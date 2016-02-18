@@ -1,0 +1,16 @@
+# Filetypes
+*.swp
+*~
+*.out
+*.gem
+*.pyc
+
+
+# Generic folders
+**/*/target
+
+# Files
+derby.log
+
+# Specifics
+help_stratos/output/*

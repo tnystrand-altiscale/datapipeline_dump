@@ -1,0 +1,2 @@
+python encrypt_stratos.py stratos_2a.tsv mem_and_vcore_per_job 4
+python encrypt_stratos.py stratos_1.tsv num_wait_perminute_with_app 1
