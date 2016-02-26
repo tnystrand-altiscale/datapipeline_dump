@@ -5,7 +5,8 @@
 *.gem
 *.pyc
 *.gz
-
+*.tsv
+*.csv
 
 # Generic folders
 **/*/target
