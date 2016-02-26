@@ -4,6 +4,7 @@
 *.out
 *.gem
 *.pyc
+*.gz
 
 
 # Generic folders
