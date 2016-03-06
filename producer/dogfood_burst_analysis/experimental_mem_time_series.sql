@@ -2,8 +2,8 @@
 -- as well as filling in missing minutes (minutes when nothing happened)
 
 set hiveconf:cluster='dogfood';
-set hiveconf:start_date='2015-12-01';
-set hiveconf:end_date='2016-02-15';
+set hiveconf:start_date='2016-02-01';
+set hiveconf:end_date='2016-03-03';
 set hiveconf:queue_dim=cluster_metrics_prod_2.queue_dim;
 set hiveconf:resource_dim=cluster_metrics_prod_2.cluster_resource_dim;
 
@@ -175,6 +175,7 @@ with
         queue_system,
         queue_name,
         int(timestamp/1000/3600)*3600 as hour_start,
+        int(timestamp/1000/60)*60 as minute_start,
         capacity,
         max_capacity,
 
@@ -201,7 +202,8 @@ with
         queue_date,
         queue_system,
         queue_name,
-        hour_start as timestamp,
+        --hour_start as timestamp,
+        minute_start as timestamp,
 
         avg(capacity) as capacity,
         avg(max_capacity) as max_capacity,
@@ -219,7 +221,8 @@ with
         queue_date,
         queue_system,
         queue_name,
-        hour_start
+        --hour_start
+        minute_start
     )
 
     ,final_table
@@ -277,6 +280,11 @@ with
                     ELSE 'unknown' END
             ) as application,
 
+        jfr.user_key,
+        jfr.workflowid,
+        jfr.workflowname,
+        jfr.workflownodename,
+
 
         --jf.duration,
         --jf.wait_on_jobstart,
@@ -310,7 +318,8 @@ with
     left outer join
         capacity_combined_avgd_hour as cc
     on
-        int(jmu.minute_start/3600)=int(cc.timestamp/3600)
+        --int(jmu.minute_start/3600)=int(cc.timestamp/3600)
+        int(jmu.minute_start/60)=int(cc.timestamp/60)
         and jmu.system=cc.queue_system
         and jmu.queue=cc.queue_name
     --left outer join
@@ -325,6 +334,7 @@ with
         and jfr.system = jmu.system
     )
 
-select * from final_table
+--select * from final_table
+select count(*),queue_system,queue_date,queue_name from capacity_combined_avgd_hour group by queue_date, queue_system,queue_name
 --select * from container_time_series_by_job
 --select * from container_time_series_filledmins_pre_mem_fix
