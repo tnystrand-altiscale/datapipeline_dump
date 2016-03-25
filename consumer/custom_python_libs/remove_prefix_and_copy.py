@@ -9,10 +9,13 @@ def copy_from_remote(data_filepath, data_filename, json_path):
             json_settings = json.load(json_file)
         
         scpstr = json_settings['scp_str']
-        
+       
     	copyfromdogfood = 'scp ' + scpstr + '/' + data_filename + ' ' + data_filepath + '/' + data_filename
-   
-    	subprocess.check_call(copyfromdogfood.split())
+
+        print('\n\t Command: %s' % copyfromdogfood,end='')
+        sys.stdout.flush()
+
+        subprocess.check_call(copyfromdogfood.split())
    
 
 def remove_prefix(data_filepath):
@@ -74,7 +77,7 @@ def main():
     outfile = outfile_path + '/' + outfile_name
 
     if args.copy[0]:
-        print('Copying to %s ...' % outfile, end='')
+        print('Copying to %s...' % outfile, end='')
         copy_from_remote(outfile_path, outfile_name, json_location)
         print('[DONE]')
     

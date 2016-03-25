@@ -40,6 +40,7 @@ def getrow(idstart,idend,name,split_line):
 		      		name,
                     split_line[11],
                     split_line[15],
+                    split_line[14],
 		      		split_line[23],
 		      		split_line[24],
                     '\n'])
@@ -65,6 +66,7 @@ def split_data(data_filename):
                         "event", 
                         "size", 
                         "priority", 
+                        "hostname",
                         split_header[23], 
                         split_header[24], 
                         "\n"])
