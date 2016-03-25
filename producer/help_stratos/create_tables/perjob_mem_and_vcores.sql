@@ -1,4 +1,4 @@
-ADD JAR ../udf_altiscale/target/HiveUDF-1.0-jar-with-dependencies.jar;
+ADD JAR ../../udf_altiscale/target/HiveUDF-1.0-jar-with-dependencies.jar;
 create temporary function sha1 as 'com.altiscale.pipeline.hive.udf.Sha1';
 
 set hiveconf:start_date='2015-06-01';
@@ -15,7 +15,24 @@ create table stratos_2a_perjob
 stored as orc
 as
 with
-    container_fact_reduced
+    job_fact_reduced
+    as (
+        select
+            *,
+            totalcounters['FILE_BYTES_READ'] as FILE_BYTES_READ,
+            totalcounters['FILE_BYTES_WRITTEN'] as FILE_BYTES_WRITTEN,
+            totalcounters['HDFS_BYTES_READ'] as HDFS_BYTES_READ,
+            totalcounters['HDFS_BYTES_WRITTEN'] as HDFS_BYTES_WRITTEN
+        from
+            cluster_metrics_prod_2.job_fact
+        where
+            date between ${hiveconf:start_date} and ${hiveconf:end_date}
+            and system != ${hiveconf:system_dog}
+            and system != ${hiveconf:system_jun}
+            and system != ${hiveconf:system_jum}
+    )
+
+    ,container_fact_reduced
     as (
     select
         *,
@@ -71,8 +88,8 @@ with
         count(*) as number_of_containers,
         sum(memory) as requested_memory,
         sum(vcores) as requested_vcores,
+        system,
         max(finishtime)-min(starttime) as job_duration,
-        sha1(system) as system,
         min(starttime) as starttime,
         max(finishtime) as finishtime
     from
@@ -82,5 +99,30 @@ with
         system
     )
 
-select * from mem_and_vcore_per_job
+    ,perjob_with_counters
+    as (
+    select
+        mv.job_id,
+        mv.number_of_containers,
+        mv.requested_memory,
+        mv.requested_vcores,
+        mv.job_duration,
+        sha1(mv.system) as system,
+        mv.starttime,
+        mv.finishtime,
+        jf.FILE_BYTES_READ,
+        jf.FILE_BYTES_WRITTEN,
+        jf.HDFS_BYTES_READ,
+        jf.HDFS_BYTES_WRITTEN
+    from
+        mem_and_vcore_per_job as mv
+    join
+        job_fact_reduced as jf
+    on
+        jf.jobid = mv.job_id
+        and jf.system = mv.system
+    )     
+
+
+select * from perjob_with_counters
 

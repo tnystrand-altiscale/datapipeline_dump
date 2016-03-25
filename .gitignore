@@ -8,6 +8,8 @@
 *.tsv
 *.csv
 *.jpg
+*.crc
+*.log
 
 # Generic folders
 **/*/target

@@ -1,4 +1,4 @@
-ADD JAR ../udf_altiscale/target/HiveUDF-1.0-jar-with-dependencies.jar;
+ADD JAR ../../udf_altiscale/target/HiveUDF-1.0-jar-with-dependencies.jar;
 create temporary function sha1 as 'com.altiscale.pipeline.hive.udf.Sha1';
 
 set hiveconf:start_date='2015-06-01';

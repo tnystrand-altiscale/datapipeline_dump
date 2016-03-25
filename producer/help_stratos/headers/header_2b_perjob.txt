@@ -1,0 +1,13 @@
+col_name	data_type	comment
+job_id              	string              	                    
+number_of_containers	bigint              	                    
+requested_memory    	bigint              	                    
+requested_vcores    	bigint              	                    
+job_duration        	double              	                    
+system              	string              	                    
+starttime           	double              	                    
+finishtime          	double              	                    
+file_bytes_read     	bigint              	                    
+file_bytes_written  	bigint              	                    
+hdfs_bytes_read     	bigint              	                    
+hdfs_bytes_written  	bigint              	                    

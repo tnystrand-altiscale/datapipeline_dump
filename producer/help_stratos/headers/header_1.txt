@@ -1,0 +1,9 @@
+col_name	data_type	comment
+minute_start        	int                 	                    
+job_id              	string              	                    
+container_state     	string              	                    
+containers_number   	bigint              	                    
+container_host      	string              	                    
+application         	string              	                    
+container_system    	string              	                    
+measure_date        	string              	                    
