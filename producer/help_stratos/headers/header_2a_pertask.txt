@@ -1,0 +1,15 @@
+col_name	data_type	comment
+containerid         	string              	                    
+requestedtime       	bigint              	                    
+reservedtime        	bigint              	                    
+allocatedtime       	bigint              	                    
+acquiredtime        	bigint              	                    
+expiredtime         	bigint              	                    
+runningtime         	bigint              	                    
+killedtime          	bigint              	                    
+releasedtime        	bigint              	                    
+completedtime       	bigint              	                    
+jobid               	string              	                    
+memory              	bigint              	                    
+vcores              	int                 	                    
+system              	string              	                    

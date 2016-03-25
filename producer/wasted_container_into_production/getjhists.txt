@@ -1,0 +1,1 @@
+hdfs dfs -getmerge /data/log_pipeline/prod/2/v2/jhist/dogfood/2015/12/05/23 jhist.dogfood.2015.12.05.23.tar.gz

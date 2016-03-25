@@ -1,0 +1,6 @@
+col_name	data_type	comment
+timestamp           	timestamp           	                    
+hostname            	string              	                    
+total_memory        	double              	                    
+total_vcores        	double              	                    
+system              	string              	                    
