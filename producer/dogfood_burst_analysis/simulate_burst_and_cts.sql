@@ -1,5 +1,5 @@
-set hiveconf:start_date='2016-03-01';
-set hiveconf:end_date='2016-03-21';
+set hiveconf:start_date='2016-03-28';
+set hiveconf:end_date='2016-03-31';
 set hiveconf:queue_dim=cluster_metrics_prod_2.queue_dim;
 set hiveconf:resource_dim=cluster_metrics_prod_2.cluster_resource_dim;
 set hiveconf:system='';
@@ -27,6 +27,8 @@ with
         sum(if(cts.memory>0,cts.vcores,0)) as vcores,
         sum(cts.container_wait_time/60000*cf.memory) as memory_in_wait,
         cts.system,
+        max(cts.cluster_memory) as cluster_memory,
+        max(cts.cluster_vcores) as cluster_vcores,
         min(cts.date) as date
     from
         cluster_metrics_prod_2.container_time_series as cts
@@ -80,6 +82,8 @@ with
         if(memory is null,0,memory) as memory,
         if(vcores is null,0,vcores) as vcores,
         if(memory_in_wait is null,0,memory_in_wait) as memory_in_wait,
+        if(cluster_memory is null,0,cluster_memory) as cluster_memory,
+        if(cluster_vcores is null,0,cluster_vcores) as cluster_vcores,
         et.system,
         et.date
     from
@@ -192,15 +196,15 @@ with
     select
         cts.*,
         -- Slothour (2.5G) size for entire minute
-        sum(if(cts.container_wait_time>2500*60,1,0)) over window_10 as shortcheck,
+        sum(if(cts.memory_in_wait>=2500*60,1,0)) over window_10 as shortcheck,
 
-        sum(if(cts.container_wait_time>2500*60,1,0)) over window_60 as longcheck,
+        sum(if(cts.memory_in_wait>=2500*60,1,0)) over window_60 as longcheck,
         
         -- Since memory is almost always small and there is always a little wait
-        sum(if(cts.container_wait_time<2500*60 and
+        sum(if(cts.memory_in_wait<=2500*60 and
               cts.memory<0.75*cts.cluster_memory_capacity,1,0)) over window_10 as shortend,
 
-        sum(if(cts.container_wait_time<2500*60 and
+        sum(if(cts.memory_in_wait<=2500*60 and
               cts.memory<0.75*cts.cluster_memory_capacity,1,0)) over window_60 as longend
 
         --cts.cluster_memory_capacity,
