@@ -1,6 +1,6 @@
 import abc
 
-class BurstScheduler:
+class Scheduler(object):
     # Contains the current settings, whether this scheudler is active and how many miutes is over the limit for a burst decision
     # 'counter for number of minutes that are 'burst-worthy''
     def __init__(self, scheduler_settings, active, min_over_limit):
@@ -9,16 +9,14 @@ class BurstScheduler:
         self.min_over_limit = min_over_limit
 
     # If the requirements are fulfilled (e.g enough waiting mem), schduler makes a decision
-    @abc.abstractmethod
     def fulfill_requirements(self):
-        return 
+        return self.scheduler_settings.scheduler_interval <= \
+            self.scheduler_settings.scheduler_busy_ratio*self.min_over_limit
 
     # If the waiting memory is over the limit increment counter towards making a decision
+    @abc.abstractmethod
     def update(self, memory_in_wait, minutes):
-        if memory_in_wait >= self.settings.scheduler_limit:
-            self.add_for_decision(minutes)
-        elif self.min_over_limit > 0:
-            self.sub_for_decision(minutes)
+        return
             
     def add_for_decision(self, minutes):
         if minutes + self.min_over_limit < self.settings.scheduler_limit:

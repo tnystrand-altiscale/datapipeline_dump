@@ -1,4 +1,4 @@
-set hiveconf:start_date='2016-03-30';
+set hiveconf:start_date='2016-03-15';
 set hiveconf:end_date='2016-03-31';
 set hiveconf:system='dogfood';
 set hiveconf:cts=cluster_metrics_prod_2.container_time_series;
