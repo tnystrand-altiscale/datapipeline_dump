@@ -1,29 +1,53 @@
-set hiveconf:start_date='2016-01-01';
-set hiveconf:end_date='2016-02-07';
+set hiveconf:start_date='2016-03-15';
+set hiveconf:end_date='2016-03-31';
 set hiveconf:queue_dim=cluster_metrics_prod_2.queue_dim;
 set hiveconf:resource_dim=cluster_metrics_prod_2.cluster_resource_dim;
-set hiveconf:system='dogfood';
+set hiveconf:system='';
 
 with
-    -- Memory and vcores per minute and system
-    ctsgrouped
+    -- Need container_fact for waiting 'slothours' which can be used to estimate requested memory
+    cf_reduced
     as (
-    select 
-        minute_start,
-        sum(container_wait_time) as container_wait_time,
-        sum(memory) as memory,
-        sum(if(memory>0,vcores,0)) as vcores,
-        system,
-        min(date) as date
+    select
+        *
     from
-        cluster_metrics_prod_2.container_time_series
+        cluster_metrics_prod_2.container_fact
     where
        date between ${hiveconf:start_date} and ${hiveconf:end_date}
-       and system=${hiveconf:system}
-    group by
-        system,
-        minute_start
+       and system like ${hiveconf:system}'%'
     )
+
+    -- Memory and vcores per minute and system
+    ,ctsgrouped
+    as (
+    select 
+        cts.minute_start,
+        sum(cts.container_wait_time) as container_wait_time,
+        sum(cts.memory) as memory,
+        sum(if(cts.memory>0,cts.vcores,0)) as vcores,
+        sum(cts.container_wait_time/60000*cf.memory) as memory_in_wait,
+        cts.system,
+        avg(cluster_memory) as cluster_memory,
+        avg(cluster_vcores) as cluster_vcores,
+        min(cts.date) as date
+    from
+        cluster_metrics_prod_2.container_time_series as cts
+    join
+        cf_reduced as cf
+    on
+        cf.containerid = cts.container_id
+        and cf.system = cts.system
+        and cf.date = cts.date
+    where
+       cf.date between ${hiveconf:start_date} and ${hiveconf:end_date}
+       and cf.system like ${hiveconf:system}'%'
+       and cts.date between ${hiveconf:start_date} and ${hiveconf:end_date}
+       and cts.system like ${hiveconf:system}'%'
+    group by
+        cts.system,
+        cts.minute_start
+    )
+
 
     -- All systems (needed to expand epochtminutes which are system independent)
     ,activesystems
@@ -46,7 +70,7 @@ with
         activesystems as ast
     where
         date between ${hiveconf:start_date} and ${hiveconf:end_date}
-        and ast.system=${hiveconf:system}
+        and ast.system like ${hiveconf:system}'%'
     )
 
     -- Fill in empty minutes in memory and vcores per minute table
@@ -57,6 +81,7 @@ with
         if(container_wait_time is null,0,container_wait_time) as container_wait_time,
         if(memory is null,0,memory) as memory,
         if(vcores is null,0,vcores) as vcores,
+        if(memory_in_wait is null,0,memory_in_wait) as memory_in_wait,
         et.system,
         et.date
     from
@@ -89,8 +114,9 @@ with
         avg(max_capacity)*avg(cluster_vcore_capacity)/100 as vcore_max_capacity
     from
         ${hiveconf:queue_dim} as qd
-        ,${hiveconf:resource_dim} as rd
-    where
+    left outer join
+        ${hiveconf:resource_dim} as rd
+    on
         cluster_system=queue_system
         and cluster_date=queue_date
         and cluster_date between ${hiveconf:start_date} and ${hiveconf:end_date}
@@ -168,16 +194,16 @@ with
     select
         cts.*,
         -- Slothour (2.5G) size for entire minute
-        sum(if(cts.container_wait_time>2500*60,1,0)) over window_10 as shortcheck,
+        sum(if(cts.memory_in_wait>=2500*60,1,0)) over window_10 as shortcheck,
 
-        sum(if(cts.container_wait_time>2500*60,1,0)) over window_60 as longcheck,
+        sum(if(cts.memory_in_wait>=2500*60,1,0)) over window_60 as longcheck,
         
         -- Since memory is almost always small and there is always a little wait
-        sum(if(cts.container_wait_time<2500*60 and
-              cts.memory<0.9*cts.cluster_memory_capacity,1,0)) over window_10 as shortend,
+        sum(if(cts.memory_in_wait<=2500*60 and
+              cts.memory<0.75*cts.cluster_memory_capacity,1,0)) over window_10 as shortend,
 
-        sum(if(cts.container_wait_time<2500*60 and
-              cts.memory<0.9*cts.cluster_memory_capacity,1,0)) over window_60 as longend
+        sum(if(cts.memory_in_wait<=2500*60 and
+              cts.memory<0.75*cts.cluster_memory_capacity,1,0)) over window_60 as longend
 
         --cts.cluster_memory_capacity,
         --cts.cluster_vcore_capacity,
@@ -273,7 +299,7 @@ with
 
 
 select * from marked_for_burst;
-
+--select * from ctsfix
 
 --select * from epochreduced;
 

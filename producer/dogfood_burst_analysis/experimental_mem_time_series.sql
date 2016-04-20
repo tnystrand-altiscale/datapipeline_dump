@@ -1,9 +1,9 @@
 -- Extending container time series with queue and memory limits
 -- as well as filling in missing minutes (minutes when nothing happened)
 
-set hiveconf:cluster='dogfood';
-set hiveconf:start_date='2016-03-01';
-set hiveconf:end_date='2016-03-21';
+set hiveconf:cluster='playfirst';
+set hiveconf:start_date='2016-04-01';
+set hiveconf:end_date='2016-04-16';
 set hiveconf:queue_dim=cluster_metrics_prod_2.queue_dim;
 set hiveconf:resource_dim=cluster_metrics_prod_2.cluster_resource_dim;
 
