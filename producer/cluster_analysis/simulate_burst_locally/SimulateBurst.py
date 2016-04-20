@@ -14,7 +14,7 @@ def main(cts_filename, logger=None):
     # Number of minutes to activate burst after a scheduling decision is reached
     burst_delay = 20
     # Number of minutes to deactivate burst after a descheduling decision is reached
-    unburst_delay = 20
+    unburst_delay = 40
 
     # Scheduling deciders
     burst_deciders = []
@@ -51,10 +51,10 @@ def main(cts_filename, logger=None):
 
     if "." in header:
         split_header = re.split('\t|\n', header)
-        # Pick out last item of ever 'dot' split
+        # Pick out last item of every 'dot' split
         column_names = [head.split('.')[-1] for head in split_header]
-
-        new_header = "\t".join(column_names)
+        # Create new tab separated header by joining header and removing last new line
+        new_header = "\t".join(column_names[:-1])
 
     # Header for output file
     burst_marked_file = cts_filename + '.burst_marked.tsv'    
@@ -64,6 +64,8 @@ def main(cts_filename, logger=None):
     # Counter for number of minutes that have been processed
     processed_minutes = 0
     empty_minutes = 0
+    missing_memory_minutes = 0
+    missing_vcore_minutes = 0
 
     # Empty row to be reused for minutes without entries in container_time_series
     empty_row = HeaderInput.empty_row()
@@ -78,29 +80,80 @@ def main(cts_filename, logger=None):
         f.write(complete_header)
         # Pretend that the last known minute_start was 0 minute before (do not pad anything)
         minute_diff = 0
-        last_minute_start = int( series[0].split() [HeaderInput.minute_start] )
+        first_minute_start = int( series[0].split() [HeaderInput.minute_start] )
+        last_minute_start = first_minute_start
 
-        logger.info('Beginning at minute: %d' % last_minute_start)
+        # For simplicity assume First memory capacity is 0. 
+        # (problematic if cluster_memory_capacity = NULL for first minute for instance)
+        last_memory_capacity = 0
+        last_vcore_capacity = 0
 
+        logger.info('Beginning at minute: %d' % first_minute_start)
+
+        # Hacking and assuming input file is ordered by systems
+        last_system = ''
         for line in series:
 
             split_line = line.split()
 
-            minute_start = int( split_line[ HeaderInput.minute_start ] )
-            memory_in_wait = float( split_line[ HeaderInput.memory_in_wait ] )
-
             # Need for adding the last known cluster_memory and cluster_vcores
-            cluster_memory = series[0].split() [HeaderInput.cluster_memory]
-            cluster_vcores = series[0].split() [HeaderInput.cluster_vcores]
-            system = series[0].split() [HeaderInput.system]
-            date = series[0].split() [HeaderInput.date]
+            system = split_line[HeaderInput.system]
+
+            minute_start = int( split_line[ HeaderInput.minute_start ] )
+            if system != 'dogfood':
+                memory_in_wait = float( split_line[ HeaderInput.memory_in_wait ] )
+            else:
+                memory_in_wait = float( split_line[ HeaderInput.production_memory_in_wait ] )
+
+
+            if system != last_system:
+                last_memory_capacity = 0
+                last_vcore_capacity = 0
+                last_minute_start = minute_start
+                
 
             # Number of minutes for which nothing is recorded in container_time_series
-            # up till current minute
-            for empty_minute_start in range(last_minute_start + 60, minute_start, 60):
+            # and cluster_resrouce_dim comes after current_minute_start. 
+            for current_minute_start in range(last_minute_start + 60, minute_start + 60, 60):
+                # If resource_dim has NULL values for the cluster_memory_capacity and/or vcores pad these
+                cluster_memory_capacity = split_line[HeaderInput.cluster_memory_capacity]
+                cluster_vcore_capacity = split_line[HeaderInput.cluster_vcore_capacity]
+                date = split_line[HeaderInput.date]
+
+                # Default to using last known value if missing cluster_resource_dim values
+                if cluster_memory_capacity == 'NULL' \
+                        or cluster_memory_capacity == '0.0' \
+                        or cluster_memory_capacity == '0':
+                    split_line[ HeaderInput.cluster_memory_capacity ] = last_memory_capacity
+                    missing_memory_minutes = missing_memory_minutes + 1
+                else:
+                    last_memory_capacity = cluster_memory_capacity
+
+                if cluster_vcore_capacity == 'NULL' \
+                        or cluster_vcore_capacity == '0.0' \
+                        or cluster_vcore_capacity == '0':
+                    split_line[ HeaderInput.cluster_vcore_capacity ] = last_vcore_capacity
+                    missing_vcore_minutes = missing_vcore_minutes + 1
+                else:
+                    last_vcore_capacity = cluster_vcore_capacity
+
+                # Empty minute if traversing more than the first minute_start
+                # Should happen very seldomly 
+                if current_minute_start != minute_start:
+                    empty_minutes = empty_minutes + 1
+                    memory_in_wait = 0
+                    # Adding minute_start to the data
+                    empty_row[HeaderInput.minute_start] = str(current_minute_start)
+
+                    empty_row[HeaderInput.cluster_memory_capacity] = split_line[HeaderInput.cluster_memory_capacity]
+                    empty_row[HeaderInput.cluster_vcore_capacity] = split_line[HeaderInput.cluster_vcore_capacity]
+                    empty_row[HeaderInput.date] = date
+                    empty_row[HeaderInput.system] = system
+                    split_line = empty_row
+
                 # If waiting for burst to change, we cannot change burst status
                 if not lock_burst:
-                    turn_on_burst, turn_off_burst = update_all_schedulers(burst_deciders, unburst_deciders, 0)
+                    turn_on_burst, turn_off_burst = update_all_schedulers(burst_deciders, unburst_deciders, memory_in_wait)
                     change_burst = swap_burst(turn_on_burst, turn_off_burst, bursted)
                     if change_burst:
                         lock_burst = True
@@ -113,43 +166,17 @@ def main(cts_filename, logger=None):
                     lock_burst = False
                 else:
                     minutes_of_delay_left = minutes_of_delay_left - 1
-                
-                # Adding minute_start to the data
-                empty_row[HeaderInput.minute_start] = str(empty_minute_start)
 
-                empty_row[HeaderInput.cluster_memory] = cluster_memory
-                empty_row[HeaderInput.cluster_vcores] = cluster_vcores
-                empty_row[HeaderInput.date] = date
-                empty_row[HeaderInput.system] = system
-
-                write_to_file(f, empty_row, bursted, burst_mode)
+                write_to_file(f, split_line, bursted, burst_mode)
                 processed_minutes = processed_minutes + 1
-                empty_minutes = empty_minutes + 1
-
-            # Update the last non-empty 'current' minute
-            # If waiting for burst to change, we cannot change burst status
-            if not lock_burst:
-                turn_on_burst, turn_off_burst = update_all_schedulers(burst_deciders, unburst_deciders, memory_in_wait)
-                change_burst = swap_burst(turn_on_burst, turn_off_burst, bursted)
-                if change_burst:
-                    lock_burst = True
-                    burst_mode = 'changing'
-                    minutes_of_delay_left = get_delay(bursted, burst_delay, unburst_delay)
-            # When no minutes left of burst, release burst mode changes, and lock is released
-            elif minutes_of_delay_left == 0:
-                bursted = not bursted
-                burst_mode = modes[bursted]
-                lock_burst = False
-            else:
-                minutes_of_delay_left = minutes_of_delay_left - 1
-
-            write_to_file(f, split_line, bursted, burst_mode)
-
             last_minute_start = minute_start
-            processed_minutes = processed_minutes + 1
+            last_system = system
 
-        logger.info('Empty minutes: %d' % empty_minutes)
+
         logger.info('Processed minutes: %d' % processed_minutes)
+        logger.info('Empty minutes: %d' % empty_minutes)
+        logger.info('Missing memory minutes: %d' % missing_memory_minutes)
+        logger.info('Missing vcore minutes: %d' % missing_vcore_minutes)
 
 def get_delay(bursted, delay_burst, delay_unburst):
     # If not bursted we have to wait for burst to start
