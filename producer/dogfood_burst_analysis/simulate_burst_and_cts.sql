@@ -1,5 +1,5 @@
-set hiveconf:start_date='2016-04-01';
-set hiveconf:end_date='2016-04-16';
+set hiveconf:start_date='2016-04-17';
+set hiveconf:end_date='2016-04-24';
 set hiveconf:queue_dim=cluster_metrics_prod_2.queue_dim;
 set hiveconf:resource_dim=cluster_metrics_prod_2.cluster_resource_dim;
 set hiveconf:system='';

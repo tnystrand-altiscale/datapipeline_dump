@@ -1,0 +1,512 @@
+[2016-04-24 17:28:23,848] INFO StandaloneConfig values: 
+	rest.advertised.port = null
+	rest.advertised.host.name = null
+	bootstrap.servers = [kafka01-sc1.service.altiscale.com:9092]
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+	task.shutdown.graceful.timeout.ms = 5000
+	internal.value.converter = class org.apache.kafka.connect.json.JsonConverter
+	rest.host.name = null
+	cluster = connect
+	internal.key.converter = class org.apache.kafka.connect.json.JsonConverter
+	key.converter = class org.apache.kafka.connect.json.JsonConverter
+	offset.flush.timeout.ms = 5000
+	rest.port = 8083
+	offset.flush.interval.ms = 10000
+ (org.apache.kafka.connect.runtime.standalone.StandaloneConfig:165)
+[2016-04-24 17:28:24,059] DEBUG Logging to org.slf4j.impl.Log4jLoggerAdapter(org.eclipse.jetty.util.log) via org.eclipse.jetty.util.log.Slf4jLog (org.eclipse.jetty.util.log:176)
+[2016-04-24 17:28:24,067] INFO Logging initialized @658ms (org.eclipse.jetty.util.log:186)
+[2016-04-24 17:28:24,076] DEBUG org.eclipse.jetty.server.Server@5e3c782 added {qtp1524550349{STOPPED,8<=0<=200,i=0,q=0},AUTO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,096] DEBUG HttpConnectionFactory@41e674d4{HTTP/1.1} added {HttpConfiguration@1002c19{32768/8192,8192/8192,https://:0,[]},POJO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,100] DEBUG ServerConnector@69b9b81{null}{0.0.0.0:0} added {org.eclipse.jetty.server.Server@5e3c782,UNMANAGED} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,100] DEBUG ServerConnector@69b9b81{null}{0.0.0.0:0} added {qtp1524550349{STOPPED,8<=0<=200,i=0,q=0},AUTO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,100] DEBUG ServerConnector@69b9b81{null}{0.0.0.0:0} added {org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@2820478a,AUTO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,101] DEBUG ServerConnector@69b9b81{null}{0.0.0.0:0} added {org.eclipse.jetty.io.ArrayByteBufferPool@51fe358a,POJO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,101] DEBUG ServerConnector@69b9b81{null}{0.0.0.0:0} added {HttpConnectionFactory@41e674d4{HTTP/1.1},AUTO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,104] DEBUG ServerConnector@69b9b81{HTTP/1.1}{0.0.0.0:0} added {org.eclipse.jetty.server.ServerConnector$ServerConnectorManager@3086b277,MANAGED} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,104] DEBUG org.eclipse.jetty.server.Server@5e3c782 added {ServerConnector@69b9b81{HTTP/1.1}{0.0.0.0:8083},AUTO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,109] DEBUG Kafka Connect instance created (org.apache.kafka.connect.runtime.Connect:45)
+[2016-04-24 17:28:24,109] INFO Kafka Connect starting (org.apache.kafka.connect.runtime.Connect:53)
+[2016-04-24 17:28:24,109] INFO Worker starting (org.apache.kafka.connect.runtime.Worker:89)
+[2016-04-24 17:28:24,123] INFO ProducerConfig values: 
+	request.timeout.ms = 2147483647
+	retry.backoff.ms = 100
+	buffer.memory = 33554432
+	ssl.truststore.password = null
+	batch.size = 16384
+	ssl.keymanager.algorithm = SunX509
+	receive.buffer.bytes = 32768
+	ssl.cipher.suites = null
+	ssl.key.password = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	ssl.provider = null
+	sasl.kerberos.service.name = null
+	max.in.flight.requests.per.connection = 1
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	bootstrap.servers = [kafka01-sc1.service.altiscale.com:9092]
+	client.id = 
+	max.request.size = 1048576
+	acks = all
+	linger.ms = 0
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	metadata.fetch.timeout.ms = 60000
+	ssl.endpoint.identification.algorithm = null
+	ssl.keystore.location = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	ssl.truststore.location = null
+	ssl.keystore.password = null
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	block.on.buffer.full = false
+	metrics.sample.window.ms = 30000
+	metadata.max.age.ms = 300000
+	security.protocol = PLAINTEXT
+	ssl.protocol = TLS
+	sasl.kerberos.min.time.before.relogin = 60000
+	timeout.ms = 30000
+	connections.max.idle.ms = 540000
+	ssl.trustmanager.algorithm = PKIX
+	metric.reporters = []
+	compression.type = none
+	ssl.truststore.type = JKS
+	max.block.ms = 9223372036854775807
+	retries = 2147483647
+	send.buffer.bytes = 131072
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	reconnect.backoff.ms = 50
+	metrics.num.samples = 2
+	ssl.keystore.type = JKS
+ (org.apache.kafka.clients.producer.ProducerConfig:165)
+[2016-04-24 17:28:24,125] TRACE Starting the Kafka producer (org.apache.kafka.clients.producer.KafkaProducer:201)
+[2016-04-24 17:28:24,135] DEBUG Added sensor with name bufferpool-wait-time (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:24,145] DEBUG Added sensor with name buffer-exhausted-records (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:24,150] DEBUG Updated cluster metadata version 1 to Cluster(nodes = [Node(-1, kafka01-sc1.service.altiscale.com, 9092)], partitions = []) (org.apache.kafka.clients.Metadata:172)
+[2016-04-24 17:28:24,163] DEBUG Added sensor with name connections-closed:client-id-producer-1 (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:24,163] DEBUG Added sensor with name connections-created:client-id-producer-1 (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:24,164] DEBUG Added sensor with name bytes-sent-received:client-id-producer-1 (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:24,164] DEBUG Added sensor with name bytes-sent:client-id-producer-1 (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:24,165] DEBUG Added sensor with name bytes-received:client-id-producer-1 (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:24,166] DEBUG Added sensor with name select-time:client-id-producer-1 (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:24,166] DEBUG Added sensor with name io-time:client-id-producer-1 (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:24,171] DEBUG Added sensor with name batch-size (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:24,172] DEBUG Added sensor with name compression-rate (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:24,172] DEBUG Added sensor with name queue-time (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:24,172] DEBUG Added sensor with name request-time (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:24,173] DEBUG Added sensor with name produce-throttle-time (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:24,173] DEBUG Added sensor with name records-per-request (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:24,173] DEBUG Added sensor with name record-retries (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:24,174] DEBUG Added sensor with name errors (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:24,174] DEBUG Added sensor with name record-size-max (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:24,176] DEBUG Starting Kafka producer I/O thread. (org.apache.kafka.clients.producer.internals.Sender:123)
+[2016-04-24 17:28:24,180] INFO Kafka version : 0.9.0.0-cp1 (org.apache.kafka.common.utils.AppInfoParser:82)
+[2016-04-24 17:28:24,180] INFO Kafka commitId : d1555e3a21980fa9 (org.apache.kafka.common.utils.AppInfoParser:83)
+[2016-04-24 17:28:24,181] DEBUG Kafka producer started (org.apache.kafka.clients.producer.KafkaProducer:315)
+[2016-04-24 17:28:24,181] INFO Starting FileOffsetBackingStore with file /tmp/connect.offsets (org.apache.kafka.connect.storage.FileOffsetBackingStore:53)
+[2016-04-24 17:28:24,183] INFO Worker started (org.apache.kafka.connect.runtime.Worker:111)
+[2016-04-24 17:28:24,183] INFO Herder starting (org.apache.kafka.connect.runtime.standalone.StandaloneHerder:57)
+[2016-04-24 17:28:24,183] INFO Herder started (org.apache.kafka.connect.runtime.standalone.StandaloneHerder:58)
+[2016-04-24 17:28:24,183] INFO Starting REST server (org.apache.kafka.connect.runtime.rest.RestServer:91)
+[2016-04-24 17:28:24,348] DEBUG org.eclipse.jetty.server.session.SessionHandler@771f4a9b added {org.eclipse.jetty.server.session.HashSessionManager@275b4336,AUTO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,348] DEBUG o.e.j.s.ServletContextHandler@5899a269{/,null,null} added {org.eclipse.jetty.server.session.SessionHandler@771f4a9b,AUTO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,352] DEBUG org.eclipse.jetty.server.session.SessionHandler@771f4a9b added {org.eclipse.jetty.servlet.ServletHandler@4afe268a,AUTO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,353] DEBUG org.eclipse.jetty.servlet.ServletHandler@4afe268a added {org.glassfish.jersey.servlet.ServletContainer-54447d40@751024b6==org.glassfish.jersey.servlet.ServletContainer,-1,true,AUTO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,354] DEBUG org.eclipse.jetty.servlet.ServletHandler@4afe268a added {[/*]=>org.glassfish.jersey.servlet.ServletContainer-54447d40,POJO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,358] DEBUG org.eclipse.jetty.server.handler.RequestLogHandler@17e21b3 added {org.eclipse.jetty.server.Slf4jRequestLog@7fd66f88,AUTO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,370] DEBUG org.eclipse.jetty.server.handler.HandlerCollection@3018076c[o.e.j.s.ServletContextHandler@5899a269{/,null,null}, org.eclipse.jetty.server.handler.DefaultHandler@798f5c1e, org.eclipse.jetty.server.handler.RequestLogHandler@17e21b3] added {o.e.j.s.ServletContextHandler@5899a269{/,null,null},AUTO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,370] DEBUG org.eclipse.jetty.server.handler.HandlerCollection@3018076c[o.e.j.s.ServletContextHandler@5899a269{/,null,null}, org.eclipse.jetty.server.handler.DefaultHandler@798f5c1e, org.eclipse.jetty.server.handler.RequestLogHandler@17e21b3] added {org.eclipse.jetty.server.handler.DefaultHandler@798f5c1e,AUTO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,371] DEBUG org.eclipse.jetty.server.handler.HandlerCollection@3018076c[o.e.j.s.ServletContextHandler@5899a269{/,null,null}, org.eclipse.jetty.server.handler.DefaultHandler@798f5c1e, org.eclipse.jetty.server.handler.RequestLogHandler@17e21b3] added {org.eclipse.jetty.server.handler.RequestLogHandler@17e21b3,AUTO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,373] DEBUG org.eclipse.jetty.server.handler.StatisticsHandler@6b99d741 added {org.eclipse.jetty.server.handler.HandlerCollection@3018076c[o.e.j.s.ServletContextHandler@5899a269{/,null,null}, org.eclipse.jetty.server.handler.DefaultHandler@798f5c1e, org.eclipse.jetty.server.handler.RequestLogHandler@17e21b3],AUTO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,373] DEBUG org.eclipse.jetty.server.Server@5e3c782 added {org.eclipse.jetty.server.handler.StatisticsHandler@6b99d741,AUTO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,373] DEBUG starting org.eclipse.jetty.server.Server@5e3c782 (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:24,377] INFO jetty-9.2.12.v20150709 (org.eclipse.jetty.server.Server:327)
+[2016-04-24 17:28:24,390] DEBUG starting org.eclipse.jetty.server.Server@5e3c782 (org.eclipse.jetty.server.handler.AbstractHandler:58)
+[2016-04-24 17:28:24,391] DEBUG starting qtp1524550349{STOPPED,8<=0<=200,i=0,q=0} (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:24,393] DEBUG STARTED @986ms qtp1524550349{STARTED,8<=8<=200,i=7,q=0} (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:24,393] DEBUG starting org.eclipse.jetty.server.handler.StatisticsHandler@6b99d741 (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:24,393] DEBUG starting org.eclipse.jetty.server.handler.StatisticsHandler@6b99d741 (org.eclipse.jetty.server.handler.AbstractHandler:58)
+[2016-04-24 17:28:24,393] DEBUG starting org.eclipse.jetty.server.handler.HandlerCollection@3018076c[o.e.j.s.ServletContextHandler@5899a269{/,null,null}, org.eclipse.jetty.server.handler.DefaultHandler@798f5c1e, org.eclipse.jetty.server.handler.RequestLogHandler@17e21b3] (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:24,393] DEBUG starting org.eclipse.jetty.server.handler.HandlerCollection@3018076c[o.e.j.s.ServletContextHandler@5899a269{/,null,null}, org.eclipse.jetty.server.handler.DefaultHandler@798f5c1e, org.eclipse.jetty.server.handler.RequestLogHandler@17e21b3] (org.eclipse.jetty.server.handler.AbstractHandler:58)
+[2016-04-24 17:28:24,394] DEBUG starting o.e.j.s.ServletContextHandler@5899a269{/,null,null} (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:24,406] DEBUG starting o.e.j.s.ServletContextHandler@5899a269{/,null,STARTING} (org.eclipse.jetty.server.handler.AbstractHandler:58)
+[2016-04-24 17:28:24,406] DEBUG starting org.eclipse.jetty.server.session.SessionHandler@771f4a9b (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:24,406] DEBUG starting org.eclipse.jetty.server.session.SessionHandler@771f4a9b (org.eclipse.jetty.server.handler.AbstractHandler:58)
+[2016-04-24 17:28:24,406] DEBUG starting org.eclipse.jetty.server.session.HashSessionManager@275b4336 (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:24,407] DEBUG org.eclipse.jetty.server.session.HashSessionManager@275b4336 added {org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@524eaead,MANAGED} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,409] DEBUG starting org.eclipse.jetty.server.session.HashSessionIdManager@66fd6dda (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:24,409] DEBUG STARTED @1002ms org.eclipse.jetty.server.session.HashSessionIdManager@66fd6dda (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:24,409] DEBUG org.eclipse.jetty.server.Server@5e3c782 added {org.eclipse.jetty.server.session.HashSessionIdManager@66fd6dda,MANAGED} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,410] DEBUG org.eclipse.jetty.server.session.HashSessionManager@275b4336 added {org.eclipse.jetty.server.session.HashSessionIdManager@66fd6dda,UNMANAGED} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,410] DEBUG starting org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@524eaead (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:24,411] DEBUG STARTED @1004ms org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@524eaead (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:24,414] DEBUG STARTED @1007ms org.eclipse.jetty.server.session.HashSessionManager@275b4336 (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:24,414] DEBUG starting org.eclipse.jetty.servlet.ServletHandler@4afe268a (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:24,415] DEBUG Chose path=/* mapped to servlet=org.glassfish.jersey.servlet.ServletContainer-54447d40 from default=false (org.eclipse.jetty.servlet.ServletHandler:1495)
+[2016-04-24 17:28:24,416] DEBUG filterNameMap={} (org.eclipse.jetty.servlet.ServletHandler:1516)
+[2016-04-24 17:28:24,417] DEBUG pathFilters=null (org.eclipse.jetty.servlet.ServletHandler:1517)
+[2016-04-24 17:28:24,417] DEBUG servletFilterMap=null (org.eclipse.jetty.servlet.ServletHandler:1518)
+[2016-04-24 17:28:24,417] DEBUG servletPathMap={/*=org.glassfish.jersey.servlet.ServletContainer-54447d40@751024b6==org.glassfish.jersey.servlet.ServletContainer,-1,true} (org.eclipse.jetty.servlet.ServletHandler:1519)
+[2016-04-24 17:28:24,417] DEBUG servletNameMap={org.glassfish.jersey.servlet.ServletContainer-54447d40=org.glassfish.jersey.servlet.ServletContainer-54447d40@751024b6==org.glassfish.jersey.servlet.ServletContainer,-1,true} (org.eclipse.jetty.servlet.ServletHandler:1520)
+[2016-04-24 17:28:24,417] DEBUG Adding Default404Servlet to org.eclipse.jetty.servlet.ServletHandler@4afe268a (org.eclipse.jetty.servlet.ServletHandler:165)
+[2016-04-24 17:28:24,418] DEBUG org.eclipse.jetty.servlet.ServletHandler@4afe268a added {org.eclipse.jetty.servlet.ServletHandler$Default404Servlet-1d56ac0@2488b86==org.eclipse.jetty.servlet.ServletHandler$Default404Servlet,-1,false,AUTO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,419] DEBUG org.eclipse.jetty.servlet.ServletHandler@4afe268a added {[/]=>org.eclipse.jetty.servlet.ServletHandler$Default404Servlet-1d56ac0,POJO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:24,419] DEBUG Chose path=/ mapped to servlet=org.eclipse.jetty.servlet.ServletHandler$Default404Servlet-1d56ac0 from default=false (org.eclipse.jetty.servlet.ServletHandler:1495)
+[2016-04-24 17:28:24,419] DEBUG Chose path=/* mapped to servlet=org.glassfish.jersey.servlet.ServletContainer-54447d40 from default=false (org.eclipse.jetty.servlet.ServletHandler:1495)
+[2016-04-24 17:28:24,419] DEBUG filterNameMap={} (org.eclipse.jetty.servlet.ServletHandler:1516)
+[2016-04-24 17:28:24,419] DEBUG pathFilters=null (org.eclipse.jetty.servlet.ServletHandler:1517)
+[2016-04-24 17:28:24,420] DEBUG servletFilterMap=null (org.eclipse.jetty.servlet.ServletHandler:1518)
+[2016-04-24 17:28:24,420] DEBUG servletPathMap={/*=org.glassfish.jersey.servlet.ServletContainer-54447d40@751024b6==org.glassfish.jersey.servlet.ServletContainer,-1,true, /=org.eclipse.jetty.servlet.ServletHandler$Default404Servlet-1d56ac0@2488b86==org.eclipse.jetty.servlet.ServletHandler$Default404Servlet,-1,false} (org.eclipse.jetty.servlet.ServletHandler:1519)
+[2016-04-24 17:28:24,420] DEBUG servletNameMap={org.eclipse.jetty.servlet.ServletHandler$Default404Servlet-1d56ac0=org.eclipse.jetty.servlet.ServletHandler$Default404Servlet-1d56ac0@2488b86==org.eclipse.jetty.servlet.ServletHandler$Default404Servlet,-1,false, org.glassfish.jersey.servlet.ServletContainer-54447d40=org.glassfish.jersey.servlet.ServletContainer-54447d40@751024b6==org.glassfish.jersey.servlet.ServletContainer,-1,true} (org.eclipse.jetty.servlet.ServletHandler:1520)
+[2016-04-24 17:28:24,421] DEBUG starting org.eclipse.jetty.servlet.ServletHandler@4afe268a (org.eclipse.jetty.server.handler.AbstractHandler:58)
+[2016-04-24 17:28:24,421] DEBUG STARTED @1014ms org.eclipse.jetty.servlet.ServletHandler@4afe268a (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:24,421] DEBUG STARTED @1014ms org.eclipse.jetty.server.session.SessionHandler@771f4a9b (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:24,421] DEBUG starting org.eclipse.jetty.servlet.ServletHandler$Default404Servlet-1d56ac0@2488b86==org.eclipse.jetty.servlet.ServletHandler$Default404Servlet,-1,false (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:24,424] DEBUG STARTED @1016ms org.eclipse.jetty.servlet.ServletHandler$Default404Servlet-1d56ac0@2488b86==org.eclipse.jetty.servlet.ServletHandler$Default404Servlet,-1,false (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:24,424] DEBUG starting org.glassfish.jersey.servlet.ServletContainer-54447d40@751024b6==org.glassfish.jersey.servlet.ServletContainer,-1,true (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:24,424] DEBUG STARTED @1017ms org.glassfish.jersey.servlet.ServletContainer-54447d40@751024b6==org.glassfish.jersey.servlet.ServletContainer,-1,true (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:24,426] DEBUG Servlet.init org.glassfish.jersey.servlet.ServletContainer@19c12ee7 for org.glassfish.jersey.servlet.ServletContainer-54447d40 (org.eclipse.jetty.servlet.ServletHolder:611)
+[2016-04-24 17:28:25,399] INFO Started o.e.j.s.ServletContextHandler@5899a269{/,null,AVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler:744)
+[2016-04-24 17:28:25,400] DEBUG STARTED @1993ms o.e.j.s.ServletContextHandler@5899a269{/,null,AVAILABLE} (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:25,400] DEBUG starting org.eclipse.jetty.server.handler.DefaultHandler@798f5c1e (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:25,400] DEBUG starting org.eclipse.jetty.server.handler.DefaultHandler@798f5c1e (org.eclipse.jetty.server.handler.AbstractHandler:58)
+[2016-04-24 17:28:25,400] DEBUG STARTED @1993ms org.eclipse.jetty.server.handler.DefaultHandler@798f5c1e (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:25,400] DEBUG starting org.eclipse.jetty.server.handler.RequestLogHandler@17e21b3 (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:25,400] DEBUG starting org.eclipse.jetty.server.handler.RequestLogHandler@17e21b3 (org.eclipse.jetty.server.handler.AbstractHandler:58)
+[2016-04-24 17:28:25,400] DEBUG starting org.eclipse.jetty.server.Slf4jRequestLog@7fd66f88 (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:25,402] DEBUG STARTED @1995ms org.eclipse.jetty.server.Slf4jRequestLog@7fd66f88 (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:25,402] DEBUG STARTED @1995ms org.eclipse.jetty.server.handler.RequestLogHandler@17e21b3 (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:25,402] DEBUG STARTED @1995ms org.eclipse.jetty.server.handler.HandlerCollection@3018076c[o.e.j.s.ServletContextHandler@5899a269{/,null,AVAILABLE}, org.eclipse.jetty.server.handler.DefaultHandler@798f5c1e, org.eclipse.jetty.server.handler.RequestLogHandler@17e21b3] (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:25,402] DEBUG STARTED @1995ms org.eclipse.jetty.server.handler.StatisticsHandler@6b99d741 (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:25,402] DEBUG starting ServerConnector@69b9b81{HTTP/1.1}{0.0.0.0:8083} (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:25,406] DEBUG ServerConnector@69b9b81{HTTP/1.1}{0.0.0.0:8083} added {sun.nio.ch.ServerSocketChannelImpl[/0.0.0.0:8083],POJO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:25,407] DEBUG starting org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@2820478a (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:25,407] DEBUG STARTED @2000ms org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@2820478a (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:25,407] DEBUG starting HttpConnectionFactory@41e674d4{HTTP/1.1} (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:25,407] DEBUG STARTED @2000ms HttpConnectionFactory@41e674d4{HTTP/1.1} (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:25,408] DEBUG starting org.eclipse.jetty.server.ServerConnector$ServerConnectorManager@3086b277 (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:25,412] DEBUG starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@5e0dc0 keys=-1 selected=-1 (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:25,413] DEBUG STARTED @2005ms org.eclipse.jetty.io.SelectorManager$ManagedSelector@5e0dc0 keys=0 selected=0 (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:25,414] DEBUG starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@33c4d60b keys=-1 selected=-1 (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:25,414] DEBUG STARTED @2007ms org.eclipse.jetty.io.SelectorManager$ManagedSelector@33c4d60b keys=0 selected=0 (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:25,414] DEBUG starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@3fc086ba keys=-1 selected=-1 (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:25,414] DEBUG STARTED @2007ms org.eclipse.jetty.io.SelectorManager$ManagedSelector@3fc086ba keys=0 selected=0 (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:25,415] DEBUG Starting Thread[qtp1524550349-16-selector-ServerConnectorManager@3086b277/1,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@33c4d60b keys=0 selected=0 (org.eclipse.jetty.io.SelectorManager:547)
+[2016-04-24 17:28:25,414] DEBUG Starting Thread[qtp1524550349-15-selector-ServerConnectorManager@3086b277/0,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@5e0dc0 keys=0 selected=0 (org.eclipse.jetty.io.SelectorManager:547)
+[2016-04-24 17:28:25,415] DEBUG starting org.eclipse.jetty.io.SelectorManager$ManagedSelector@23d90c0d keys=-1 selected=-1 (org.eclipse.jetty.util.component.AbstractLifeCycle:185)
+[2016-04-24 17:28:25,415] DEBUG Starting Thread[qtp1524550349-17-selector-ServerConnectorManager@3086b277/2,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@3fc086ba keys=0 selected=0 (org.eclipse.jetty.io.SelectorManager:547)
+[2016-04-24 17:28:25,415] DEBUG STARTED @2008ms org.eclipse.jetty.io.SelectorManager$ManagedSelector@23d90c0d keys=0 selected=0 (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:25,416] DEBUG STARTED @2008ms org.eclipse.jetty.server.ServerConnector$ServerConnectorManager@3086b277 (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:25,416] DEBUG Starting Thread[qtp1524550349-18-selector-ServerConnectorManager@3086b277/3,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@23d90c0d keys=0 selected=0 (org.eclipse.jetty.io.SelectorManager:547)
+[2016-04-24 17:28:25,416] DEBUG Selector loop waiting on select (org.eclipse.jetty.io.SelectorManager:599)
+[2016-04-24 17:28:25,416] DEBUG Selector loop waiting on select (org.eclipse.jetty.io.SelectorManager:599)
+[2016-04-24 17:28:25,416] DEBUG Selector loop waiting on select (org.eclipse.jetty.io.SelectorManager:599)
+[2016-04-24 17:28:25,416] DEBUG Selector loop waiting on select (org.eclipse.jetty.io.SelectorManager:599)
+[2016-04-24 17:28:25,417] DEBUG ServerConnector@69b9b81{HTTP/1.1}{0.0.0.0:8083} added {acceptor-0@3be44a5f,POJO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:25,417] INFO Started ServerConnector@69b9b81{HTTP/1.1}{0.0.0.0:8083} (org.eclipse.jetty.server.ServerConnector:266)
+[2016-04-24 17:28:25,418] DEBUG STARTED @2010ms ServerConnector@69b9b81{HTTP/1.1}{0.0.0.0:8083} (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:25,418] INFO Started @2011ms (org.eclipse.jetty.server.Server:379)
+[2016-04-24 17:28:25,418] DEBUG STARTED @2011ms org.eclipse.jetty.server.Server@5e3c782 (org.eclipse.jetty.util.component.AbstractLifeCycle:177)
+[2016-04-24 17:28:25,430] INFO REST server listening at http://10.252.18.37:8083/, advertising URL http://10.252.18.37:8083/ (org.apache.kafka.connect.runtime.rest.RestServer:132)
+[2016-04-24 17:28:25,431] INFO Kafka Connect started (org.apache.kafka.connect.runtime.Connect:60)
+[2016-04-24 17:28:25,435] INFO ConnectorConfig values: 
+	topics = [resourcemanager]
+	name = local-file-sink
+	tasks.max = 1
+	connector.class = class org.apache.kafka.connect.file.FileStreamSinkConnector
+ (org.apache.kafka.connect.runtime.ConnectorConfig:165)
+[2016-04-24 17:28:25,436] INFO Creating connector local-file-sink of type org.apache.kafka.connect.file.FileStreamSinkConnector (org.apache.kafka.connect.runtime.Worker:170)
+[2016-04-24 17:28:25,436] INFO Instantiated connector local-file-sink with version 0.9.0.0-cp1 of type org.apache.kafka.connect.file.FileStreamSinkConnector (org.apache.kafka.connect.runtime.Worker:183)
+[2016-04-24 17:28:25,436] INFO Finished creating connector local-file-sink (org.apache.kafka.connect.runtime.Worker:193)
+[2016-04-24 17:28:25,437] TRACE Reconfiguring connector tasks for local-file-sink (org.apache.kafka.connect.runtime.Worker:207)
+[2016-04-24 17:28:25,441] INFO TaskConfig values: 
+	task.class = class org.apache.kafka.connect.file.FileStreamSinkTask
+ (org.apache.kafka.connect.runtime.TaskConfig:165)
+[2016-04-24 17:28:25,441] INFO Creating task local-file-sink-0 (org.apache.kafka.connect.runtime.Worker:256)
+[2016-04-24 17:28:25,441] INFO Instantiated task local-file-sink-0 with version 0.9.0.0-cp1 of type org.apache.kafka.connect.file.FileStreamSinkTask (org.apache.kafka.connect.runtime.Worker:267)
+[2016-04-24 17:28:25,453] INFO ConsumerConfig values: 
+	request.timeout.ms = 40000
+	check.crcs = true
+	retry.backoff.ms = 100
+	ssl.truststore.password = null
+	ssl.keymanager.algorithm = SunX509
+	receive.buffer.bytes = 32768
+	ssl.cipher.suites = null
+	ssl.key.password = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	ssl.provider = null
+	sasl.kerberos.service.name = null
+	session.timeout.ms = 30000
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	bootstrap.servers = [kafka01-sc1.service.altiscale.com:9092]
+	client.id = 
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1024
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	auto.offset.reset = earliest
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	partition.assignment.strategy = [org.apache.kafka.clients.consumer.RangeAssignor]
+	ssl.endpoint.identification.algorithm = null
+	max.partition.fetch.bytes = 1048576
+	ssl.keystore.location = null
+	ssl.truststore.location = null
+	ssl.keystore.password = null
+	metrics.sample.window.ms = 30000
+	metadata.max.age.ms = 300000
+	security.protocol = PLAINTEXT
+	auto.commit.interval.ms = 5000
+	ssl.protocol = TLS
+	sasl.kerberos.min.time.before.relogin = 60000
+	connections.max.idle.ms = 540000
+	ssl.trustmanager.algorithm = PKIX
+	group.id = connect-local-file-sink
+	enable.auto.commit = false
+	metric.reporters = []
+	ssl.truststore.type = JKS
+	send.buffer.bytes = 131072
+	reconnect.backoff.ms = 50
+	metrics.num.samples = 2
+	ssl.keystore.type = JKS
+	heartbeat.interval.ms = 3000
+ (org.apache.kafka.clients.consumer.ConsumerConfig:165)
+[2016-04-24 17:28:25,453] DEBUG Starting the Kafka consumer (org.apache.kafka.clients.consumer.KafkaConsumer:527)
+[2016-04-24 17:28:25,454] DEBUG Updated cluster metadata version 1 to Cluster(nodes = [Node(-1, kafka01-sc1.service.altiscale.com, 9092)], partitions = []) (org.apache.kafka.clients.Metadata:172)
+[2016-04-24 17:28:25,454] DEBUG Added sensor with name connections-closed:client-id-consumer-1 (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,454] DEBUG Added sensor with name connections-created:client-id-consumer-1 (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,455] DEBUG Added sensor with name bytes-sent-received:client-id-consumer-1 (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,455] DEBUG Added sensor with name bytes-sent:client-id-consumer-1 (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,455] DEBUG Added sensor with name bytes-received:client-id-consumer-1 (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,456] DEBUG Added sensor with name select-time:client-id-consumer-1 (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,456] DEBUG Added sensor with name io-time:client-id-consumer-1 (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,491] DEBUG Added sensor with name heartbeat-latency (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,492] DEBUG Added sensor with name join-latency (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,492] DEBUG Added sensor with name sync-latency (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,494] DEBUG Added sensor with name commit-latency (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,502] DEBUG Added sensor with name bytes-fetched (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,502] DEBUG Added sensor with name records-fetched (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,503] DEBUG Added sensor with name fetch-latency (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,503] DEBUG Added sensor with name records-lag (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,503] DEBUG Added sensor with name fetch-throttle-time (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,503] INFO Kafka version : 0.9.0.0-cp1 (org.apache.kafka.common.utils.AppInfoParser:82)
+[2016-04-24 17:28:25,503] INFO Kafka commitId : d1555e3a21980fa9 (org.apache.kafka.common.utils.AppInfoParser:83)
+[2016-04-24 17:28:25,504] DEBUG Kafka consumer created (org.apache.kafka.clients.consumer.KafkaConsumer:617)
+[2016-04-24 17:28:25,507] DEBUG Task local-file-sink-0 subscribing to topics [resourcemanager] (org.apache.kafka.connect.runtime.WorkerSinkTask:142)
+[2016-04-24 17:28:25,508] INFO Created connector local-file-sink (org.apache.kafka.connect.cli.ConnectStandalone:82)
+[2016-04-24 17:28:25,508] DEBUG Subscribed to topic(s): resourcemanager (org.apache.kafka.clients.consumer.KafkaConsumer:694)
+[2016-04-24 17:28:25,508] DEBUG Issuing group metadata request to broker -1 (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:465)
+[2016-04-24 17:28:25,527] DEBUG Initiating connection to node -1 at kafka01-sc1.service.altiscale.com:9092. (org.apache.kafka.clients.NetworkClient:512)
+[2016-04-24 17:28:25,533] DEBUG Added sensor with name node--1.bytes-sent (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,534] DEBUG Added sensor with name node--1.bytes-received (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,534] DEBUG Added sensor with name node--1.latency (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,534] DEBUG Completed connection to node -1 (org.apache.kafka.clients.NetworkClient:492)
+[2016-04-24 17:28:25,629] DEBUG Sending metadata request ClientRequest(expectResponse=true, callback=null, request=RequestSend(header={api_key=3,api_version=0,correlation_id=1,client_id=consumer-1}, body={topics=[resourcemanager]}), isInitiatedByNetworkClient, createdTimeMs=1461518905627, sendTimeMs=0) to node -1 (org.apache.kafka.clients.NetworkClient:667)
+[2016-04-24 17:28:25,647] DEBUG Updated cluster metadata version 2 to Cluster(nodes = [Node(1, 102-09-04.sc1.altiscale.com, 9092), Node(3, 202-01-04.sc1.altiscale.com, 9092), Node(2, 103-34-04.sc1.altiscale.com, 9092)], partitions = [Partition(topic = resourcemanager, partition = 2, leader = 1, replicas = [1,3,2,], isr = [1,3,2,], Partition(topic = resourcemanager, partition = 0, leader = 2, replicas = [2,1,3,], isr = [2,1,3,], Partition(topic = resourcemanager, partition = 3, leader = 2, replicas = [2,3,1,], isr = [2,3,1,], Partition(topic = resourcemanager, partition = 4, leader = 3, replicas = [3,1,2,], isr = [3,1,2,], Partition(topic = resourcemanager, partition = 1, leader = 3, replicas = [3,2,1,], isr = [3,2,1,]]) (org.apache.kafka.clients.Metadata:172)
+[2016-04-24 17:28:25,647] DEBUG Adding node 1 to nodes ever seen (org.apache.kafka.clients.NetworkClient:611)
+[2016-04-24 17:28:25,648] DEBUG Adding node 3 to nodes ever seen (org.apache.kafka.clients.NetworkClient:611)
+[2016-04-24 17:28:25,648] DEBUG Adding node 2 to nodes ever seen (org.apache.kafka.clients.NetworkClient:611)
+[2016-04-24 17:28:25,648] DEBUG Issuing group metadata request to broker 1 (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:465)
+[2016-04-24 17:28:25,648] DEBUG Initiating connection to node 1 at 102-09-04.sc1.altiscale.com:9092. (org.apache.kafka.clients.NetworkClient:512)
+[2016-04-24 17:28:25,654] DEBUG Added sensor with name node-1.bytes-sent (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,654] DEBUG Added sensor with name node-1.bytes-received (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,655] DEBUG Added sensor with name node-1.latency (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,655] DEBUG Completed connection to node 1 (org.apache.kafka.clients.NetworkClient:492)
+[2016-04-24 17:28:25,660] DEBUG Group metadata response ClientResponse(receivedTimeMs=1461518905659, disconnected=false, request=ClientRequest(expectResponse=true, callback=org.apache.kafka.clients.consumer.internals.ConsumerNetworkClient$RequestFutureCompletionHandler@4286d23d, request=RequestSend(header={api_key=10,api_version=0,correlation_id=2,client_id=consumer-1}, body={group_id=connect-local-file-sink}), createdTimeMs=1461518905648, sendTimeMs=1461518905655), responseBody={error_code=0,coordinator={node_id=1,host=102-09-04.sc1.altiscale.com,port=9092}}) (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:478)
+[2016-04-24 17:28:25,660] DEBUG Initiating connection to node 2147483646 at 102-09-04.sc1.altiscale.com:9092. (org.apache.kafka.clients.NetworkClient:512)
+[2016-04-24 17:28:25,660] DEBUG Revoking previously assigned partitions [] (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:247)
+[2016-04-24 17:28:25,661] DEBUG (Re-)joining group connect-local-file-sink (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:309)
+[2016-04-24 17:28:25,663] DEBUG Issuing request (JOIN_GROUP: {group_id=connect-local-file-sink,session_timeout=30000,member_id=,protocol_type=consumer,group_protocols=[{protocol_name=range,protocol_metadata=java.nio.HeapByteBuffer[pos=0 lim=27 cap=27]}]}) to coordinator 2147483646 (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:318)
+[2016-04-24 17:28:25,664] DEBUG Added sensor with name node-2147483646.bytes-sent (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,664] DEBUG Added sensor with name node-2147483646.bytes-received (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,664] DEBUG Added sensor with name node-2147483646.latency (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,665] DEBUG Completed connection to node 2147483646 (org.apache.kafka.clients.NetworkClient:492)
+[2016-04-24 17:28:25,670] DEBUG Joined group: {error_code=0,generation_id=1,group_protocol=range,leader_id=consumer-1-96c9343d-94c0-40c2-9461-e5a246d825a8,member_id=consumer-1-96c9343d-94c0-40c2-9461-e5a246d825a8,members=[{member_id=consumer-1-96c9343d-94c0-40c2-9461-e5a246d825a8,member_metadata=java.nio.HeapByteBuffer[pos=0 lim=27 cap=27]}]} (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:336)
+[2016-04-24 17:28:25,671] DEBUG Performing range assignment for subscriptions {consumer-1-96c9343d-94c0-40c2-9461-e5a246d825a8=org.apache.kafka.clients.consumer.internals.PartitionAssignor$Subscription@5025e2ff} (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:225)
+[2016-04-24 17:28:25,671] DEBUG Finished assignment: {consumer-1-96c9343d-94c0-40c2-9461-e5a246d825a8=org.apache.kafka.clients.consumer.internals.PartitionAssignor$Assignment@55e8b9e2} (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:229)
+[2016-04-24 17:28:25,672] DEBUG Issuing leader SyncGroup (SYNC_GROUP: {group_id=connect-local-file-sink,generation_id=1,member_id=consumer-1-96c9343d-94c0-40c2-9461-e5a246d825a8,group_assignment=[{member_id=consumer-1-96c9343d-94c0-40c2-9461-e5a246d825a8,member_assignment=java.nio.HeapByteBuffer[pos=0 lim=51 cap=51]}]}) to coordinator 2147483646 (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:397)
+[2016-04-24 17:28:25,681] DEBUG Received successful sync group response for group connect-local-file-sink: {error_code=0,member_assignment=java.nio.HeapByteBuffer[pos=0 lim=51 cap=51]} (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:423)
+[2016-04-24 17:28:25,682] DEBUG Setting newly assigned partitions [resourcemanager-0, resourcemanager-2, resourcemanager-4, resourcemanager-3, resourcemanager-1] (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:191)
+[2016-04-24 17:28:25,682] DEBUG Fetching committed offsets for partitions: [resourcemanager-0, resourcemanager-2, resourcemanager-4, resourcemanager-3, resourcemanager-1] (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:581)
+[2016-04-24 17:28:25,689] DEBUG No committed offset for partition resourcemanager-0 (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:628)
+[2016-04-24 17:28:25,689] DEBUG No committed offset for partition resourcemanager-2 (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:628)
+[2016-04-24 17:28:25,689] DEBUG No committed offset for partition resourcemanager-3 (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:628)
+[2016-04-24 17:28:25,689] DEBUG No committed offset for partition resourcemanager-4 (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:628)
+[2016-04-24 17:28:25,689] DEBUG No committed offset for partition resourcemanager-1 (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:628)
+[2016-04-24 17:28:25,689] DEBUG Resetting offset for partition resourcemanager-0 to earliest offset. (org.apache.kafka.clients.consumer.internals.Fetcher:290)
+[2016-04-24 17:28:25,691] DEBUG Initiating connection to node 2 at 103-34-04.sc1.altiscale.com:9092. (org.apache.kafka.clients.NetworkClient:512)
+[2016-04-24 17:28:25,697] DEBUG Added sensor with name node-2.bytes-sent (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,697] DEBUG Added sensor with name node-2.bytes-received (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,698] DEBUG Added sensor with name node-2.latency (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,698] DEBUG Completed connection to node 2 (org.apache.kafka.clients.NetworkClient:492)
+[2016-04-24 17:28:25,703] DEBUG Fetched offset 1 for partition resourcemanager-0 (org.apache.kafka.clients.consumer.internals.Fetcher:484)
+[2016-04-24 17:28:25,704] DEBUG local-file-sink-0 assigned topic partition resourcemanager-0 with offset 1 (org.apache.kafka.connect.runtime.WorkerSinkTask:334)
+[2016-04-24 17:28:25,704] DEBUG Resetting offset for partition resourcemanager-2 to earliest offset. (org.apache.kafka.clients.consumer.internals.Fetcher:290)
+[2016-04-24 17:28:25,708] DEBUG Fetched offset 1 for partition resourcemanager-2 (org.apache.kafka.clients.consumer.internals.Fetcher:484)
+[2016-04-24 17:28:25,708] DEBUG local-file-sink-0 assigned topic partition resourcemanager-2 with offset 1 (org.apache.kafka.connect.runtime.WorkerSinkTask:334)
+[2016-04-24 17:28:25,708] DEBUG Resetting offset for partition resourcemanager-3 to earliest offset. (org.apache.kafka.clients.consumer.internals.Fetcher:290)
+[2016-04-24 17:28:25,712] DEBUG Fetched offset 1 for partition resourcemanager-3 (org.apache.kafka.clients.consumer.internals.Fetcher:484)
+[2016-04-24 17:28:25,712] DEBUG local-file-sink-0 assigned topic partition resourcemanager-3 with offset 1 (org.apache.kafka.connect.runtime.WorkerSinkTask:334)
+[2016-04-24 17:28:25,712] DEBUG Resetting offset for partition resourcemanager-4 to earliest offset. (org.apache.kafka.clients.consumer.internals.Fetcher:290)
+[2016-04-24 17:28:25,712] DEBUG Initiating connection to node 3 at 202-01-04.sc1.altiscale.com:9092. (org.apache.kafka.clients.NetworkClient:512)
+[2016-04-24 17:28:25,718] DEBUG Added sensor with name node-3.bytes-sent (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,718] DEBUG Added sensor with name node-3.bytes-received (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,718] DEBUG Added sensor with name node-3.latency (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,719] DEBUG Completed connection to node 3 (org.apache.kafka.clients.NetworkClient:492)
+[2016-04-24 17:28:25,723] DEBUG Fetched offset 5981220 for partition resourcemanager-4 (org.apache.kafka.clients.consumer.internals.Fetcher:484)
+[2016-04-24 17:28:25,723] DEBUG local-file-sink-0 assigned topic partition resourcemanager-4 with offset 5981220 (org.apache.kafka.connect.runtime.WorkerSinkTask:334)
+[2016-04-24 17:28:25,723] DEBUG Resetting offset for partition resourcemanager-1 to earliest offset. (org.apache.kafka.clients.consumer.internals.Fetcher:290)
+[2016-04-24 17:28:25,726] DEBUG Fetched offset 1 for partition resourcemanager-1 (org.apache.kafka.clients.consumer.internals.Fetcher:484)
+[2016-04-24 17:28:25,726] DEBUG local-file-sink-0 assigned topic partition resourcemanager-1 with offset 1 (org.apache.kafka.connect.runtime.WorkerSinkTask:334)
+[2016-04-24 17:28:25,731] INFO Sink task org.apache.kafka.connect.runtime.WorkerSinkTask@a8db40d finished initialization and start (org.apache.kafka.connect.runtime.WorkerSinkTask:155)
+[2016-04-24 17:28:25,731] TRACE local-file-sink-0 polling consumer with timeout 9776 ms (org.apache.kafka.connect.runtime.WorkerSinkTask:170)
+[2016-04-24 17:28:25,902] DEBUG Added sensor with name topic.resourcemanager.bytes-fetched (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,903] DEBUG Added sensor with name topic.resourcemanager.records-fetched (org.apache.kafka.common.metrics.Metrics:201)
+[2016-04-24 17:28:25,903] TRACE Returning fetched records for assigned partition resourcemanager-2 and update consumed position to 1158 (org.apache.kafka.clients.consumer.internals.Fetcher:417)
+[2016-04-24 17:28:25,904] TRACE local-file-sink-0 polling returned 1157 messages (org.apache.kafka.connect.runtime.WorkerSinkTask:173)
+[2016-04-24 17:28:25,905] TRACE Consuming message with key [114, 109, 45, 99, 108, 117, 115, 116, 101, 114, 45, 110, 105, 103, 104, 116, 108, 121, 45, 115, 116, 97, 98, 108, 101], value [123, 34, 104, 111, 115, 116, 110, 97, 109, 101, 34, 58, 32, 34, 99, 108, 117, 115, 116, 101, 114, 45, 110, 105, 103, 104, 116, 108, 121, 45, 115, 116, 97, 98, 108, 101, 45, 114, 101, 115, 111, 117, 114, 99, 101, 109, 97, 110, 97, 103, 101, 114, 46, 116, 101, 115, 116, 46, 97, 108, 116, 105, 115, 99, 97, 108, 101, 46, 99, 111, 109, 34, 44, 32, 34, 116, 105, 109, 101, 115, 116, 97, 109, 112, 34, 58, 32, 49, 52, 54, 48, 55, 48, 56, 48, 54, 51, 50, 50, 49, 44, 32, 34, 100, 97, 116, 101, 34, 58, 32, 34, 50, 48, 49, 54, 45, 48, 52, 45, 49, 53, 34, 44, 34, 116, 105, 109, 101, 34, 58, 32, 34, 48, 56, 58, 49, 52, 58, 50, 51, 34, 44, 34, 116, 97, 103, 115, 34, 58, 32, 123, 34, 99, 108, 117, 115, 116, 101, 114, 34, 58, 32, 34, 99, 108, 117, 115, 116, 101, 114, 45, 110, 105, 103, 104, 116, 108, 121, 45, 115, 116, 97, 98, 108, 101, 34, 125, 44, 34, 110, 97, 109, 101, 34, 58, 32, 34, 81, 117, 101, 117, 101, 77, 101, 116, 114, 105, 99, 115, 34, 32, 44, 32, 34, 81, 117, 101, 117, 101, 34, 58, 32, 32, 34, 114, 111, 111, 116, 46, 100, 101, 102, 97, 117, 108, 116, 34, 44, 32, 34, 67, 111, 110, 116, 101, 120, 116, 34, 58, 32, 32, 34, 121, 97, 114, 110, 34, 44, 32, 34, 72, 111, 115, 116, 110, 97, 109, 101, 34, 58, 32, 32, 34, 99, 108, 117, 115, 116, 101, 114, 45, 110, 105, 103, 104, 116, 108, 121, 45, 115, 116, 97, 98, 108, 101, 45, 114, 101, 115, 111, 117, 114, 99, 101, 109, 97, 110, 97, 103, 101, 114, 46, 116, 101, 115, 116, 46, 97, 108, 116, 105, 115, 99, 97, 108, 101, 46, 99, 111, 109, 34, 44, 32, 34, 114, 117, 110, 110, 105, 110, 103, 95, 48, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 114, 117, 110, 110, 105, 110, 103, 95, 54, 48, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 114, 117, 110, 110, 105, 110, 103, 95, 51, 48, 48, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 114, 117, 110, 110, 105, 110, 103, 95, 49, 52, 52, 48, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 65, 112, 112, 115, 83, 117, 98, 109, 105, 116, 116, 101, 100, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 65, 112, 112, 115, 82, 117, 110, 110, 105, 110, 103, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 65, 112, 112, 115, 80, 101, 110, 100, 105, 110, 103, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 65, 112, 112, 115, 67, 111, 109, 112, 108, 101, 116, 101, 100, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 65, 112, 112, 115, 75, 105, 108, 108, 101, 100, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 65, 112, 112, 115, 70, 97, 105, 108, 101, 100, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 65, 108, 108, 111, 99, 97, 116, 101, 100, 77, 66, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 65, 108, 108, 111, 99, 97, 116, 101, 100, 86, 67, 111, 114, 101, 115, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 65, 108, 108, 111, 99, 97, 116, 101, 100, 67, 111, 110, 116, 97, 105, 110, 101, 114, 115, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 65, 103, 103, 114, 101, 103, 97, 116, 101, 67, 111, 110, 116, 97, 105, 110, 101, 114, 115, 65, 108, 108, 111, 99, 97, 116, 101, 100, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 65, 103, 103, 114, 101, 103, 97, 116, 101, 67, 111, 110, 116, 97, 105, 110, 101, 114, 115, 82, 101, 108, 101, 97, 115, 101, 100, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 65, 118, 97, 105, 108, 97, 98, 108, 101, 77, 66, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 65, 118, 97, 105, 108, 97, 98, 108, 101, 86, 67, 111, 114, 101, 115, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 80, 101, 110, 100, 105, 110, 103, 77, 66, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 80, 101, 110, 100, 105, 110, 103, 86, 67, 111, 114, 101, 115, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 80, 101, 110, 100, 105, 110, 103, 67, 111, 110, 116, 97, 105, 110, 101, 114, 115, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 82, 101, 115, 101, 114, 118, 101, 100, 77, 66, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 82, 101, 115, 101, 114, 118, 101, 100, 86, 67, 111, 114, 101, 115, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 82, 101, 115, 101, 114, 118, 101, 100, 67, 111, 110, 116, 97, 105, 110, 101, 114, 115, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 65, 99, 116, 105, 118, 101, 85, 115, 101, 114, 115, 34, 58, 32, 32, 34, 48, 34, 44, 32, 34, 65, 99, 116, 105, 118, 101, 65, 112, 112, 108, 105, 99, 97, 116, 105, 111, 110, 115, 34, 58, 32, 32, 34, 48, 34, 125] (org.apache.kafka.connect.runtime.WorkerSinkTask:264)
+[2016-04-24 17:28:25,917] ERROR Thread WorkerSinkTask-local-file-sink-0 exiting with uncaught exception:  (org.apache.kafka.connect.util.ShutdownableThread:84)
+org.apache.kafka.connect.errors.DataException: Converting byte[] to Kafka Connect data failed due to serialization error: 
+	at org.apache.kafka.connect.json.JsonConverter.toConnectData(JsonConverter.java:319)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.convertMessages(WorkerSinkTask.java:265)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.poll(WorkerSinkTask.java:175)
+	at org.apache.kafka.connect.runtime.WorkerSinkTaskThread.iteration(WorkerSinkTaskThread.java:90)
+	at org.apache.kafka.connect.runtime.WorkerSinkTaskThread.execute(WorkerSinkTaskThread.java:58)
+	at org.apache.kafka.connect.util.ShutdownableThread.run(ShutdownableThread.java:82)
+Caused by: org.apache.kafka.common.errors.SerializationException: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'rm': was expecting ('true', 'false' or 'null')
+ at [Source: [B@751e963; line: 1, column: 4]
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'rm': was expecting ('true', 'false' or 'null')
+ at [Source: [B@751e963; line: 1, column: 4]
+	at com.fasterxml.jackson.core.JsonParser._constructError(JsonParser.java:1487)
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportError(ParserMinimalBase.java:518)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._reportInvalidToken(UTF8StreamJsonParser.java:3323)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._handleUnexpectedValue(UTF8StreamJsonParser.java:2482)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._nextTokenNotInObject(UTF8StreamJsonParser.java:801)
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser.nextToken(UTF8StreamJsonParser.java:697)
+	at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:3604)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:3549)
+	at com.fasterxml.jackson.databind.ObjectMapper.readTree(ObjectMapper.java:2161)
+	at org.apache.kafka.connect.json.JsonDeserializer.deserialize(JsonDeserializer.java:50)
+	at org.apache.kafka.connect.json.JsonConverter.toConnectData(JsonConverter.java:317)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.convertMessages(WorkerSinkTask.java:265)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.poll(WorkerSinkTask.java:175)
+	at org.apache.kafka.connect.runtime.WorkerSinkTaskThread.iteration(WorkerSinkTaskThread.java:90)
+	at org.apache.kafka.connect.runtime.WorkerSinkTaskThread.execute(WorkerSinkTaskThread.java:58)
+	at org.apache.kafka.connect.util.ShutdownableThread.run(ShutdownableThread.java:82)
+[2016-04-24 17:28:36,069] DEBUG stopping org.eclipse.jetty.server.Server@5e3c782 (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,071] INFO Kafka Connect stopping (org.apache.kafka.connect.runtime.Connect:68)
+[2016-04-24 17:28:36,072] DEBUG Graceful shutdown org.eclipse.jetty.server.Server@5e3c782 by  (org.eclipse.jetty.server.Server:418)
+[2016-04-24 17:28:36,072] DEBUG stopping ServerConnector@69b9b81{HTTP/1.1}{0.0.0.0:8083} (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,072] DEBUG stopping org.eclipse.jetty.server.ServerConnector$ServerConnectorManager@3086b277 (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,072] DEBUG stopping org.eclipse.jetty.io.SelectorManager$ManagedSelector@5e0dc0 keys=0 selected=0 (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,072] DEBUG Stopping org.eclipse.jetty.io.SelectorManager$ManagedSelector@5e0dc0 keys=0 selected=0 (org.eclipse.jetty.io.SelectorManager:432)
+[2016-04-24 17:28:36,073] DEBUG Queued change org.eclipse.jetty.io.SelectorManager$ManagedSelector$Stop@68c0dad5 (org.eclipse.jetty.io.SelectorManager:480)
+[2016-04-24 17:28:36,074] DEBUG Selector loop woken up from select, 0/0 selected (org.eclipse.jetty.io.SelectorManager:602)
+[2016-04-24 17:28:36,074] DEBUG Running change org.eclipse.jetty.io.SelectorManager$ManagedSelector$Stop@68c0dad5 (org.eclipse.jetty.io.SelectorManager:525)
+[2016-04-24 17:28:36,074] DEBUG Stopped org.eclipse.jetty.io.SelectorManager$ManagedSelector@5e0dc0 keys=-1 selected=-1 (org.eclipse.jetty.io.SelectorManager:437)
+[2016-04-24 17:28:36,074] DEBUG STOPPED org.eclipse.jetty.io.SelectorManager$ManagedSelector@5e0dc0 keys=-1 selected=-1 (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,074] DEBUG Stopped Thread[qtp1524550349-15-selector-ServerConnectorManager@3086b277/0,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@5e0dc0 keys=-1 selected=-1 (org.eclipse.jetty.io.SelectorManager:556)
+[2016-04-24 17:28:36,074] DEBUG stopping org.eclipse.jetty.io.SelectorManager$ManagedSelector@33c4d60b keys=0 selected=0 (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,075] DEBUG Stopping org.eclipse.jetty.io.SelectorManager$ManagedSelector@33c4d60b keys=0 selected=0 (org.eclipse.jetty.io.SelectorManager:432)
+[2016-04-24 17:28:36,075] DEBUG Queued change org.eclipse.jetty.io.SelectorManager$ManagedSelector$Stop@4d5f0bad (org.eclipse.jetty.io.SelectorManager:480)
+[2016-04-24 17:28:36,075] DEBUG Selector loop woken up from select, 0/0 selected (org.eclipse.jetty.io.SelectorManager:602)
+[2016-04-24 17:28:36,075] DEBUG Running change org.eclipse.jetty.io.SelectorManager$ManagedSelector$Stop@4d5f0bad (org.eclipse.jetty.io.SelectorManager:525)
+[2016-04-24 17:28:36,075] DEBUG Stopped org.eclipse.jetty.io.SelectorManager$ManagedSelector@33c4d60b keys=-1 selected=-1 (org.eclipse.jetty.io.SelectorManager:437)
+[2016-04-24 17:28:36,075] DEBUG STOPPED org.eclipse.jetty.io.SelectorManager$ManagedSelector@33c4d60b keys=-1 selected=-1 (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,075] DEBUG Stopped Thread[qtp1524550349-16-selector-ServerConnectorManager@3086b277/1,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@33c4d60b keys=-1 selected=-1 (org.eclipse.jetty.io.SelectorManager:556)
+[2016-04-24 17:28:36,076] DEBUG stopping org.eclipse.jetty.io.SelectorManager$ManagedSelector@3fc086ba keys=0 selected=0 (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,076] DEBUG Stopping org.eclipse.jetty.io.SelectorManager$ManagedSelector@3fc086ba keys=0 selected=0 (org.eclipse.jetty.io.SelectorManager:432)
+[2016-04-24 17:28:36,076] DEBUG Queued change org.eclipse.jetty.io.SelectorManager$ManagedSelector$Stop@1af7b28a (org.eclipse.jetty.io.SelectorManager:480)
+[2016-04-24 17:28:36,076] DEBUG Selector loop woken up from select, 0/0 selected (org.eclipse.jetty.io.SelectorManager:602)
+[2016-04-24 17:28:36,076] DEBUG Running change org.eclipse.jetty.io.SelectorManager$ManagedSelector$Stop@1af7b28a (org.eclipse.jetty.io.SelectorManager:525)
+[2016-04-24 17:28:36,077] DEBUG Stopped org.eclipse.jetty.io.SelectorManager$ManagedSelector@3fc086ba keys=-1 selected=-1 (org.eclipse.jetty.io.SelectorManager:437)
+[2016-04-24 17:28:36,077] DEBUG Stopped Thread[qtp1524550349-17-selector-ServerConnectorManager@3086b277/2,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@3fc086ba keys=-1 selected=-1 (org.eclipse.jetty.io.SelectorManager:556)
+[2016-04-24 17:28:36,077] DEBUG STOPPED org.eclipse.jetty.io.SelectorManager$ManagedSelector@3fc086ba keys=-1 selected=-1 (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,077] DEBUG stopping org.eclipse.jetty.io.SelectorManager$ManagedSelector@23d90c0d keys=0 selected=0 (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,077] DEBUG Stopping org.eclipse.jetty.io.SelectorManager$ManagedSelector@23d90c0d keys=0 selected=0 (org.eclipse.jetty.io.SelectorManager:432)
+[2016-04-24 17:28:36,077] DEBUG Queued change org.eclipse.jetty.io.SelectorManager$ManagedSelector$Stop@7bea8fda (org.eclipse.jetty.io.SelectorManager:480)
+[2016-04-24 17:28:36,078] DEBUG Selector loop woken up from select, 0/0 selected (org.eclipse.jetty.io.SelectorManager:602)
+[2016-04-24 17:28:36,078] DEBUG Running change org.eclipse.jetty.io.SelectorManager$ManagedSelector$Stop@7bea8fda (org.eclipse.jetty.io.SelectorManager:525)
+[2016-04-24 17:28:36,078] DEBUG Stopped org.eclipse.jetty.io.SelectorManager$ManagedSelector@23d90c0d keys=-1 selected=-1 (org.eclipse.jetty.io.SelectorManager:437)
+[2016-04-24 17:28:36,078] DEBUG STOPPED org.eclipse.jetty.io.SelectorManager$ManagedSelector@23d90c0d keys=-1 selected=-1 (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,078] DEBUG Stopped Thread[qtp1524550349-18-selector-ServerConnectorManager@3086b277/3,5,main] on org.eclipse.jetty.io.SelectorManager$ManagedSelector@23d90c0d keys=-1 selected=-1 (org.eclipse.jetty.io.SelectorManager:556)
+[2016-04-24 17:28:36,078] DEBUG STOPPED org.eclipse.jetty.server.ServerConnector$ServerConnectorManager@3086b277 (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,078] DEBUG stopping HttpConnectionFactory@41e674d4{HTTP/1.1} (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,079] DEBUG STOPPED HttpConnectionFactory@41e674d4{HTTP/1.1} (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,079] DEBUG stopping org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@2820478a (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,079] DEBUG STOPPED org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@2820478a (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,079] INFO Stopped ServerConnector@69b9b81{HTTP/1.1}{0.0.0.0:8083} (org.eclipse.jetty.server.ServerConnector:306)
+[2016-04-24 17:28:36,079] DEBUG STOPPED ServerConnector@69b9b81{HTTP/1.1}{0.0.0.0:8083} (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,080] DEBUG stopping org.eclipse.jetty.server.Server@5e3c782 (org.eclipse.jetty.server.handler.AbstractHandler:72)
+[2016-04-24 17:28:36,080] DEBUG stopping org.eclipse.jetty.server.session.HashSessionIdManager@66fd6dda (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,080] DEBUG STOPPED org.eclipse.jetty.server.session.HashSessionIdManager@66fd6dda (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,080] DEBUG stopping org.eclipse.jetty.server.handler.StatisticsHandler@6b99d741 (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,080] DEBUG stopping org.eclipse.jetty.server.handler.StatisticsHandler@6b99d741 (org.eclipse.jetty.server.handler.AbstractHandler:72)
+[2016-04-24 17:28:36,080] DEBUG stopping org.eclipse.jetty.server.handler.HandlerCollection@3018076c[o.e.j.s.ServletContextHandler@5899a269{/,null,SHUTDOWN}, org.eclipse.jetty.server.handler.DefaultHandler@798f5c1e, org.eclipse.jetty.server.handler.RequestLogHandler@17e21b3] (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,080] DEBUG stopping org.eclipse.jetty.server.handler.HandlerCollection@3018076c[o.e.j.s.ServletContextHandler@5899a269{/,null,SHUTDOWN}, org.eclipse.jetty.server.handler.DefaultHandler@798f5c1e, org.eclipse.jetty.server.handler.RequestLogHandler@17e21b3] (org.eclipse.jetty.server.handler.AbstractHandler:72)
+[2016-04-24 17:28:36,080] DEBUG stopping org.eclipse.jetty.server.handler.RequestLogHandler@17e21b3 (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,080] DEBUG stopping org.eclipse.jetty.server.handler.RequestLogHandler@17e21b3 (org.eclipse.jetty.server.handler.AbstractHandler:72)
+[2016-04-24 17:28:36,081] DEBUG stopping org.eclipse.jetty.server.Slf4jRequestLog@7fd66f88 (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,081] DEBUG STOPPED org.eclipse.jetty.server.Slf4jRequestLog@7fd66f88 (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,081] DEBUG STOPPED org.eclipse.jetty.server.handler.RequestLogHandler@17e21b3 (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,081] DEBUG stopping org.eclipse.jetty.server.handler.DefaultHandler@798f5c1e (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,082] DEBUG stopping org.eclipse.jetty.server.handler.DefaultHandler@798f5c1e (org.eclipse.jetty.server.handler.AbstractHandler:72)
+[2016-04-24 17:28:36,082] DEBUG STOPPED org.eclipse.jetty.server.handler.DefaultHandler@798f5c1e (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,082] DEBUG stopping o.e.j.s.ServletContextHandler@5899a269{/,null,SHUTDOWN} (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,082] DEBUG stopping o.e.j.s.ServletContextHandler@5899a269{/,null,UNAVAILABLE} (org.eclipse.jetty.server.handler.AbstractHandler:72)
+[2016-04-24 17:28:36,082] DEBUG stopping org.eclipse.jetty.server.session.SessionHandler@771f4a9b (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,082] DEBUG stopping org.eclipse.jetty.server.session.SessionHandler@771f4a9b (org.eclipse.jetty.server.handler.AbstractHandler:72)
+[2016-04-24 17:28:36,082] DEBUG stopping org.eclipse.jetty.servlet.ServletHandler@4afe268a (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,082] DEBUG stopping org.eclipse.jetty.servlet.ServletHandler@4afe268a (org.eclipse.jetty.server.handler.AbstractHandler:72)
+[2016-04-24 17:28:36,083] DEBUG stopping org.eclipse.jetty.servlet.ServletHandler$Default404Servlet-1d56ac0@2488b86==org.eclipse.jetty.servlet.ServletHandler$Default404Servlet,-1,false (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,083] DEBUG STOPPED org.eclipse.jetty.servlet.ServletHandler$Default404Servlet-1d56ac0@2488b86==org.eclipse.jetty.servlet.ServletHandler$Default404Servlet,-1,false (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,083] DEBUG stopping org.glassfish.jersey.servlet.ServletContainer-54447d40@751024b6==org.glassfish.jersey.servlet.ServletContainer,-1,true (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,088] DEBUG STOPPED org.glassfish.jersey.servlet.ServletContainer-54447d40@751024b6==org.glassfish.jersey.servlet.ServletContainer,-1,true (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,090] DEBUG STOPPED org.eclipse.jetty.servlet.ServletHandler@4afe268a (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,090] DEBUG stopping org.eclipse.jetty.server.session.HashSessionManager@275b4336 (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,090] DEBUG stopping org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@524eaead (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,090] DEBUG STOPPED org.eclipse.jetty.util.thread.ScheduledExecutorScheduler@524eaead (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,090] DEBUG STOPPED org.eclipse.jetty.server.session.HashSessionManager@275b4336 (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,090] DEBUG STOPPED org.eclipse.jetty.server.session.SessionHandler@771f4a9b (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,091] INFO Stopped o.e.j.s.ServletContextHandler@5899a269{/,null,UNAVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler:865)
+[2016-04-24 17:28:36,091] DEBUG STOPPED o.e.j.s.ServletContextHandler@5899a269{/,null,UNAVAILABLE} (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,091] DEBUG STOPPED org.eclipse.jetty.server.handler.HandlerCollection@3018076c[o.e.j.s.ServletContextHandler@5899a269{/,null,UNAVAILABLE}, org.eclipse.jetty.server.handler.DefaultHandler@798f5c1e, org.eclipse.jetty.server.handler.RequestLogHandler@17e21b3] (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,091] DEBUG STOPPED org.eclipse.jetty.server.handler.StatisticsHandler@6b99d741 (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,091] DEBUG stopping qtp1524550349{STARTED,8<=8<=200,i=8,q=0} (org.eclipse.jetty.util.component.AbstractLifeCycle:194)
+[2016-04-24 17:28:36,092] DEBUG STOPPED qtp1524550349{STOPPED,8<=8<=200,i=0,q=0} (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,093] DEBUG shutdown already commenced (org.eclipse.jetty.util.thread.ShutdownThread:83)
+[2016-04-24 17:28:36,093] DEBUG STOPPED org.eclipse.jetty.server.Server@5e3c782 (org.eclipse.jetty.util.component.AbstractLifeCycle:204)
+[2016-04-24 17:28:36,093] DEBUG Stopped org.eclipse.jetty.server.Server@5e3c782 (org.eclipse.jetty.util.thread.ShutdownThread:139)
+[2016-04-24 17:28:36,093] DEBUG Destroyed org.eclipse.jetty.server.Server@5e3c782 (org.eclipse.jetty.util.thread.ShutdownThread:145)
+[2016-04-24 17:28:36,093] DEBUG o.e.j.s.ServletContextHandler@5899a269{/,null,UNAVAILABLE} added {org.eclipse.jetty.server.session.SessionHandler@771f4a9b,AUTO} (org.eclipse.jetty.util.component.ContainerLifeCycle:324)
+[2016-04-24 17:28:36,093] INFO Herder stopping (org.apache.kafka.connect.runtime.standalone.StandaloneHerder:62)
+[2016-04-24 17:28:36,093] INFO Stopping task local-file-sink-0 (org.apache.kafka.connect.runtime.Worker:305)
+[2016-04-24 17:28:36,094] INFO Starting graceful shutdown of thread WorkerSinkTask-local-file-sink-0 (org.apache.kafka.connect.util.ShutdownableThread:119)
+[2016-04-24 17:28:36,095] TRACE Closing the Kafka consumer. (org.apache.kafka.clients.consumer.KafkaConsumer:1244)
+[2016-04-24 17:28:36,100] DEBUG Removed sensor with name connections-closed:client-id-consumer-1 (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,100] DEBUG Removed sensor with name connections-created:client-id-consumer-1 (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,100] DEBUG Removed sensor with name bytes-sent-received:client-id-consumer-1 (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,101] DEBUG Removed sensor with name bytes-received:client-id-consumer-1 (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,101] DEBUG Removed sensor with name bytes-sent:client-id-consumer-1 (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,101] DEBUG Removed sensor with name select-time:client-id-consumer-1 (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,102] DEBUG Removed sensor with name io-time:client-id-consumer-1 (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,102] DEBUG Removed sensor with name node--1.bytes-sent (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,102] DEBUG Removed sensor with name node--1.bytes-received (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,102] DEBUG Removed sensor with name node--1.latency (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,103] DEBUG Removed sensor with name node-1.bytes-sent (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,103] DEBUG Removed sensor with name node-1.bytes-received (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,103] DEBUG Removed sensor with name node-1.latency (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,103] DEBUG Removed sensor with name node-2147483646.bytes-sent (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,104] DEBUG Removed sensor with name node-2147483646.bytes-received (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,104] DEBUG Removed sensor with name node-2147483646.latency (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,104] DEBUG Removed sensor with name node-2.bytes-sent (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,104] DEBUG Removed sensor with name node-2.bytes-received (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,105] DEBUG Removed sensor with name node-2.latency (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,105] DEBUG Removed sensor with name node-3.bytes-sent (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,105] DEBUG Removed sensor with name node-3.bytes-received (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,105] DEBUG Removed sensor with name node-3.latency (org.apache.kafka.common.metrics.Metrics:220)
+[2016-04-24 17:28:36,106] DEBUG The Kafka consumer has closed. (org.apache.kafka.clients.consumer.KafkaConsumer:1253)
+[2016-04-24 17:28:36,106] INFO Stopping connector local-file-sink (org.apache.kafka.connect.runtime.Worker:226)
+[2016-04-24 17:28:36,106] INFO Stopped connector local-file-sink (org.apache.kafka.connect.runtime.Worker:240)
+[2016-04-24 17:28:36,106] INFO Herder stopped (org.apache.kafka.connect.runtime.standalone.StandaloneHerder:77)
+[2016-04-24 17:28:36,106] INFO Worker stopping (org.apache.kafka.connect.runtime.Worker:115)
+[2016-04-24 17:28:36,106] INFO Stopped FileOffsetBackingStore (org.apache.kafka.connect.storage.FileOffsetBackingStore:61)
+[2016-04-24 17:28:36,106] INFO Worker stopped (org.apache.kafka.connect.runtime.Worker:155)
+[2016-04-24 17:28:36,106] INFO Kafka Connect stopped (org.apache.kafka.connect.runtime.Connect:74)
