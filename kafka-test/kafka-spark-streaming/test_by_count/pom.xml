@@ -1,0 +1,71 @@
+<project>
+    <groupId>com.altiscale.pipeline</groupId>
+    <artifactId>TestByCount</artifactId>
+    <modelVersion>4.0.0</modelVersion>
+    <name>Counting</name>
+    <packaging>jar</packaging>
+    <version>1.0</version>
+    <description>Test kafka connection by simple count program</description>
+
+    <dependencies>
+        <!-- Spark dependency -->
+        <dependency>
+ 	        <groupId>org.apache.spark</groupId>
+ 		    <artifactId>spark-mllib_2.10</artifactId>
+ 		    <version>1.6.0</version>
+ 		</dependency>
+        <dependency>
+  	        <groupId>com.databricks</groupId>
+            <artifactId>spark-csv_2.10</artifactId>
+  	        <version>1.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-hive_2.10</artifactId>
+            <version>1.6.0</version>
+        </dependency>
+        <dependency>
+  	        <groupId>org.apache.spark</groupId>
+  		    <artifactId>spark-sql_2.10</artifactId>
+  			<version>1.6.0</version>
+  		</dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.10</artifactId>
+            <version>1.6.0</version>
+        </dependency>
+
+        <!-- Kafka -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming-kafka_2.10</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4.1</version>
+
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <id>assemble-all</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

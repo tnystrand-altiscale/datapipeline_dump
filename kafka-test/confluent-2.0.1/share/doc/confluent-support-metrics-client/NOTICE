@@ -1,0 +1,139 @@
+The following libraries are included in packaged versions of this project:
+
+* Amazon Web Services SDK For Java 
+ * COPYRIGHT: Copyright 2010-2016 Amazon.com, Inc.
+ * LICENSE: licenses/LICENSE.apache2.txt
+ * NOTICE: licenses/NOTICE.aws-sdk-java.txt
+ * HOMEPAGE: https://github.com/aws/aws-sdk-java
+ 
+* Apache Avro
+ * COPYRIGHT: Copyright 2010 The Apache Software Foundation
+ * LICENSE: licenses/LICENSE.apache2.txt
+ * NOTICE: licenses/NOTICE.avro.txt
+ * HOMEPAGE: http://avro.apache.org
+
+* Apache Commons BeanUtils
+ * COPYRIGHT: Copyright 2014 The Apache Software Foundation
+ * LICENSE: licenses/LICENSE.apache2.txt
+ * NOTICE: licenses/NOTICE.commons-beanutils.txt
+ * HOMEPAGE: http://commons.apache.org/proper/commons-beanutils/
+ 
+* Apache Commons Compress
+ * COPYRIGHT: Copyright 2002-2015 The Apache Software Foundation
+ * LICENSE: licenses/LICENSE.apache2.txt
+ * NOTICE: licenses/NOTICE.commons-compress.txt
+ * HOMEPAGE: http://commons.apache.org/proper/commons-compress/
+
+* Apache Commons CLI
+ * COPYRIGHT: Copyright 2015 The Apache Software Foundation
+ * LICENSE: licenses/LICENSE.apache2.txt
+ * NOTICE: licenses/NOTICE.commons-cli.txt
+ * HOMEPAGE: http://commons.apache.org/proper/commons-cli/
+
+* Apache Commons Digester
+ * COPYRIGHT: Copyright 2013 The Apache Software Foundation
+ * LICENSE: licenses/LICENSE.apache2.txt
+ * NOTICE: licenses/NOTICE.commons-digester.txt
+ * HOMEPAGE: http://commons.apache.org/proper/commons-digester/
+ 
+* Apache Commons Logging
+ * COPYRIGHT: Copyright 2014 The Apache Software Foundation
+ * LICENSE: licenses/LICENSE.apache2.txt
+ * NOTICE: licenses/NOTICE.commons-logging.txt
+ * HOMEPAGE: http://commons.apache.org/proper/commons-logging/
+
+* Apache Commons Lang
+ * COPYRIGHT: Copyright 2015 The Apache Software Foundation
+ * LICENSE: licenses/LICENSE.apache2.txt
+ * NOTICE: licenses/NOTICE.commons-lang.txt
+ * HOMEPAGE: http://commons.apache.org/proper/commons-lang/
+
+* Apache Commons Validator
+ * COPYRIGHT: Copyright 2015 The Apache Software Foundation
+ * LICENSE: licenses/LICENSE.apache2.txt
+ * NOTICE: licenses/NOTICE.commons-validator.txt
+ * HOMEPAGE: http://commons.apache.org/proper/commons-validator/
+
+* Apache HttpComponents HTTP Client
+ * COPYRIGHT: Copyright 2015 The Apache Software Foundation
+ * LICENSE: licenses/LICENSE.apache2.txt
+ * NOTICE: licenses/NOTICE.httpclient.txt
+ * HOMEPAGE: https://hc.apache.org
+
+* Apache HttpComponents HTTP Core
+ * COPYRIGHT: Copyright 2016 The Apache Software Foundation
+ * LICENSE: licenses/LICENSE.apache2.txt
+ * NOTICE: licenses/NOTICE.httpcore.txt
+ * HOMEPAGE: https://hc.apache.org
+
+* Apache HttpComponents HTTP Mime
+ * COPYRIGHT: Copyright 2015 The Apache Software Foundation
+ * LICENSE: licenses/LICENSE.apache2.txt
+ * NOTICE: licenses/NOTICE.httpmime.txt
+ * HOMEPAGE: https://hc.apache.org
+
+* Apache Kafka
+ * COPYRIGHT: Copyright 2012 The Apache Software Foundation.
+ * LICENSE: licenses/LICENSE.apache2.txt
+ * NOTICE: licenses/NOTICE.kafka.txt
+ * HOMEPAGE: http://kafka.apache.org
+
+* Apache log4j
+ * COPYRIGHT: Copyright 2010 The Apache Software Foundation
+ * LICENSE: licenses/LICENSE.apache2.txt
+ * NOTICE: licenses/NOTICE.log4j.txt
+ * HOMEPAGE: http://logging.apache.org/log4j/1.2/
+
+* Jackson annotations
+ * LICENSE: licenses/LICENSE.jackson-annotations.txt (Apache 2)
+ * HOMEPAGE: http://github.com/FasterXML/jackson
+
+* Jackson core
+ * LICENSE: licenses/LICENSE.jackson-core.txt (Apache 2)
+ * NOTICE: licenses/NOTICE.jackson-core.txt
+ * HOMEPAGE: http://github.com/FasterXML/jackson
+
+* Jackson databind
+ * LICENSE: licenses/LICENSE.jackson-databind.txt (Apache 2)
+ * NOTICE: licenses/NOTICE.jackson-databind.txt
+ * HOMEPAGE: http://github.com/FasterXML/jackson
+
+* jline
+ * COPYRIGHT: Copyright (c) 2002-2006, Marc Prud'hommeaux <mwp1@cornell.edu>
+ * LICENSE: licenses/LICENSE.bsd.txt
+ * HOMEPAGE: http://jline.sourceforge.net/
+
+* JOpt Simple
+ * COPYRIGHT: Copyright (c) 2004-2014 Paul R. Holser, Jr.
+ * LICENSE: licenses/LICENSE.mit.txt
+ * HOMEPAGE: https://pholser.github.io/jopt-simple/
+
+* Metrics
+ * COPYRIGHT: Copyright (c) 2010-2012 Coda Hale, Yammer.com
+ * LICENSE: licenses/LICENSE.apache2.txt
+ * NOTICE: licenses/NOTICE.metrics.txt
+ * HOMEPAGE: http://metrics.dropwizard.io/
+
+* paranamer
+ * COPYRIGHT: Copyright (c) 2006 Paul Hammant & ThoughtWorks Inc
+ * LICENSE: licenses/LICENSE.bsd.txt
+ * HOMEPAGE: http://xircles.codehaus.org/projects/paranamer
+
+* Scala
+ * COPYRIGHT: Copyright (c) 2002-2015 EPFL, Copyright (c) 2011-2015 Typesafe, Inc.
+ * LICENSE: licenses/LICENSE.bsd.txt
+ * HOMEPAGE: http://www.scala-lang.org
+
+* SLF4J
+ * COPYRIGHT: Copyright (c) 2004-2013 QOS.ch
+ * LICENSE: licenses/LICENSE.mit.txt
+ * HOMEPAGE: http://www.slf4j.org/
+
+* snappy-java
+ * LICENSE: licenses/LICENSE.apache2.txt
+ * NOTICE: licenses/NOTICE.snappy-java.txt
+ * HOMEPAGE: https://github.com/xerial/snappy-java
+
+* ZkClient
+ * LICENSE: licenses/LICENSE.apache2.txt
+ * HOMEPAGE: https://github.com/sgroschupf/zkclient

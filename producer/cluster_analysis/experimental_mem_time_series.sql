@@ -1,12 +1,11 @@
 -- Extending container time series with queue and memory limits
 -- as well as filling in missing minutes (minutes when nothing happened)
 
-set hiveconf:cluster='firstdata';
-set hiveconf:start_date='2016-01-01';
-set hiveconf:end_date='2016-02-07';
+set hiveconf:cluster='dogfood';
+set hiveconf:start_date='2016-04-15';
+set hiveconf:end_date='2016-04-24';
 set hiveconf:queue_dim=cluster_metrics_prod_2.queue_dim;
 set hiveconf:resource_dim=cluster_metrics_prod_2.cluster_resource_dim;
-
 
 with
     -- Select the desired interval from container_time_series
@@ -215,7 +214,7 @@ with
         jf.jobstatus,
         jf.duration,
         jf.wait_on_jobstart,
-        jf.num_containers robbed_num_containers,
+        jf.num_containers as robbed_num_containers,
         jf.job_waittime,
         jf.application,
         jf.user_key,
