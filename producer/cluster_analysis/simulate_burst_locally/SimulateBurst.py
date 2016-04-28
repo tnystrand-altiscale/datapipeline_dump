@@ -13,6 +13,7 @@ from BurstOffScheduler import BurstOffScheduler
 from RollingStats import RollingStats
 
 INPUT_PERCENTILES = [0, 0.25, 0.5, 0.75, 1.0]
+INPUT_WINDOW = 10
 
 # Defining scheduling deciders
 def setup_schedulers():
@@ -66,7 +67,7 @@ def setup_stats():
     memory_level_function = functools.partial(get_memory_levels, percentiles=INPUT_PERCENTILES)
     rolling_stats = RollingStats()
     # Save percentiles for a window of 10 minutes
-    rolling_stats.add_stat('percentiles', memory_level_function, 10)
+    rolling_stats.add_stat('percentiles', memory_level_function, INPUT_WINDOW)
     
     return rolling_stats
 
@@ -105,8 +106,14 @@ def main(cts_filename, logger=None):
         new_header = "\t".join(column_names[:-1])
 
     # Header for output file
-    burst_marked_file = cts_filename + '_burst_marked.tsv'    
-    complete_header = new_header + '\t' + 'burst_mode_extended' + '\t' + 'burst_mode' + '\n'
+    burst_marked_file = cts_filename + '_burst_marked.tsv'
+
+    stat_header = [str(INPUT_WINDOW) + 'min_' + str(int(p*100)) + '%' for p in INPUT_PERCENTILES]
+    stat_header = '\t'.join(stat_header)
+
+    complete_header = '\t'.join( [new_header, stat_header, 'burst_mode_extended', 'burst_mode'] )
+    complete_header = complete_header + '\n'
+
     logger.info('Constructed header: ' + complete_header)
 
     # Counter for number of minutes that have been processed
@@ -161,7 +168,7 @@ def main(cts_filename, logger=None):
                 
 
             # Number of minutes for which nothing is recorded in container_time_series
-            # and cluster_resrouce_dim comes after current_minute_start. 
+            # and cluster_resrouce_dim which comes after current_minute_start. 
             for current_minute_start in range(last_minute_start + 60, minute_start + 60, 60):
                 # If resource_dim has NULL values for the cluster_memory_capacity and/or vcores pad these
                 cluster_memory_capacity = split_line[HeaderInput.cluster_memory_capacity]
@@ -185,6 +192,7 @@ def main(cts_filename, logger=None):
                 else:
                     last_vcore_capacity = cluster_vcore_capacity
 
+                line_to_file = split_line
                 # Empty minute if traversing more than the first minute_start
                 # Should happen very seldomly 
                 if current_minute_start != minute_start:
@@ -197,7 +205,7 @@ def main(cts_filename, logger=None):
                     empty_row[HeaderInput.cluster_vcore_capacity] = split_line[HeaderInput.cluster_vcore_capacity]
                     empty_row[HeaderInput.date] = date
                     empty_row[HeaderInput.system] = system
-                    split_line = empty_row
+                    line_to_file = empty_row
 
                 # If waiting for burst to change, we cannot change burst status
                 if not lock_burst:
@@ -221,10 +229,14 @@ def main(cts_filename, logger=None):
                 if memory_percentiles is None:
                     memory_percentiles = ['NULL']*len(INPUT_PERCENTILES) 
 
-                write_to_file(f, split_line, bursted, burst_mode, memory_percentiles)
+                write_to_file(f, line_to_file, bursted, burst_mode, memory_percentiles)
                 processed_minutes = processed_minutes + 1
+
+                if processed_minutes % 10000 == 0 and processed_minutes>0:
+                    logger.info('Processed minutes: %d' % processed_minutes)
             last_minute_start = minute_start
             last_system = system
+
 
 
         logger.info('Processed minutes: %d' % processed_minutes)
