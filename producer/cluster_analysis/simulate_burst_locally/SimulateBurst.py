@@ -1,22 +1,22 @@
 import sys
 import re
 import logging
+import functools
+
+import numpy as np
+import math
 
 from SchedulerSettings import SchedulerSettings
 from HeaderInput import HeaderInput
 from BurstOnScheduler import BurstOnScheduler
 from BurstOffScheduler import BurstOffScheduler
+from RollingStats import RollingStats
 
-def main(cts_filename, logger=None):
-    logger = logger or logging.getLogger(__name__)
-    logger.info('Starting the burst processing marking')
+INPUT_PERCENTILES = [0, 0.25, 0.5, 0.75, 1.0]
+INPUT_WINDOW = 10
 
-    # Number of minutes to activate burst after a scheduling decision is reached
-    burst_delay = 20
-    # Number of minutes to deactivate burst after a descheduling decision is reached
-    unburst_delay = 40
-
-    # Scheduling deciders
+# Defining scheduling deciders
+def setup_schedulers():
     burst_deciders = []
     unburst_deciders = []
     
@@ -36,6 +36,55 @@ def main(cts_filename, logger=None):
     burst_deciders.append(scheduler_2)
     unburst_deciders.append(de_scheduler_1)
     unburst_deciders.append(de_scheduler_2)
+
+    return burst_deciders, unburst_deciders
+
+
+def calculate_percentile(N, percent):
+    k = (len(N)-1) * percent
+    f = math.floor(k)
+    c = math.ceil(k)
+    if f == c:
+        return N[int(k)]
+    d0 = N[int(f)] * (c-k)
+    d1 = N[int(c)] * (k-f)
+    return d0+d1   
+
+# Return for which value the input data has had less then or equal value percentile amount of time for past minutes
+# The number of minutes is set by the length of the data array
+def get_memory_levels(data, percentiles):
+    memory_levels = []
+    data_array = np.array(list(data))
+    # Good idea to maintaina sorted linked data structure instead of unsorted deque
+    sorted_array = np.sort(data_array)
+    for percentile in percentiles:
+        memory_levels.append( calculate_percentile( sorted_array, percentile) )
+    return memory_levels
+
+
+# All statistics collect in the run
+def setup_stats():
+    memory_level_function = functools.partial(get_memory_levels, percentiles=INPUT_PERCENTILES)
+    rolling_stats = RollingStats()
+    # Save percentiles for a window of 10 minutes
+    rolling_stats.add_stat('percentiles', memory_level_function, INPUT_WINDOW)
+    
+    return rolling_stats
+
+def main(cts_filename, logger=None):
+    logger = logger or logging.getLogger(__name__)
+    logger.info('Starting the burst processing marking')
+
+    # Number of minutes to activate burst after a scheduling decision is reached
+    burst_delay = 20
+    # Number of minutes to deactivate burst after a descheduling decision is reached
+    unburst_delay = 40
+
+    # Setup scheduling deciders
+    burst_deciders, unburst_deciders = setup_schedulers()
+
+    # Setup rolling stat collectors
+    rolling_stats = setup_stats()
 
     # Cluster starts non-bursted
     bursted = False
@@ -57,8 +106,14 @@ def main(cts_filename, logger=None):
         new_header = "\t".join(column_names[:-1])
 
     # Header for output file
-    burst_marked_file = cts_filename + '.burst_marked.tsv'    
-    complete_header = new_header + '\t' + 'burst_mode_extended' + '\t' + 'burst_mode' + '\n'
+    burst_marked_file = cts_filename + '_burst_marked.tsv'
+
+    stat_header = [str(INPUT_WINDOW) + 'min_' + str(int(p*100)) + '%' for p in INPUT_PERCENTILES]
+    stat_header = '\t'.join(stat_header)
+
+    complete_header = '\t'.join( [new_header, stat_header, 'burst_mode_extended', 'burst_mode'] )
+    complete_header = complete_header + '\n'
+
     logger.info('Constructed header: ' + complete_header)
 
     # Counter for number of minutes that have been processed
@@ -113,7 +168,7 @@ def main(cts_filename, logger=None):
                 
 
             # Number of minutes for which nothing is recorded in container_time_series
-            # and cluster_resrouce_dim comes after current_minute_start. 
+            # and cluster_resrouce_dim which comes after current_minute_start. 
             for current_minute_start in range(last_minute_start + 60, minute_start + 60, 60):
                 # If resource_dim has NULL values for the cluster_memory_capacity and/or vcores pad these
                 cluster_memory_capacity = split_line[HeaderInput.cluster_memory_capacity]
@@ -137,6 +192,7 @@ def main(cts_filename, logger=None):
                 else:
                     last_vcore_capacity = cluster_vcore_capacity
 
+                line_to_file = split_line
                 # Empty minute if traversing more than the first minute_start
                 # Should happen very seldomly 
                 if current_minute_start != minute_start:
@@ -149,7 +205,7 @@ def main(cts_filename, logger=None):
                     empty_row[HeaderInput.cluster_vcore_capacity] = split_line[HeaderInput.cluster_vcore_capacity]
                     empty_row[HeaderInput.date] = date
                     empty_row[HeaderInput.system] = system
-                    split_line = empty_row
+                    line_to_file = empty_row
 
                 # If waiting for burst to change, we cannot change burst status
                 if not lock_burst:
@@ -167,10 +223,20 @@ def main(cts_filename, logger=None):
                 else:
                     minutes_of_delay_left = minutes_of_delay_left - 1
 
-                write_to_file(f, split_line, bursted, burst_mode)
+                # Updating the stats
+                rolling_stats.update_stat('percentiles', memory_in_wait)
+                memory_percentiles = rolling_stats.calculate_stat('percentiles')
+                if memory_percentiles is None:
+                    memory_percentiles = ['NULL']*len(INPUT_PERCENTILES) 
+
+                write_to_file(f, line_to_file, bursted, burst_mode, memory_percentiles)
                 processed_minutes = processed_minutes + 1
+
+                if processed_minutes % 10000 == 0 and processed_minutes>0:
+                    logger.info('Processed minutes: %d' % processed_minutes)
             last_minute_start = minute_start
             last_system = system
+
 
 
         logger.info('Processed minutes: %d' % processed_minutes)
@@ -185,8 +251,9 @@ def get_delay(bursted, delay_burst, delay_unburst):
     else:
         return delay_unburst
 
-def write_to_file(f, line, bursted, burst_mode):
-    line = line + [burst_mode]
+def write_to_file(f, line, bursted, burst_mode, memory_percentiles):
+    memories = [str(m) for m in memory_percentiles]
+    line = line + memories + [burst_mode]
     if bursted:
         f.write('\t'.join( line + ['bursted\n']))
     else:
@@ -225,8 +292,6 @@ def swap_burst(turn_on_burst, turn_off_burst, bursted):
     return switch
         
             
-
-
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
