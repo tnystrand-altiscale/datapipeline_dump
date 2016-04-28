@@ -1,4 +1,4 @@
--- Extending container time series with queue and memory limits
+-- Extending container time series with queue and per job and memory limits
 -- as well as filling in missing minutes (minutes when nothing happened)
 
 set hiveconf:cluster=;
