@@ -2,48 +2,56 @@
     <groupId>com.altiscale.pipeline</groupId>
     <artifactId>TestByCount</artifactId>
     <modelVersion>4.0.0</modelVersion>
-    <name>Counting</name>
+    <name>TestByCount</name>
     <packaging>jar</packaging>
     <version>1.0</version>
     <description>Test kafka connection by simple count program</description>
 
-    <dependencies>
-        <!-- Spark dependency -->
-        <dependency>
- 	        <groupId>org.apache.spark</groupId>
- 		    <artifactId>spark-mllib_2.10</artifactId>
- 		    <version>1.6.0</version>
- 		</dependency>
-        <dependency>
-  	        <groupId>com.databricks</groupId>
-            <artifactId>spark-csv_2.10</artifactId>
-  	        <version>1.0.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-hive_2.10</artifactId>
-            <version>1.6.0</version>
-        </dependency>
-        <dependency>
-  	        <groupId>org.apache.spark</groupId>
-  		    <artifactId>spark-sql_2.10</artifactId>
-  			<version>1.6.0</version>
-  		</dependency>
-        <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-core_2.10</artifactId>
-            <version>1.6.0</version>
-        </dependency>
+    <properties>
+      <scala.version>2.11.8</scala.version>
+      <scala.binary.version>2.10</scala.binary.version>
+      <project.version>1.6.0</project.version>
+    </properties>
 
-        <!-- Kafka -->
+    <dependencies>
+        <!-- Prevent our dummy JAR from being included in Spark distributions or uploaded to YARN -->
         <dependency>
-            <groupId>org.apache.spark</groupId>
-            <artifactId>spark-streaming-kafka_2.10</artifactId>
-            <version>1.6.1</version>
+          <groupId>org.apache.spark</groupId>
+          <artifactId>spark-core_${scala.binary.version}</artifactId>
+          <version>1.6.1</version>
         </dependency>
+        <dependency>
+          <groupId>org.apache.spark</groupId>
+          <artifactId>spark-streaming_${scala.binary.version}</artifactId>
+          <version>1.6.1</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.spark</groupId>
+          <artifactId>spark-mllib_${scala.binary.version}</artifactId>
+          <version>1.6.1</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.spark</groupId>
+          <artifactId>spark-hive_${scala.binary.version}</artifactId>
+          <version>1.6.1</version>
+        </dependency>
+        <dependency>
+          <groupId>org.apache.spark</groupId>
+          <artifactId>spark-streaming-kafka_${scala.binary.version}</artifactId>
+          <version>1.6.1</version>
+        </dependency>
+        <!--
+      <dependency>
+          <groupId>org.apache.kafka</groupId>
+          <artifactId>kafka_${scala.binary.version}</artifactId>
+          <version>0.9.0.1</version>
+      </dependency>
+      -->
     </dependencies>
 
     <build>
+      <outputDirectory>target/scala-${scala.binary.version}/classes</outputDirectory>
+      <testOutputDirectory>target/scala-${scala.binary.version}/test-classes</testOutputDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -69,3 +77,48 @@
         </plugins>
     </build>
 </project>
+
+<!--
+    <build>
+      <outputDirectory>target/scala-${scala.binary.version}/classes</outputDirectory>
+      <testOutputDirectory>target/scala-${scala.binary.version}/test-classes</testOutputDirectory>
+      <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <version>2.4.1</version>
+
+          <configuration>
+            <skip>true</skip>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-install-plugin</artifactId>
+          <configuration>
+            <skip>true</skip>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <configuration>
+            <outputDirectory>${jars.target.dir}</outputDirectory>
+          </configuration>
+        </plugin>
+      </plugins>
+  </build>
+</project>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
