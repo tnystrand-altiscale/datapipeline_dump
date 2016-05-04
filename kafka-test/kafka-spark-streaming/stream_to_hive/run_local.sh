@@ -8,8 +8,10 @@ time spark-submit \
     --num-executors 1 \
     --queue production \
     --executor-memory 5G \
-    --class BucketJobCategories \
+    --class JavaKafkaToHDFSHive \
     --master local \
     --deploy-mode client \
-    --conf "spark.task.maxFailures=1"\
-    target/KafkaToHiveStream-1.0-jar-with-dependencies.jar
+    --conf "spark.task.maxFailures=1" \
+    target/JavaKafkaToHDFSHive-1.0-jar-with-dependencies.jar \
+    "kafka01-us-west-1.test.altiscale.com:9092" \
+    "test_json"
