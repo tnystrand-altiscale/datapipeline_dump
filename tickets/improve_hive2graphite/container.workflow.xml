@@ -1,0 +1,356 @@
+<workflow-app xmlns="uri:oozie:workflow:0.4" name="lp-container-wf">
+  <start to="mkdir"/>
+  <action name="mkdir">
+      <fs>
+        <delete path="${TMP_DIR}"/> 
+        <mkdir path="${TMP_DIR}"/>
+      </fs>
+      <ok to="parser-workflow"/>
+      <error to="fail_kill"/>
+  </action>
+  <action name='parser-workflow'>
+    <sub-workflow>
+      <app-path>${appDir}/parser.workflow.xml</app-path>
+      <propagate-configuration/>
+      <configuration>
+         <property>
+           <name>REDUCERS</name><value>400</value>
+         </property>
+         <property>
+           <name>PARSER_OUTPUT</name><value>${TMP_DIR}/parser_output</value>
+         </property>
+         <property>
+           <name>LOG_DB</name><value>${log_db}</value>
+         </property>
+         <property>
+           <name>LOG_TABLE</name><value>logs</value>
+         </property>
+         <property>
+           <name>PARSER_INPUT</name><value>${TMP_DIR}/parser_export</value>
+         </property>
+         <property>
+           <name>SERVICE</name><value>resourcemanager</value>
+         </property>
+         <property>
+           <name>START_DATE</name><value>${START_DATE}</value>
+         </property>
+         <property>
+           <name>END_DATE</name><value>${END_DATE}</value>
+         </property>
+         <property>
+           <name>SOURCE_CLAUSE</name>
+           <value>(source = 'org.apache.hadoop.yarn.server.resourcemanager.RMAppManager$ApplicationSummary' OR source = 'org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo' OR source = 'org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl' OR source = 'org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue')</value>
+         </property>
+      </configuration>
+    </sub-workflow>
+    <ok to="container-fact-export"/>
+    <error to="fail_kill"/>
+  </action>
+  <action name="container-fact-export">
+    <hive xmlns="uri:oozie:hive-action:0.2">
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <job-xml>oozie-hive-site.xml</job-xml>
+      <configuration>
+        <property>
+          <name>tez.lib.uris</name>
+          <value>hdfs:///apps/tez/,hdfs:///apps/tez/lib/</value>
+        </property>
+      </configuration>
+      <script>container_fact_export.q</script>
+      <param>DB_NAME=${DB_NAME}</param>
+      <param>EDB_SDB=${EDB_SDB}</param>
+      <param>previous_date=${PREVIOUS_DATE}</param>
+      <param>start_date=${START_DATE}</param>
+      <param>end_date=${END_DATE}</param>
+      <param>TMP_DIR=${TMP_DIR}</param>
+    </hive>
+    <ok to="rename"/>
+    <error to="fail_kill"/>
+  </action>
+  <action name="rename">
+      <fs>
+            <move source='${TMP_DIR}/cluster_dim/000000_0' target='${TMP_DIR}/cluster_dim/clusters' />
+            <move source='${TMP_DIR}/user_map/000000_0' target='${TMP_DIR}/user_map/user_map' />
+     </fs>
+    <ok to="container-facts"/>
+    <error to="fail_kill"/>
+  </action>
+  <action name="container-facts">
+    <map-reduce>
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <prepare>
+        <delete path="${TMP_DIR}/container_fact"/>
+      </prepare>
+      <streaming>
+        <mapper>container_mapper.rb</mapper>
+        <reducer>container_reducer.rb -l ${log_level} -b ${BOOTSTRAP} -s ${START_DATE} -e ${END_DATE}</reducer>
+      </streaming>
+      <configuration>
+        <property>
+          <name>mapreduce.job.queuename</name>
+          <value>${queueName}</value>
+        </property>
+        <property>
+          <name>mapred.input.dir</name>
+          <value>${TMP_DIR}/container_fact_export,${TMP_DIR}/parser_output</value>
+        </property>
+        <property>
+          <name>mapred.output.dir</name>
+          <value>${TMP_DIR}/container_fact</value>
+        </property>
+        <property>
+          <name>mapred.reduce.tasks</name>
+          <value>400</value>
+        </property>
+        <property>
+          <name>mapred.output.key.comparator.class</name>
+          <value>org.apache.hadoop.mapred.lib.KeyFieldBasedComparator</value>
+        </property>
+        <property>
+          <name>mapred.partitioner.class</name>
+          <value>org.apache.hadoop.mapred.lib.KeyFieldBasedPartitioner</value>
+        </property>
+        <property>
+          <name>stream.num.map.output.key.fields</name>
+          <value>2</value>
+        </property>
+        <property>
+          <name>mapred.text.key.partitioner.options</name>
+          <value>-k1,1</value>
+        </property>
+        <property>
+          <name>mapred.text.key.comparator.options</name>
+          <value>-k1,1 -k2,2</value>
+        </property>
+        <property>
+	  <name>mapred.task.timeout</name>
+	  <value>0</value>
+	</property>
+        <property>
+          <name>mapreduce.reduce.memory.mb</name>
+          <value>32020</value>
+        </property>
+        <property>
+          <name>oozie.sharelib</name>
+          <value>${appDir}/lib</value>
+        </property>
+        <property>
+          <name>io.compression.codecs</name>
+          <value>org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.DefaultCodec,org.apache.hadoop.io.compress.BZip2Codec,org.apache.hadoop.io.compress.SnappyCodec</value>
+        </property>
+        <property>
+           <name>mapred.output.compress</name>
+           <value>true</value>
+        </property>
+        <property>
+          <name>mapred.output.compression</name>
+          <value>org.apache.hadoop.io.compress.SnappyCodec</value>
+        </property>
+      </configuration>
+      <file>Utils.rb</file>
+      <file>ApplicationRequestQueues.rb</file>
+      <file>EdbSdbData.rb</file>
+      <file>${appDir}/container_mapper.rb#container_mapper.rb</file>
+      <file>${appDir}/container_reducer.rb#container_reducer.rb</file>
+      <file>${TMP_DIR}/cluster_dim/clusters</file>
+      <file>${TMP_DIR}/user_map/user_map</file>
+    </map-reduce>
+    <ok to="container_fact_import"/>
+    <error to="fail_kill"/>
+  </action>
+  <action name="container_fact_import">
+    <hive xmlns="uri:oozie:hive-action:0.2">
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <job-xml>oozie-hive-site.xml</job-xml>
+      <configuration>
+        <property>
+          <name>tez.lib.uris</name>
+          <value>hdfs:///apps/tez/,hdfs:///apps/tez/lib/</value>
+        </property>
+      </configuration>
+      <script>container_fact_import.q</script>
+      <param>DB_NAME=${DB_NAME}</param>
+      <param>RUN_ID=${replaceAll(END_DATE, '-', '_')}</param>
+      <param>TMP_TABLE=${concat('container_fact_import_', replaceAll(END_DATE, '-', '_'))}</param>
+      <param>INPUT_DIR=${TMP_DIR}/container_fact</param>
+    </hive>
+    <ok to="swap-partitions"/>
+    <error to="fail_kill"/>
+  </action>
+  <action name="swap-partitions">
+      <java>
+        <job-tracker>${jobTracker}</job-tracker>
+        <name-node>${nameNode}</name-node>
+        <configuration>
+          <property>
+            <name>mapred.job.queue.name</name>
+            <value>${queueName}</value>
+          </property>
+        </configuration>
+        <main-class>com.altiscale.datapipeline.HiveMovePartitions</main-class>
+        <arg>-hiveServer</arg>
+        <arg>${hiveHost}</arg>
+        <arg>-sourceTable</arg>
+        <arg>container_fact_${replaceAll(END_DATE, '-', '_')}_part_temp</arg>
+        <arg>-sourceDatabase</arg>
+        <arg>${DB_NAME}</arg>
+        <arg>-targetTable</arg>
+        <arg>container_fact</arg>
+        <archive>HiveMovePartitions.jar</archive>
+      </java>
+      <ok to="container_time_series_export"/>
+      <error to="fail_kill"/>
+  </action>
+  <action name="container_time_series_export">
+    <hive xmlns="uri:oozie:hive-action:0.2">
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <job-xml>oozie-hive-site.xml</job-xml>
+      <configuration>
+        <property>
+          <name>tez.lib.uris</name>
+          <value>hdfs:///apps/tez/,hdfs:///apps/tez/lib/</value>
+        </property>
+      </configuration>
+      <script>container_time_series_export.q</script>
+      <param>DB_NAME=${DB_NAME}</param>
+      <param>start_date=${START_DATE}</param>
+      <param>end_date=${END_DATE}</param>
+      <param>TMP_DIR=${TMP_DIR}</param>
+    </hive>
+    <ok to="time_series_transform"/>
+    <error to="fail_kill"/>
+  </action>
+  <action name="time_series_transform">
+    <map-reduce>
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <prepare>
+        <delete path='${TMP_DIR}/container_time_series'/>
+      </prepare>
+      <streaming>
+        <mapper>ruby timeseries_container_mapper.rb</mapper>
+      </streaming>
+      <configuration>
+        <property>
+          <name>mapred.max.split.size</name>
+          <value>100000</value>
+        </property>
+        <property>
+          <name>mapred.reduce.tasks</name>
+          <value>0</value>
+        </property>
+        <property>
+          <name>mapreduce.job.queuename</name>
+          <value>${queueName}</value>
+        </property>
+        <property>
+          <name>mapred.input.dir</name>
+          <value>${TMP_DIR}/container_time_series_export/</value>
+        </property>
+        <property>
+          <name>mapred.compress.map.output</name>
+          <value>true</value>
+        </property>
+        <property>
+          <name>mapred.output.compress</name>
+          <value>true</value>
+        </property>
+        <property>
+          <name>mapred.output.compression</name>
+          <value>org.apache.hadoop.io.compress.SnappyCodec</value>
+        </property>
+        <property>
+          <name>mapred.output.dir</name>
+          <value>${TMP_DIR}/container_time_series</value>
+        </property>
+      </configuration>
+      <file>Utils.rb</file>
+      <file>timeseries_container_mapper.rb</file>
+    </map-reduce>
+    <ok to="container_time_series_import"/>
+    <error to="fail_kill"/>
+  </action>
+  <action name="container_time_series_import">
+    <hive xmlns="uri:oozie:hive-action:0.2">
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <job-xml>oozie-hive-site.xml</job-xml>
+      <configuration>
+        <property>
+          <name>tez.lib.uris</name>
+          <value>hdfs:///apps/tez/,hdfs:///apps/tez/lib/</value>
+        </property>
+      </configuration>
+      <script>container_time_series_import.q</script>
+      <param>DB_NAME=${DB_NAME}</param>
+      <param>RUN_ID=${replaceAll(END_DATE, '-', '_')}</param>
+      <param>TMP_TABLE=${concat('container_time_series_import_', replaceAll(END_DATE, '-', '_'))}</param>
+      <param>INPUT_DIR=${TMP_DIR}/container_time_series</param>
+    </hive>
+    <ok to="swap-partitions2"/>
+    <error to="fail_kill"/>
+  </action>
+  <action name="swap-partitions2">
+      <java>
+        <job-tracker>${jobTracker}</job-tracker>
+        <name-node>${nameNode}</name-node>
+        <configuration>
+          <property>
+            <name>mapred.job.queue.name</name>
+            <value>${queueName}</value>
+          </property>
+        </configuration>
+        <main-class>com.altiscale.datapipeline.HiveMovePartitions</main-class>
+        <arg>-hiveServer</arg>
+        <arg>${hiveHost}</arg>
+        <arg>-sourceTable</arg>
+        <arg>container_time_series_${replaceAll(END_DATE, '-', '_')}_part_temp</arg>
+        <arg>-sourceDatabase</arg>
+        <arg>${DB_NAME}</arg>
+        <arg>-targetTable</arg>
+        <arg>container_time_series</arg>
+        <archive>HiveMovePartitions.jar</archive>
+      </java>
+      <ok to="deltmp"/>
+      <error to="fail_kill"/>
+  </action>
+  <action name="deltmp">
+    <hive xmlns="uri:oozie:hive-action:0.2">
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <job-xml>oozie-hive-site.xml</job-xml>
+      <script>drop_table.q</script>
+      <param>DB_NAME=${DB_NAME}</param>
+      <param>TABLE_NAME=container_fact_${replaceAll(END_DATE, '-', '_')}_part_temp</param>
+    </hive>
+    <ok to="deltmp2"/>
+    <error to="fail_kill"/>
+  </action>
+  <action name="deltmp2">
+    <hive xmlns="uri:oozie:hive-action:0.2">
+      <job-tracker>${jobTracker}</job-tracker>
+      <name-node>${nameNode}</name-node>
+      <job-xml>oozie-hive-site.xml</job-xml>
+      <script>drop_table.q</script>
+      <param>DB_NAME=${DB_NAME}</param>
+      <param>TABLE_NAME=container_time_series_${replaceAll(END_DATE, '-', '_')}_part_temp</param>
+    </hive>
+    <ok to="deldir"/>
+    <error to="fail_kill"/>
+  </action>
+  <action name="deldir">
+      <fs>
+        <delete path="${TMP_DIR}"/>
+      </fs>
+      <ok to="end"/>
+      <error to="fail_kill"/>
+  </action>
+  <kill name="fail_kill">
+      <message>Execution failed, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+  </kill>
+  <end name="end"/>
+</workflow-app>

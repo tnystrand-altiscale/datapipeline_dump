@@ -13,7 +13,7 @@
 
 -- Run from command line:
 --nohup hive \
---   -hiveconf DB_NAME=cluster_metrics_prod_2 \
+--   -hiveconf DB_NAME=dp_views \
 --   -hiveconf START_DATE=2016-02-13 \
 --   -hiveconf END_DATE=2016-02-20 \
 --   -hiveconf EDB_DB_NAME=rollup_edb_sdb_dims_prod_1 \
@@ -28,7 +28,7 @@
 --   -f ./slots_for_graphite.backfill.q > nohup.out 2>&1 &
 
 -- Inside a script:
---set DB_NAME=cluster_metrics_prod_2;
+--set DB_NAME=dp_views;
 --set START_DATE=2016-02-20;
 --set END_DATE=2016-02-20;
 --set EDB_DB_NAME=rollup_edb_sdb_dims_prod_1;
