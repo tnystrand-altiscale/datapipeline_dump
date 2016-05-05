@@ -41,7 +41,8 @@ public class ExecuteHiveCommand {
             else if (mode.equals("query"))
                 System.out.print("<query-mode>: ");
 
-            String query = scanner.nextLine();
+            //String query = scanner.nextLine();
+            String query = System.console().readLine();
             if(query.equals("quit"))
                 break;
             else if (query.equals("file"))
