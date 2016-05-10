@@ -4,8 +4,7 @@
  * this work for additional information regarding copyright ownership.
  * The ASF licenses this file to You under the Apache License, Version 2.0
  * (the "License"); you may not use this file except in compliance with
- * the License.  You may obtain a copy of the License at
- *
+
  *    http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
@@ -64,7 +63,7 @@ public final class JavaKafkaToHDFSHive {
 
     SparkConf sparkConf = new SparkConf().setAppName("JavaKafkaToHDFSHive");
     HiveContext hc = new HiveContext(sc)
-    JavaStreamingContext jssc = new JavaStreamingContext(hc, Durations.seconds(2));
+    JavaStreamingContext jssc = new JavaStreamingContext(hc, Durations.seconds(10));
 
     Set<String> topicsSet = new HashSet<String>(Arrays.asList(topics.split(",")));
     Map<String, String> kafkaParams = new HashMap<String, String>();
@@ -80,6 +79,10 @@ public final class JavaKafkaToHDFSHive {
         kafkaParams,
         topicsSet
     );
+
+
+    
+
 
     // Get the lines, split them into words, count the words and print
     JavaDStream<String> lines = messages.map(new Function<Tuple2<String, String>, String>() {
