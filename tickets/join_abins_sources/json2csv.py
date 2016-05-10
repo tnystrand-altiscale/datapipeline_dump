@@ -24,7 +24,8 @@ for line in lines:
     csv_line = []
     for column in header:
         if column=='timestamp':
-            csv_line.append( str( int(json_line[column]/1000/60)*60 ) )
+            #csv_line.append( str( int(json_line[column]/1000/60)*60 ) )
+            csv_line.append( str( json_line[column] ) )
         else:
             # Safe guard against schema changes
             if column in curr_header:
