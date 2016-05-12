@@ -30,14 +30,26 @@ with
         cluster
     )
 
+    ,clusters
+    as (
+    select distinct
+        cluster
+    from
+        queue_by_second
+    )
+
     ,cts_limit
     as (
     select
-        *
+        cts.*
     from
-        dp_derived.time_series_system_granularity_ext
+        dp_derived.time_series_system_granularity_ext as cts
+    join
+        clusters as cls
+    on
+        cts.cluster = cts.system
     where
-        date between '2016-05-01' and '2016-05-10'
+        cts.date between '2016-05-01' and '2016-05-10'
     )
 
 select
