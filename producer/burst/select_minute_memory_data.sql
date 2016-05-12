@@ -1,5 +1,5 @@
-set hiveconf:start_date='2016-04-22';
-set hiveconf:end_date='2016-04-22';
+set hiveconf:start_date='2016-05-01';
+set hiveconf:end_date='2016-05-08';
 set hiveconf:system='';
 set hiveconf:cts=cluster_metrics_prod_2.container_time_series;
 set hiveconf:cf=cluster_metrics_prod_2.container_fact;

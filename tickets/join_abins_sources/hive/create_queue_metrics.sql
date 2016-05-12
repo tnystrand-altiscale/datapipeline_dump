@@ -1,4 +1,4 @@
-set hiveconf:target_tables=thomastest.mt_burst;
+set hiveconf:target_table=thomastest.queue_metrics;
 
 drop table if exists ${hiveconf:target_table};
 
@@ -15,11 +15,11 @@ create table ${hiveconf:target_table}
         running_300         int,
         AggregateOffSwitchContainersAllocated   int,
         AppsPending         int,
-        hostname            string,
+        hostname_dup        string,
         PendingVCores       int,
         PendingContainers   int,
         AllocatedMB         int,
-        timestamp           int,
+        timestamp           double,
         ReservedVCores      int,
         ActiveUsers         int,
         AggregateContainersReleased             int,
@@ -41,6 +41,9 @@ create table ${hiveconf:target_table}
         running_60          int,
         AllocatedContainers int,
         ReservedContainers  int
-    );
+    )
+    ROW FORMAT DELIMITED
+    FIELDS TERMINATED BY ','
+    LINES TERMINATED BY '\n';
 
-load local data inpath '/home/tnystrand/semi_serious/tickets/join_abins_sources/data/mt_burst_1462147200000_processed.csv' into table ${hiveconf:target_table}
+load data local inpath '/home/tnystrand/semi_serious/tickets/join_abins_sources/data/all_1462147200000_QueueMetrics.csv' into table ${hiveconf:target_table}
