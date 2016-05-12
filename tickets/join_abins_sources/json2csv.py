@@ -26,6 +26,8 @@ for line in lines:
         if column=='timestamp':
             #csv_line.append( str( int(json_line[column]/1000/60)*60 ) )
             csv_line.append( str( json_line[column] ) )
+        elif column=='tags':
+            csv_line.append( json_line[column]['cluster'] )
         else:
             # Safe guard against schema changes
             if column in curr_header:
