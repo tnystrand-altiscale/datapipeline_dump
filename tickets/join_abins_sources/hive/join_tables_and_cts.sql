@@ -11,7 +11,7 @@ with
     from
         thomastest.queue_metrics
     group by
-        int(timestamp/1000),
+        int(timestamp/60000)*60,
         tags
     )
 
@@ -26,7 +26,7 @@ with
     from
         thomastest.mt_burst
     group by
-        int(timestamp/1000),
+        int(timestamp/60000)*60,
         cluster
     )
 
@@ -47,7 +47,7 @@ with
     join
         clusters as cls
     on
-        cts.cluster = cts.system
+        cls.cluster = cts.system
     where
         cts.date between '2016-05-01' and '2016-05-10'
     )
