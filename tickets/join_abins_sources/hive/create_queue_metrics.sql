@@ -1,4 +1,4 @@
-set hiveconf:target_table=thomastest.queue_metrics;
+set hiveconf:target_table=thomastest.queue_metrics_2;
 
 drop table if exists ${hiveconf:target_table};
 
@@ -46,4 +46,4 @@ create table ${hiveconf:target_table}
     FIELDS TERMINATED BY ','
     LINES TERMINATED BY '\n';
 
-load data local inpath '/home/tnystrand/semi_serious/tickets/join_abins_sources/data/all_1462147200000_QueueMetrics.csv' into table ${hiveconf:target_table}
+load data local inpath '/home/tnystrand/semi_serious/tickets/join_abins_sources/data2/all_1462873685370_QueueMetrics.csv' into table ${hiveconf:target_table}

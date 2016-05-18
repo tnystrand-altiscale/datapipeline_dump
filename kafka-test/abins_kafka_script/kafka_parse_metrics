@@ -1,0 +1,314 @@
+#!/usr/bin/env ruby
+## -*- encoding: utf-8 -*-
+require 'thor'
+require './poseidon/lib/poseidon'
+require 'time'
+require 'json'
+require_relative 'partition_hasher'
+    # The minimum advance (as percentage of range) during binary search. We
+    # use the timestamp values to generally do much better than blind (1/2), but
+    # we don't want to degenerate into worse than log(some base) N.
+    BINSEARCH_MIN_PROGRESS = 0.1
+    # Read size while scanning for binary search. We use considerably smaller
+    # reads than the default 1 MB; but an entire message of interest should
+    # fit here.
+    SMALL_READ_SIZE = 8 * 1024
+    STRIP_ROOT = 'root'
+class KafkaUtils
+KAFKA_ANALYZER_OPTIONS = {
+      kafka: { desc: 'One or more Kafka brokers to connect to. These are the '\
+                           '"seed" brokers that will let us know which broker to '\
+                                              'eventually connect to, e.g. if partitioned.',
+                                                           banner: 'HOST:PORT ...', type: :array, required: true },
+     topic: { desc: 'Kafka topic to read from',
+                    default: 'mt-burst-metrics' },
+     kafka_client_id: { desc: 'Client ID to pass to Kafka', banner: 'ID',
+             default: 'AltiSkynet-dev' },
+      kafka_socket_timeout: {
+        desc: 'Timeout for Kafka broker sockets. Lower values make it faster to '\
+                    'find an available broker',
+                          banner: 'SECONDS', type: :numeric, default: 5.0 },
+     timestamp: { desc: 'timestamp in miliseconds', type: :numeric},
+     clusters: {desc: 'array of clusters', type: :array},
+     cluster_queues: {desc: 'hash of clusters and queues', type: :hash},
+     path: {desc: 'file path to save cluster_timestamp files'}
+}
+
+def initialize(options)
+  @options = options
+  @path = @options[:path]
+  @clusters = @options[:cluster_queues] ? @options[:cluster_queues].keys \
+                  : @options[:clusters]  
+  @include_queues = Hash[@options[:cluster_queues]] if @options[:cluster_queues]  
+  STDERR.puts "options #{@options}"
+  @timestamp = @options[:timestamp].nil? ? time_to_kafka_ts(Time.parse(@options[:time]).to_i) : @options[:timestamp]
+  STDERR.puts "time in seconds since epoch #{@timestamp}"
+  @kafka_topic = @options[:topic]
+  @filter_keys = Hash[@clusters.map { |cl| ["rm-#{cl}", cl] }] if @kafka_topic == 'resourcemanager'
+
+  @filter_keys = Hash[@clusters.map { |cl| ["burst-#{cl}", cl] }] if @kafka_topic == 'mt-burst-metrics' && !@clusters.nil?
+
+end
+
+def strip_q_prefix(qname)
+      return qname unless qname.start_with?(STRIP_ROOT + '.')
+      qname[STRIP_ROOT.size + 1..-1]
+    end
+
+def q_included(cluster, short_qn)
+      File.fnmatch(@include_queues[cluster] || '<dontmatch>', \
+                   short_qn, File::FNM_EXTGLOB) \
+      || File.fnmatch(@include_queues[nil] || '<dontmatch>', \
+                      short_qn, File::FNM_EXTGLOB)
+    end
+
+def relevant_queue(cluster, qname)
+  @relevant_cache ||= { STRIP_ROOT => false }
+  key = [cluster, qname]
+  result = @relevant_cache[key]
+  if result.nil?
+    short_qn = strip_q_prefix(qname)
+    result = (q_included(cluster, short_qn)) ? short_qn : false
+    @relevant_cache[key] = result
+  end
+  result
+end
+
+def self.parse_json(msg)
+      return JSON.parse(msg.value)
+    rescue JSON::ParserError
+      logger.warn "Skipped unparseable message at #{msg.offset}"
+      return nil
+    end
+def merge_msg(msg_kafka)
+  cluster = @filter_keys[msg_kafka.key] if @filter_keys
+  return true if cluster.nil? && @clusters
+
+  STDERR.puts "cluster #{cluster}"
+  if @kafka_topic == 'resourcemanager'
+    msg = parse_json(msg_kafka)
+    return true unless msg && msg['name'] == 'QueueMetrics' && msg['Queue']
+    timestamp = msg['timestamp']
+    time = Time.at(timestamp / 1000.0)
+    qn = relevant_queue(cluster, msg['Queue'])
+    return true unless qn
+  end
+  if @path
+    File.open("#{@path}/#{cluster}_#{@timestamp}", 'a') {|f| f.write("#{msg_kafka.value}\n")}
+  else
+    puts msg_kafka.value
+  end
+  true
+end
+
+def read
+  keys = @filter_keys.nil? ? nil: @filter_keys.keys
+  parallel_read_partitions(
+    @kafka_topic, @timestamp, keys, @options,
+       nil, nil) \
+          { |msg| merge_msg(msg) }
+end
+
+def parallel_map(enum)
+  return [] if enum.empty?
+  threads = enum.drop(1).map { |elt| Thread.new { yield elt } } 
+  rv = [(yield enum.first)]      # Run first inline.
+  rv.concat threads.map(&:value) # Then wait for all others.
+end
+
+    # Creates a Kafka consumer from our parameters.
+    #
+    # @return [PartitionConsumer] , not nil.
+    def create_consumers(topic, partitions, filter_keys, options)
+      # TODO: put a key-based-partition constructor in Poseidon. Right
+      # now this replicates some of consumer_for_partition.
+      parts = []
+      part_brokers = Poseidon::BrokerPool.open(
+          options[:kafka_client_id], options[:kafka],
+          options[:kafka_socket_timeout] * 1000) do |broker_pool|
+        cluster_metadata = Poseidon::ClusterMetadata.new
+        cluster_metadata.update(broker_pool.fetch_metadata([topic]))
+        metadata = cluster_metadata.metadata_for_topics([topic]) \
+                                                         [topic] # clunky
+        fail "Topic #{topic} does not appear to exist" unless metadata
+        count = metadata.partition_count
+        if (partitions.nil? || partitions.empty? ) && !filter_keys.nil?
+          hasher = Poseidon::PartitionHasher.new count
+          partitions = filter_keys.map do  |key|
+            partition = hasher.partition_for key
+            STDERR.puts "Targetting partition #{partition}/#{count} for key #{key}"
+            partition
+          end
+        end
+        if !partitions.nil?
+         partitions.sort.uniq.map do |part|
+          broker = cluster_metadata.lead_broker_for_partition(topic, part)
+          STDERR.puts "Selected broker: #{broker.host}:#{broker.port} (ID# " \
+                      "#{broker.id}) for partition #{part}"
+          [part, broker] 
+         end
+        else
+         (0..count-1).map do |part|
+          STDERR.puts "topic #{topic} partition #{part}"
+          broker = cluster_metadata.lead_broker_for_partition(topic, part)
+          STDERR.puts "Selected broker: #{broker.host}:#{broker.port} (ID# " \
+                      "#{broker.id}) for partition #{part}"
+          [part, broker]
+         end
+        end
+      end
+      part_brokers.map do |part, broker|
+        STDERR.puts part_brokers
+        Poseidon::PartitionConsumer.new(
+          options[:kafka_client_id], broker.host, broker.port,
+          topic, part, :earliest_offset)
+      end
+    end
+
+    # Parse a json value; warns and returns nil if not parseable (e.g. stray
+    # test messages).
+    def parse_json(msg)
+      return JSON.parse(msg.value)
+    rescue JSON::ParserError
+      STDERR.puts "Skipped unparseable message at #{msg.offset}"
+      return nil
+    end
+
+    # Read from consumer using the specified read_size, until encountering
+    # a message with a correct timestamp.  Returns the parsed message and
+    # its offset, or [nil, nil] if none found from this position. Used when
+    # binary searching with small reads, below. If max_offset is specified,
+    # do not advance past this position
+    def read_until_ts(consumer, read_size = nil, max_offset = nil)
+      begin
+        msgs = consumer.fetch(min_bytes: 0, max_bytes: read_size)
+        msgs.each do |msg|
+          return [nil, nil] if max_offset && msg.offset > max_offset
+          parsed = parse_json(msg)
+          next unless parsed && parsed['timestamp']
+          return [parsed, msg.offset]
+        end
+      end while msgs.any?
+      [nil, nil]
+    end
+
+    # Poseidon doesn't have a "seek" (will request), but @offset seems to
+    # work as expected. An alternative would be to re-create the consumer, but
+    # it seems wasteful. Poseidon's :earliest_offset and :latest_offset work
+    # here.
+    def seek_consumer(consumer, offset)
+      consumer.instance_variable_set(:@offset, offset)
+    end
+
+    # Seek "consumer" to the last message <= "timestamp" and return that
+    # offset; last offset if no parseable messages at all. Uses guided
+    # binary search to reach it in 4-5 steps (and less than a second) for a
+    # typical queue.
+    def binsearch_timestamp(consumer, timestamp)
+      seek_consumer(consumer, :earliest_offset)
+      parsed, omin = read_until_ts(consumer, SMALL_READ_SIZE)
+      return consumer.next_offset unless parsed
+      tmin = parsed['timestamp']
+      omax = -1
+      begin
+        seek_consumer(consumer, omax)
+        parsed, new_omax = read_until_ts(consumer, SMALL_READ_SIZE)
+        if parsed
+          tmax = parsed['timestamp']
+          omax = new_omax
+        else
+          omax -= 1
+        end
+      end until omax > 0
+      begin
+        # Guided by timestamp value, but demand a minimum seek.
+        dmid = (omax - omin).to_f / (tmax - tmin) * (timestamp - tmin)
+        dmid = 0 if dmid < 0 # -Infinity corner case for below
+        dmid = [dmid, (omax - omin) * (1 - BINSEARCH_MIN_PROGRESS)].min.floor
+        dmid = [dmid, (omax - omin) * BINSEARCH_MIN_PROGRESS].max.ceil
+        omid_candidate = omin + dmid.round
+        seek_consumer(consumer, omid_candidate)
+        parsed, omid = read_until_ts(consumer, SMALL_READ_SIZE, omax)
+        compare_ts = parsed ? parsed['timestamp'] : tmax # omid..omax unreadable
+        if compare_ts > timestamp
+          # Subtle: a difference between omid and omid_candidate exists iff
+          # there are unparseable messages at "omid_candidate", whereby
+          # omid points past them. To avoid infinite loop, shrink to _candidate.
+          omax = omid_candidate - 1
+          tmax = compare_ts
+        else
+          omin = omid
+          tmin = compare_ts
+        end
+      end while omin < omax
+      STDERR.puts "Seeked to: #{kafka_ts_to_time(compare_ts)}"
+      seek_consumer(consumer, omin)
+      omin
+    end
+
+    # Converts a Kafka timestamp (Java millis) to a Ruby Time.
+    def kafka_ts_to_time(timestamp)
+      Time.at(timestamp / 1000.0)
+    end
+
+    # Converts a Ruby Time to a Kafka timestamp (Java millis).
+    def time_to_kafka_ts(time)
+      time.to_f * 1000
+    end
+
+    # Reads from multiple partitions of a topic in parallel. Should be called
+    # with a block that processes a single message at a time. The block will
+    # be called with a single context, from multiple threads but under a shared
+    # lock, so it can use shared data structures. The block should return
+    # true if reads from this partition should continue.
+    #
+    # @param topic String  the topic
+    # @param seek_ts Time  a time to seek to in each partition
+    # @param keys [String, ...]   the Kafka keys to look for, passed through
+    #    the standard hasher to get partitions. Caller should post-filter
+    #    based on the keys, since there might be more in each partition.
+    # @param force_partitions [Int, ...] a set of partitions to override "keys"
+    # @param force_consumer PoseidonConsumer a fixed Consumer [mock] for tests.
+    def parallel_read_partitions(topic, seek_ts, keys, options,
+                                      force_partitions, force_consumer = nil)
+      consumers = force_consumer ? [force_consumer] \
+                  : create_consumers(topic, force_partitions, keys, options)
+      yield_lock = Mutex.new
+      parallel_map(consumers) do |consumer|
+        part = consumer.instance_variable_get(:@partition) # TODO: expose this
+        STDERR.puts "Seeking Kafka partition #{topic}/#{part} for time " \
+                    "#{seek_ts}"
+        binsearch_timestamp(consumer, seek_ts)
+        cont = true
+        while cont
+          messages = consumer.fetch(min_bytes: 0)
+          break if messages.empty?
+          yield_lock.synchronize do
+            STDERR.puts "Read batch of #{messages.size} messages from " \
+                        "partition #{topic}/#{part}"
+            # When we start seeing later timestamps, finish up the block just
+            # in case, but bail afterwards.
+            messages.each { |m| cont = (yield m)  && cont }
+          end
+        end
+      end
+    end
+  end
+
+# Various utilities for interacting with Kafka.
+class CLI < Thor
+    KafkaUtils::KAFKA_ANALYZER_OPTIONS.each { |arg, attrs| method_option arg, attrs }
+    desc 'show', 'Queries kafka given a timestamp'
+    def show
+      KafkaUtils.new(options).read
+    end
+
+    map %w(--version -v) => :__print_version
+
+    desc '--version, -v', 'Print burstcmd version'
+    def __print_version
+      STDERR.puts "#{AltiSkynet::VERSION}"
+    end
+  end
+CLI.start
+

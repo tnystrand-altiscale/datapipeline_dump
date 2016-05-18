@@ -9,7 +9,7 @@ with
         avg(reservedmb)/1000 as reservedgb,
         tags as cluster
     from
-        thomastest.queue_metrics
+        thomastest.queue_metrics_2
     group by
         int(timestamp/60000)*60,
         tags
@@ -20,11 +20,10 @@ with
     select 
         avg(int(timestamp/60000)*60) as timestamp,
         avg(desired_capacity)*2.5 as desired_capacity,
-        avg(fulfilled_capacity)*2.5 as fulfilled_capacity,
         avg(cluster_capacity)*2.5 as cluster_capacity,
         cluster
     from
-        thomastest.mt_burst
+        thomastest.mt_burst_2
     group by
         int(timestamp/60000)*60,
         cluster
@@ -49,13 +48,12 @@ with
     on
         cls.cluster = cts.system
     where
-        cts.date between '2016-05-01' and '2016-05-10'
+        cts.date between '2016-05-10' and '2016-05-13'
     )
 
 select
     mt.timestamp as mt_timestamp,
     mt.desired_capacity as desired_capacity,
-    mt.fulfilled_capacity as fulfilled_capacity,
     mt.cluster_capacity as cluster_capacity,
     mt.cluster as mt_cluster,
 
