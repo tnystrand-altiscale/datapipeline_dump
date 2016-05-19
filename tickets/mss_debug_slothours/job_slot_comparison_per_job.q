@@ -26,12 +26,14 @@ WITH
     SELECT
         SUM(slothours) AS job_slot_hours,
         system,
-        date
+        date,
+        jobid
     FROM
         job_fact_reduced
     GROUP BY
         system,
-        date
+        date,
+        jobid
     )
 
     ,container_slot_hours_table
@@ -39,7 +41,8 @@ WITH
     SELECT
         sum(memory/2500/60) AS container_slot_hours,
         cts.system,
-        jf.date
+        jf.date,
+        cts.jobid
     FROM
         container_time_series as cts,
         job_fact_reduced as jf
@@ -51,6 +54,7 @@ WITH
         AND cts.system like '%${hiveconf:system}%'
     GROUP BY
         cts.system,
+        cts.jobid,
         jf.date
     )
 
@@ -63,8 +67,10 @@ FROM
     container_slot_hours_table as csh
 WHERE
     jsh.system = csh.system
+    AND jsh.jobid = csh.jobid
     AND jsh.date = csh.date
 ORDER BY
     system,
-    date;
+    date,
+    percent_diff;
 
