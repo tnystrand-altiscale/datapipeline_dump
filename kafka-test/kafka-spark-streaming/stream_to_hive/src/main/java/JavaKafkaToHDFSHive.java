@@ -59,6 +59,9 @@ public final class JavaKafkaToHDFSHive {
     String brokers = args[0];
     String topics = args[1];
 
+    System.out.println("Brokers: " + brokers);
+    System.out.println("Topics: " + topics);
+
     // Create context with a 2 seconds batch interval
 
     SparkConf sparkConf = new SparkConf().setAppName("JavaKafkaToHDFSHive");
@@ -80,10 +83,6 @@ public final class JavaKafkaToHDFSHive {
         topicsSet
     );
 
-
-    
-
-
     // Get the lines, split them into words, count the words and print
     JavaDStream<String> lines = messages.map(new Function<Tuple2<String, String>, String>() {
       @Override
@@ -91,6 +90,7 @@ public final class JavaKafkaToHDFSHive {
         return tuple2._2();
       }
     });
+
     JavaDStream<String> words = lines.flatMap(new FlatMapFunction<String, String>() {
       @Override
       public Iterable<String> call(String x) {
