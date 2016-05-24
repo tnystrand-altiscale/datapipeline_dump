@@ -1,0 +1,133 @@
+{
+  "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue": [
+  {
+    "regex" : "assignedContainer application( attempt)?=(?<appattemptid>[[:graph:]]+) container=Container: \\[ContainerId: (?<containerid>[^,]+), NodeId: (?<node>[^:]+):[^,]+, NodeHttpAddress: [^:]+:[^,]+, Resource: <?memory: *(?<memory>[^,]+)(, vCores:(?<cores>[^>]+)>)?, Priority: ({Priority: )?(?<priority>[^,}]+)}?,( State: [^,]*,)? Token: [^\\]]+\\].*queue=(?<queue>[^:]+): capacity=(?<capacity>[^,]+), absoluteCapacity=(?<absolute_capacity>[^,]+), usedResources=<?(memory:)?(?<used_memory>[[:digit:]]+)(MB)?,( vCores:(?<used_cores>[^>]+)>)?(,)?([[:space:]])?usedCapacity=(?<used_capacity>[^,]+), (absoluteUsedCapacity=(?<absolute_used_capacity>[^,]+), )?numApps=(?<num_apps>[^,]+), numContainers=(?<num_containers>[[:graph:]]+).*cluster(Resource)?=<?memory: *(?<cluster_memory>[^,]+)(, vCores:(?<cluster_cores>[^>]+)>)?",
+    "event" : "assigned_container",
+    "schema":
+    {
+      "appattemptid" : "string",
+      "containerid" : "string",
+      "node" : "string",
+      "memory" : "int",
+      "cores" : "int",
+      "priority" : "int",
+      "queue" : "string",
+      "capacity" : "double",
+      "absolute_capacity" : "double",
+      "used_memory" : "int",
+      "used_cores" : "int",
+      "used_capacity" : "double",
+      "absolute_used_capacity" : "double",
+      "num_apps" : "int",
+      "num_containers" : "int", 
+      "cluster_memory" : "int",
+      "cluster_cores" : "int" 
+    }
+  },
+    {
+      "regex" : "Application (?<appid>[[:graph:]]+) from user: (?<user>[[:graph:]]+) activated in queue: (?<queue>[[:graph:]]+)",
+      "event" : "app_activated",
+      "schema" : {
+        "appid" : "string",
+        "user" : "string",
+        "queue" : "string"
+      }
+    },
+    {
+      "regex" : "completedContainer container=Container: \\[ContainerId: (?<id>[^,]+).*",
+      "event" : "completed_container",
+      "schema" : {
+        "id" : "string"
+      }
+    }
+  ],
+  "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo": [
+    {
+      "regex" : "update: application=(?<appid>[[:graph:]]+) request={Priority: (?<priority>[^,]+), Capability: <memory:(?<memory>[^,]+), vCores:(?<cores>[^>]+)>, # Containers: (?<num_containers>[^,]+), Location: (?<location>[^,]+), Relax Locality: (?<relax_locality>)[^}]+}",
+      "event": "container_request",
+      "schema":
+      {
+        "appid" : "string",
+        "priority" : "int",
+        "memory" : "int",
+        "cores" : "int",
+        "num_containers" : "int",
+        "location" : "string", 
+        "relax_locality" : "boolean"
+      }
+    }
+  ],
+    "org.apache.hadoop.yarn.server.resourcemanager.scheduler.common.fica.FiCaSchedulerNode": [
+    {
+      "regex" : "(?<action>(Assigned|Released)) container (?<id>[[:graph:]]+) of capacity <?memory: *(?<memory>[^,]+)(, vCores:(?<cores>[^>]+))?>? on host (?<hostname>[^:]+):(?<port>[^,[[:space:]]]+).*",
+      "event": "assign_release",
+      "schema": 
+      {
+        "action" : "string",
+        "id" : "string",         
+        "memory" : "int",
+        "cores" : "int",
+        "hostname" : "string",
+        "port" : "int"
+      }
+    }
+  ],
+   "org.apache.hadoop.yarn.server.resourcemanager.scheduler.SchedulerNode": [
+    {
+      "regex" : "(?<action>(Assigned|Released)) container (?<id>[[:graph:]]+) of capacity <?memory: *(?<memory>[^,]+)(, vCores:(?<cores>[^>]+))?>? on host (?<hostname>[^:]+):(?<port>[^,[[:space:]]]+).*",
+      "event": "assign_release",
+      "schema":
+      {
+        "action" : "string",
+        "id" : "string",
+        "memory" : "int",
+        "cores" : "int",
+        "hostname" : "string",
+        "port" : "int"
+      }
+    }
+  ],
+  "org.apache.hadoop.yarn.server.resourcemanager.RMAppManager$ApplicationSummary":  [
+    {
+      "regex" : "appId=(?<appId>[^,]+),name=(?<name>.*?)(?>,user=)(?<user>[^,]+),queue=(?<queue>[^,]+),state=(?<state>[^,]+),trackingUrl=(?<trackingUrl>[^,]*),appMasterHost=(?<appMasterHost>[^,]*),startTime=(?<startTime>[^,]+),finishTime=(?<finishTime>[^,]+)(,finalStatus=(?<finalStatus>[^,[[:space:]]]+))?.*",
+      "event": "app_summary",
+      "schema": 
+      {
+        "appId" : "string",
+        "name" : "string",
+        "user" : "string",
+        "queue" : "string",
+        "state" : "string",
+        "trackingUrl" : "string",
+        "appMasterHost" : "string",
+        "startTime" : "long",
+	"finishTime" : "long",
+	"finalStatus" : "string"
+      }
+    }
+  ],
+  "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl": [
+    {
+      "regex" : "(?<id>[[:graph:]]+) Container Transitioned from (?<from>[[:graph:]]+) to (?<to>[[:graph:]]+)",
+      "event": "transitions",
+      "schema": 
+      {
+        "id" : "string",
+        "from" : "string",
+        "to" : "string"
+      }
+    }
+  ],
+  "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler": [
+    {
+      "regex" : "(Accepted application|Application Submission:) (?<appid>[^,[[:space:]]]+)(,|[[:space:]])(from)? user: (?<user>[^,[[:space:]]]+)(, in)? queue: (?<queue>[^[[:space:]]:]+).*",
+      "event": "app_added",
+      "schema":
+      {
+        "appid" : "string",
+        "user" : "string",
+        "queue" : "string"
+      }
+    }
+  ]
+}

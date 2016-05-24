@@ -1,6 +1,6 @@
 SET hive.cli.print.header=false;
-SET hiveconf:system=marketshare;
-SET hiveconf:START_DATE=2016-05-15;
+SET hiveconf:system=ms22;
+SET hiveconf:START_DATE=2016-05-16;
 SET hiveconf:END_DATE=2016-05-18;
 SET hiveconf:FIRST_DATE=2016-04-16;
 
@@ -42,7 +42,7 @@ WITH
         sum(memory/2500/60) AS container_slot_hours,
         cts.system,
         jf.date,
-        cts.jobid
+        cts.job_id
     FROM
         container_time_series as cts,
         job_fact_reduced as jf
@@ -54,20 +54,23 @@ WITH
         AND cts.system like '%${hiveconf:system}%'
     GROUP BY
         cts.system,
-        cts.jobid,
+        cts.job_id,
         jf.date
     )
 
 SELECT
     (job_slot_hours - container_slot_hours)/container_slot_hours*100 AS percent_diff,
+    job_slot_hours,
+    container_slot_hours,
     jsh.system AS system,
-    jsh.date AS date
+    jsh.date AS date,
+    jsh.jobid AS jobid
 FROM
     job_slot_hours_table as jsh,
     container_slot_hours_table as csh
 WHERE
     jsh.system = csh.system
-    AND jsh.jobid = csh.jobid
+    AND jsh.jobid = csh.job_id
     AND jsh.date = csh.date
 ORDER BY
     system,
