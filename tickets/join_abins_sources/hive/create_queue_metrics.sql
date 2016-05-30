@@ -46,4 +46,4 @@ create table ${hiveconf:target_table}
     FIELDS TERMINATED BY ','
     LINES TERMINATED BY '\n';
 
-load data local inpath '/home/tnystrand/semi_serious/tickets/join_abins_sources/data2/all_1462873685370_QueueMetrics.csv' into table ${hiveconf:target_table}
+load data local inpath '/home/tnystrand/semi_serious/tickets/join_abins_sources/data4/all_1463460898000_QueueMetrics.csv' into table ${hiveconf:target_table}

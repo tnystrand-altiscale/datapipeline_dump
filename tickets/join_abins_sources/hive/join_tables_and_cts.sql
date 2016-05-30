@@ -48,9 +48,9 @@ with
     on
         cls.cluster = cts.system
     where
-        cts.date between '2016-05-10' and '2016-05-13'
+        cts.date between '2016-05-17' and '2016-05-24'
     )
-
+select * from mt_burst_second;
 select
     mt.timestamp as mt_timestamp,
     mt.desired_capacity as desired_capacity,

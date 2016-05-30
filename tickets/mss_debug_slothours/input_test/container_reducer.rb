@@ -212,59 +212,59 @@ class RMContainerReduce
     @logger.info("Processing app #{@appid}")
     previous_timestamp = nil
     @lines.each do |msg|
-          @logger.debug(msg.inspect)
-          timestamp = msg.timestamp.to_i
-          if timestamp == nil || timestamp < 10000
-            next
-          end
-          if previous_timestamp != nil
-            date = Time.at(timestamp/1000).to_s[0..9]
-            previous_date = Time.at(previous_timestamp/1000).to_s[0..9]
-            if date != previous_date 
-               # The reason for the following loop:
-               # Necessary to maintain proper # unfinished tables and buckets
-               # Partitions are overwritten each time the oozie jobs runs
-               # The loop after process_app will not save
-               # unfinished containers if application finishes its containers
-               # This would means containers would be lost
-               # the last day of the interval since no containers are rolled over
-               #
-               # This wont however maintain the 'true' picture
-               # for applications without messages>1 day which 
-               # 1) terminates
-               # 2) runs at same days as other apps with unfinished containers
-               if previous_date >= @interval_start_date
-                 while previous_date < date
-                   @logger.debug("Saving job state for #{previous_date}")
-                   #Save the end state of a day for the application after each day's messages are processed
-                   save(true, previous_date)
-                   previous_date_obj = Date.parse(previous_date) + 1
-                   previous_date = previous_date_obj.to_s[0..9]
-                 end
-               end
-              @current_date = date
+       @logger.debug(msg.inspect)
+       timestamp = msg.timestamp.to_i
+       if timestamp == nil || timestamp < 10000
+         next
+       end
+       if previous_timestamp != nil
+         date = Time.at(timestamp/1000).to_s[0..9]
+         previous_date = Time.at(previous_timestamp/1000).to_s[0..9]
+         
+         # Save state for all containers that span multiple days
+         # Necessary to avoid losing containers in container_fact
+         # unfinished_container partitions are overwritten each time the oozie jobs runs
+         # Once the application finish, unfinished containers for this app are not in the output.
+         # When container_reducer run on subsequent days of the interval, the unfinished containers 
+         # are gone and the application sees only the end messages, which are therefore ignored.
+         # Container fact is then overwritten without the containers
+         if date != previous_date 
+            # Only overwrite partitions within interval date
+            if previous_date < @interval_start_date
+                previous_date = interval_start_date
             end
-          end
-          previous_timestamp = timestamp
+            
+            while previous_date < date
+                @logger.debug("Saving job state for #{previous_date}")
+                #Save the end state of a day for the application after each day's messages are processed
+                save(true, previous_date)
+                previous_date_obj = Date.parse(previous_date) + 1
+                previous_date = previous_date_obj.to_s[0..9]
+              end
+            end
+         # Update current date which is used to tag on unfinished containers for unfinished apps
+         @current_date = date
+       end
+       previous_timestamp = timestamp
 
-          case msg.type
-            when 'container_request'
-              process_container_request(msg, timestamp)
-            when 'app_summary'
-              process_app_summary(timestamp)
-            when 'bucket'
-              process_bucket(msg, timestamp)
-            when 'transitions'
-              process_transitions(msg, timestamp)
-            when 'app_activated'
-              process_app_activated(msg)
-            when 'assigned_container'
-              process_assigned_container(msg, timestamp)
-            when 'unfinished_container'
-              process_unfinished_container(msg)
-            when 'completed_container'
-              process_completed_container(msg, timestamp)
-          end
+       case msg.type
+         when 'container_request'
+           process_container_request(msg, timestamp)
+         when 'app_summary'
+           process_app_summary(timestamp)
+         when 'bucket'
+           process_bucket(msg, timestamp)
+         when 'transitions'
+           process_transitions(msg, timestamp)
+         when 'app_activated'
+           process_app_activated(msg)
+         when 'assigned_container'
+           process_assigned_container(msg, timestamp)
+         when 'unfinished_container'
+           process_unfinished_container(msg)
+         when 'completed_container'
+           process_completed_container(msg, timestamp)
+       end
     end
   end
 
@@ -323,23 +323,24 @@ class RMContainerReduce
   #Save the state of the application after all messages have been buffered
   def save_interval_end
     process_app
-    #This loop is needed for the case when messages are seen on day X (e.g. the first couple days of the interval) but not on a day > X
-    #In that case the day boundary crossing in 'process_app' will not be triggered, 
-    #but we still want to save the state of day X for rollover (saw this a lot for H20 jobs)
+    # This loop is needed for the case when messages are seen on day X (e.g. the first couple days of the interval) but not on a day > X
+    # In that case the day boundary crossing in 'process_app' will not be triggered, 
+    # but we still want to save the state of day X for rollover (saw this a lot for H20 jobs)
     #
-    # Some notable uglyhacking:
+    # Note:
     #   When processing several days worth of data:
-    #       Some apps will finish in day1 and have a current_date < interval_date
-    #       These will not be saved in the loop though, since
-    #       Its containers have 'completed' set to true
-    #       AND The methods unfinished flag is called with 'true'
-    #       AND The applications finish flag is set to 'true'
+    #     Terminated apps will have current_date < interval_end_date on if interval>1 day
+    #     These will enter the loop, but not save any containers since
+    #       + Its containers have 'completed' set to true
+    #       + The methods unfinished flag is called with 'true'
+    #       + The applications instance finished flag is set to 'true'
     #   The method will just loop through to the bottom of the method
     while @current_date < @interval_end_date
       save(true, @current_date)
       next_date = Date.parse(@current_date) + 1 
       @current_date = next_date.to_s[0..9]
     end
+    # Saves unfinished and finished containers for last day
     save(false, @interval_end_date)
   end
 
@@ -433,9 +434,8 @@ class RMContainerReduce
     hash = data.select{|k,v| fields.include?(k)}
     hash['system'] = @cluster
     hash['date'] = date.to_s[0..9]
-    # This check is important for maintina unfinished container table
-    # If this does not exists, containers which have not finished for
-    # many days will cause unnecessary overwrite of old partitions
+    # This check is important for maintaining unfinished container table
+    # Containers which have not finished > interval span would cause overwrites of old partitions
     if(hash['date'] >= @interval_start_date && hash['date'] <= @interval_end_date)
       @logger.info("Saving a partial: #{hash.inspect}")
       @app_request_queues.proxy_timestamp(hash['requestedTime']) 

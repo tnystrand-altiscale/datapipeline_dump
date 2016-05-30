@@ -25,7 +25,7 @@ for line in lines:
     for column in header:
         if column=='timestamp':
             #csv_line.append( str( int(json_line[column]/1000/60)*60 ) )
-            csv_line.append( str( json_line[column] ) )
+            csv_line.append( str( "%f" % json_line[column] ) )
         elif column=='tags':
             csv_line.append( json_line[column]['cluster'] )
         else:
