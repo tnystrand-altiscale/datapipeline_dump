@@ -1,7 +1,7 @@
-set hiveconf:target_table=thomastest.queue_metrics_2;
+set hiveconf:target_table=thomastest.queue_metrics;
 
 drop table if exists ${hiveconf:target_table};
--- select * from thomastest.queue_metrics_2 limit 10
+-- select * from thomastest.queue_metrics limit 10
 
 create table ${hiveconf:target_table}
     (
@@ -45,6 +45,7 @@ create table ${hiveconf:target_table}
     )
     ROW FORMAT DELIMITED
     FIELDS TERMINATED BY ','
-    LINES TERMINATED BY '\n';
+    LINES TERMINATED BY '\n'
+    tblproperties("skip.header.line.count"="1");
 
-load data local inpath '/home/tnystrand/semi_serious/tickets/join_abins_sources/data5/all_1463961600000_QueueMetrics.csv' into table ${hiveconf:target_table}
+load data local inpath '/home/tnystrand/semi_serious/tickets/kafka_to_hive/data/rm_tohive.csv' into table ${hiveconf:target_table}

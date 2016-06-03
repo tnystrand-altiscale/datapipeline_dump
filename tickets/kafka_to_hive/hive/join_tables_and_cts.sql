@@ -1,5 +1,5 @@
-set hiveconf:start_date=2016-05-24;
-set hiveconf:end_date=2016-05-30;
+set hiveconf:start_date=2016-05-26;
+set hiveconf:end_date=2016-06-02;
 
 with
     queue_by_second
@@ -12,7 +12,7 @@ with
         avg(reservedmb)/1000 as reservedgb,
         tags as cluster
     from
-        thomastest.queue_metrics_2
+        thomastest.queue_metrics
     group by
         int(timestamp/60000)*60,
         tags

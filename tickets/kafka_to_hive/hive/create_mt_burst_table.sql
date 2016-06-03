@@ -15,6 +15,7 @@ create table ${hiveconf:target_table}
     )
     ROW FORMAT DELIMITED
     FIELDS TERMINATED BY ','
-    LINES TERMINATED BY '\n';
+    LINES TERMINATED BY '\n'
+    tblproperties("skip.header.line.count"="1");
 
-load data local inpath '/home/tnystrand/semi_serious/tickets/join_abins_sources/data5/mt_1463961600000_processed.csv' into table ${hiveconf:target_table}
+load data local inpath '/home/tnystrand/semi_serious/tickets/kafka_to_hive/data/mt_tohive.csv' into table ${hiveconf:target_table}
