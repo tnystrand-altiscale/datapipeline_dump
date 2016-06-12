@@ -1,5 +1,5 @@
-set hiveconf:start_date=2016-05-26;
-set hiveconf:end_date=2016-06-02;
+set hiveconf:start_date=2016-05-28;
+set hiveconf:end_date=2016-06-07;
 
 with
     queue_by_second
@@ -10,12 +10,14 @@ with
         avg(allocatedmb)/1000 as allocatedgb,
         avg(availablemb)/1000 as availablegb,
         avg(reservedmb)/1000 as reservedgb,
-        tags as cluster
+        system as cluster
     from
         thomastest.queue_metrics
+    where
+        partition_date between '${hiveconf:start_date}' and '${hiveconf:end_date}'
     group by
         int(timestamp/60000)*60,
-        tags
+        system
     )
 
     ,mt_burst_second
@@ -24,12 +26,15 @@ with
         avg(int(timestamp/60000)*60) as timestamp,
         avg(desired_capacity)*2.5 as desired_capacity,
         avg(cluster_capacity)*2.5 as cluster_capacity,
-        cluster
+        avg(requested_delta)*2.5 as requested_delta,
+        system as cluster
     from
         thomastest.mt_burst
+    where
+        partition_date between '${hiveconf:start_date}' and '${hiveconf:end_date}'
     group by
         int(timestamp/60000)*60,
-        cluster
+        system
     )
 
     ,clusters
@@ -53,10 +58,12 @@ with
     where
         cts.date between '${hiveconf:start_date}' and '${hiveconf:end_date}'
     )
+--select * from queue_by_second;
 --select * from mt_burst_second;
 select
     mt.timestamp as mt_timestamp,
     mt.desired_capacity as desired_capacity,
+    mt.requested_delta as requested_delta,
     mt.cluster_capacity as cluster_capacity,
     mt.cluster as mt_cluster,
 

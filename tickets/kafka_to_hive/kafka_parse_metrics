@@ -5,116 +5,89 @@ require './poseidon/lib/poseidon'
 require 'time'
 require 'json'
 require_relative 'partition_hasher'
-    # The minimum advance (as percentage of range) during binary search. We
-    # use the timestamp values to generally do much better than blind (1/2), but
-    # we don't want to degenerate into worse than log(some base) N.
-    BINSEARCH_MIN_PROGRESS = 0.1
-    # Read size while scanning for binary search. We use considerably smaller
-    # reads than the default 1 MB; but an entire message of interest should
-    # fit here.
-    SMALL_READ_SIZE = 8 * 1024
-    STRIP_ROOT = 'root'
+require 'fileutils'
+
+# The minimum advance (as percentage of range) during binary search. We
+# use the timestamp values to generally do much better than blind (1/2), but
+# we don't want to degenerate into worse than log(some base) N.
+BINSEARCH_MIN_PROGRESS = 0.1
+# Read size while scanning for binary search. We use considerably smaller
+# reads than the default 1 MB; but an entire message of interest should
+# fit here.
+SMALL_READ_SIZE = 8 * 1024
+STRIP_ROOT = 'root'
+
 class KafkaUtils
-KAFKA_ANALYZER_OPTIONS = {
-      kafka: { desc: 'One or more Kafka brokers to connect to. These are the '\
-                           '"seed" brokers that will let us know which broker to '\
-                                              'eventually connect to, e.g. if partitioned.',
-                                                           banner: 'HOST:PORT ...', type: :array, required: true },
-     topic: { desc: 'Kafka topic to read from',
-                    default: 'mt-burst-metrics' },
-     kafka_client_id: { desc: 'Client ID to pass to Kafka', banner: 'ID',
-             default: 'AltiSkynet-dev' },
-      kafka_socket_timeout: {
-        desc: 'Timeout for Kafka broker sockets. Lower values make it faster to '\
-                    'find an available broker',
-                          banner: 'SECONDS', type: :numeric, default: 5.0 },
-     timestamp: { desc: 'timestamp in miliseconds', type: :numeric},
-     clusters: {desc: 'array of clusters', type: :array},
-     cluster_queues: {desc: 'hash of clusters and queues', type: :hash},
-     path: {desc: 'file path to save cluster_timestamp files'}
-}
+    KAFKA_ANALYZER_OPTIONS = {
+        kafka: { desc: 'One or more Kafka brokers to connect to. These are the '\
+                       '"seed" brokers that will let us know which broker to '\
+                       'eventually connect to, e.g. if partitioned.',
+                 banner: 'HOST:PORT ...', type: :array, required: true },
+        topic: { desc: 'Kafka topic to read from',
+                 default: 'mt-burst-metrics' },
+        kafka_client_id: { desc: 'Client ID to pass to Kafka', banner: 'ID',
+                           default: 'AltiSkynet-dev' },
+        kafka_socket_timeout: { desc: 'Timeout for Kafka broker sockets. Lower values make it faster to '\
+                                      'find an available broker',
+                                banner: 'SECONDS', type: :numeric, default: 5.0 },
+        timestamp: { desc: 'timestamp in miliseconds', type: :numeric},
+        clusters: {desc: 'array of clusters', type: :array},
+        cluster_queues: {desc: 'hash of clusters and queues', type: :hash},
+        path: {desc: 'file path to save cluster_timestamp files, if not specified, will dump to screen'}
+    }
 
-def initialize(options)
-  @options = options
-  @path = @options[:path]
-  @clusters = @options[:cluster_queues] ? @options[:cluster_queues].keys \
-                  : @options[:clusters]  
-  @include_queues = Hash[@options[:cluster_queues]] if @options[:cluster_queues]  
-  STDERR.puts "options #{@options}"
-  @timestamp = @options[:timestamp].nil? ? time_to_kafka_ts(Time.parse(@options[:time]).to_i) : @options[:timestamp]
-  STDERR.puts "time in seconds since epoch #{@timestamp}"
-  @kafka_topic = @options[:topic]
-  @filter_keys = Hash[@clusters.map { |cl| ["rm-#{cl}", cl] }] if @kafka_topic == 'resourcemanager'
+    def initialize(options)
+        @options = options
+        # Path to save output
+        @path = @options[:path]
+        # Create path if not exists
+        FileUtils::mkdir_p "#{@path}"
 
-  @filter_keys = Hash[@clusters.map { |cl| ["burst-#{cl}", cl] }] if @kafka_topic == 'mt-burst-metrics' && !@clusters.nil?
-
-end
-
-def strip_q_prefix(qname)
-      return qname unless qname.start_with?(STRIP_ROOT + '.')
-      qname[STRIP_ROOT.size + 1..-1]
+        @clusters = @options[:cluster_queues] ? @options[:cluster_queues].keys : @options[:clusters]  
+        @include_queues = Hash[@options[:cluster_queues]] if @options[:cluster_queues]  
+        STDERR.puts "options #{@options}"
+        # Defulat to using current time
+        @timestamp = @options[:timestamp].nil? ? time_to_kafka_ts(Time.parse(@options[:time]).to_i) : @options[:timestamp]
+        STDERR.puts "time in seconds since epoch #{@timestamp}"
+        @kafka_topic = @options[:topic]
+    
+        # Resourcmanager kafka keys are written on rm-cluster format
+        @filter_keys = Hash[@clusters.map { |cl| ["rm-#{cl}", cl] }] if @kafka_topic == 'resourcemanager' && !@clusters.nil?
+       
+        # If nil clusters are supplied, filter_keys are nil and everything will be collected
+        @filter_keys = Hash[@clusters.map { |cl| ["burst-#{cl}", cl] }] if @kafka_topic == 'mt-burst-metrics' && !@clusters.nil?
+    end
+    
+    def strip_q_prefix(qname)
+          return qname unless qname.start_with?(STRIP_ROOT + '.')
+          qname[STRIP_ROOT.size + 1..-1]
+    end
+    
+    def q_included(cluster, short_qn)
+          File.fnmatch( @include_queues[cluster] || '<dontmatch>', short_qn, File::FNM_EXTGLOB ) \
+          || File.fnmatch( @include_queues[nil] || '<dontmatch>', short_qn, File::FNM_EXTGLOB )
+    end
+    
+    def relevant_queue(cluster, qname)
+        @relevant_cache ||= { STRIP_ROOT => false }
+        key = [cluster, qname]
+        result = @relevant_cache[key]
+        if result.nil?
+            short_qn = strip_q_prefix(qname)
+            result = (q_included(cluster, short_qn)) ? short_qn : false
+            @relevant_cache[key] = result
+        end
+        result
     end
 
-def q_included(cluster, short_qn)
-      File.fnmatch(@include_queues[cluster] || '<dontmatch>', \
-                   short_qn, File::FNM_EXTGLOB) \
-      || File.fnmatch(@include_queues[nil] || '<dontmatch>', \
-                      short_qn, File::FNM_EXTGLOB)
+    
+    def parallel_map(enum)
+      return [] if enum.empty?
+      threads = enum.drop(1).map { |elt| Thread.new { yield elt } } 
+      rv = [(yield enum.first)]      # Run first inline.
+      rv.concat threads.map(&:value) # Then wait for all others.
     end
 
-def relevant_queue(cluster, qname)
-  @relevant_cache ||= { STRIP_ROOT => false }
-  key = [cluster, qname]
-  result = @relevant_cache[key]
-  if result.nil?
-    short_qn = strip_q_prefix(qname)
-    result = (q_included(cluster, short_qn)) ? short_qn : false
-    @relevant_cache[key] = result
-  end
-  result
-end
-
-def self.parse_json(msg)
-      return JSON.parse(msg.value)
-    rescue JSON::ParserError
-      logger.warn "Skipped unparseable message at #{msg.offset}"
-      return nil
-    end
-def merge_msg(msg_kafka)
-  cluster = @filter_keys[msg_kafka.key] if @filter_keys
-  return true if cluster.nil? && @clusters
-
-  STDERR.puts "cluster #{cluster}"
-  if @kafka_topic == 'resourcemanager'
-    msg = parse_json(msg_kafka)
-    return true unless msg && msg['name'] == 'QueueMetrics' && msg['Queue']
-    timestamp = msg['timestamp']
-    time = Time.at(timestamp / 1000.0)
-    qn = relevant_queue(cluster, msg['Queue'])
-    return true unless qn
-  end
-  if @path
-    File.open("#{@path}/#{cluster}_#{@timestamp}", 'a') {|f| f.write("#{msg_kafka.value}\n")}
-  else
-    puts msg_kafka.value
-  end
-  true
-end
-
-def read
-  keys = @filter_keys.nil? ? nil: @filter_keys.keys
-  parallel_read_partitions(
-    @kafka_topic, @timestamp, keys, @options,
-       nil, nil) \
-          { |msg| merge_msg(msg) }
-end
-
-def parallel_map(enum)
-  return [] if enum.empty?
-  threads = enum.drop(1).map { |elt| Thread.new { yield elt } } 
-  rv = [(yield enum.first)]      # Run first inline.
-  rv.concat threads.map(&:value) # Then wait for all others.
-end
 
     # Creates a Kafka consumer from our parameters.
     #
@@ -168,10 +141,9 @@ end
     # Parse a json value; warns and returns nil if not parseable (e.g. stray
     # test messages).
     def parse_json(msg)
-      return JSON.parse(msg.value)
-    rescue JSON::ParserError
-      STDERR.puts "Skipped unparseable message at #{msg.offset}"
-      return nil
+        return JSON.parse(msg.value) rescue JSON::ParserError
+        STDERR.puts "Skipped unparseable message at #{msg.offset}"
+        return nil
     end
 
     # Read from consumer using the specified read_size, until encountering
@@ -191,7 +163,7 @@ end
       end while msgs.any?
       [nil, nil]
     end
-
+    
     # Poseidon doesn't have a "seek" (will request), but @offset seems to
     # work as expected. An alternative would be to re-create the consumer, but
     # it seems wasteful. Poseidon's :earliest_offset and :latest_offset work
@@ -199,7 +171,7 @@ end
     def seek_consumer(consumer, offset)
       consumer.instance_variable_set(:@offset, offset)
     end
-
+    
     # Seek "consumer" to the last message <= "timestamp" and return that
     # offset; last offset if no parseable messages at all. Uses guided
     # binary search to reach it in 4-5 steps (and less than a second) for a
@@ -270,30 +242,66 @@ end
     # @param force_partitions [Int, ...] a set of partitions to override "keys"
     # @param force_consumer PoseidonConsumer a fixed Consumer [mock] for tests.
     def parallel_read_partitions(topic, seek_ts, keys, options,
-                                      force_partitions, force_consumer = nil)
-      consumers = force_consumer ? [force_consumer] \
-                  : create_consumers(topic, force_partitions, keys, options)
-      yield_lock = Mutex.new
-      parallel_map(consumers) do |consumer|
-        part = consumer.instance_variable_get(:@partition) # TODO: expose this
-        STDERR.puts "Seeking Kafka partition #{topic}/#{part} for time " \
-                    "#{seek_ts}"
-        binsearch_timestamp(consumer, seek_ts)
-        cont = true
-        while cont
-          messages = consumer.fetch(min_bytes: 0)
-          break if messages.empty?
-          yield_lock.synchronize do
-            STDERR.puts "Read batch of #{messages.size} messages from " \
-                        "partition #{topic}/#{part}"
-            # When we start seeing later timestamps, finish up the block just
-            # in case, but bail afterwards.
-            messages.each { |m| cont = (yield m)  && cont }
-          end
+                                        force_partitions, force_consumer = nil)
+        consumers = force_consumer ? [force_consumer] \
+                    : create_consumers(topic, force_partitions, keys, options)
+        yield_lock = Mutex.new
+        parallel_map(consumers) do |consumer|
+            part = consumer.instance_variable_get(:@partition) # TODO: expose this
+            STDERR.puts "Seeking Kafka partition #{topic}/#{part} for time " \
+                        "#{seek_ts}"
+            binsearch_timestamp(consumer, seek_ts)
+            cont = true
+            while cont
+                messages = consumer.fetch(min_bytes: 0)
+                break if messages.empty?
+                yield_lock.synchronize do
+                    STDERR.puts "Read batch of #{messages.size} messages from " \
+                              "partition #{topic}/#{part}"
+                    # When we start seeing later timestamps, finish up the block just
+                    # in case, but bail afterwards.
+                    messages.each { |m| cont = (yield m)  && cont }
+                end
+            end
         end
-      end
     end
-  end
+
+    def merge_msg(msg_kafka)
+        cluster = msg_kafka.key
+        # Skip clusters not in filter_keys
+        if @filter_keys
+            cluster = @filter_keys[cluster]
+            return true if cluster.nil?
+        end
+    
+        if @kafka_topic == 'resourcemanager'
+            msg = parse_json(msg_kafka)
+            # Ignore messages which are not QueueMetrics messages
+            return true unless msg && msg['name'] == 'QueueMetrics' && msg['Queue']
+
+            #timestamp = msg['timestamp']
+            #time = Time.at(timestamp / 1000.0)
+            # Only return certain queues
+            if @include_queues
+                qn = relevant_queue(cluster, msg['Queue'])
+                return true unless qn
+            end
+        end
+        if @path
+            File.open("#{@path}/#{cluster}_#{@timestamp}", 'a') {|f| f.write("#{msg_kafka.value}\n")}
+        else
+            puts msg_kafka.value
+        end
+        true
+    end
+
+    # MAIN METHOD. Class starts here
+    def read
+      keys = @filter_keys.nil? ? nil: @filter_keys.keys
+      parallel_read_partitions( @kafka_topic, @timestamp, keys, @options, nil, nil ) \
+              { |msg| merge_msg(msg) }
+    end
+end
 
 # Various utilities for interacting with Kafka.
 class CLI < Thor

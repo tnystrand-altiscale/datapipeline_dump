@@ -1,9 +1,14 @@
-set hiveconf:target_table=thomastest.queue_metrics;
+--set hiveconf:local_data=/home/tnystrand/semi_serious/tickets/kafka_to_hive/data/mt_tohive.csv;
 
+set hiveconf:target_table=dp_prod_1_metrics_archive.queue_metrics;
+set hiveconf:tmp_table=dp_prod_1_metrics_archive.queue_metrics_tmp;
+
+-- hive -e "select * from thomastest.queue_metrics limit 10"
 drop table if exists ${hiveconf:target_table};
--- select * from thomastest.queue_metrics limit 10
+drop table if exists ${hiveconf:tmp_table};
 
-create table ${hiveconf:target_table}
+-- Reading into temporary table since we want to save as orc
+create table ${hiveconf:tmp_table}
     (
         AvailableMB         int,
         ActiveApplications  int,
@@ -48,4 +53,114 @@ create table ${hiveconf:target_table}
     LINES TERMINATED BY '\n'
     tblproperties("skip.header.line.count"="1");
 
-load data local inpath '/home/tnystrand/semi_serious/tickets/kafka_to_hive/data/rm_tohive.csv' into table ${hiveconf:target_table}
+-- Output table
+create table if not exists ${hiveconf:target_table}
+    (
+        AvailableMB         int,
+        AllocatedMB         int,
+        PendingMB           int,
+        ReservedMB          int,
+
+        AvailableVCores     int,
+        AllocatedVCores     int,
+        PendingVCores       int,
+        ReservedVCores      int,
+
+        AllocatedContainers int,
+        PendingContainers   int,
+        ReservedContainers  int,
+
+        ActiveApplications  int,
+        AppsPending         int,
+        AppsCompleted       int,
+        AppsKilled          int,
+        AppsSubmitted       int,
+        AppsRunning         int,
+        AppsFailed          int,
+
+        AggregateRackLocalContainersAllocated   int,
+        AggregateOffSwitchContainersAllocated   int,
+        AggregateContainersReleased             int,
+        AggregateNodeLocalContainersAllocated   int,
+        AggregateContainersAllocated            int,
+
+        running_0           int,
+        running_60          int,
+        running_300         int,
+        running_1440        int,
+
+        ActiveUsers         int,
+
+        Hostname            string,
+        timestamp           double,
+        Queue               string,
+        Context             string,
+        metricName          string,
+        time                string
+
+    )
+partitioned by
+    (
+        system              String,
+        partition_date      String
+    )
+stored as orc;
+
+
+load data local inpath '${hiveconf:local_data}' into table ${hiveconf:tmp_table};
+
+set hive.exec.dynamic.partition=true;
+set hive.exec.dynamic.partition.mode=nonstrict;
+
+insert overwrite table 
+    ${hiveconf:target_table}
+partition 
+    (system, partition_date)
+select
+    AvailableMB,
+    AllocatedMB,
+    PendingMB,
+    ReservedMB,
+
+    AvailableVCores,
+    AllocatedVCores,
+    PendingVCores,
+    ReservedVCores,
+
+    AllocatedContainers,
+    PendingContainers,
+    ReservedContainers,
+
+    ActiveApplications,
+    AppsPending,
+    AppsCompleted,
+    AppsKilled,
+    AppsSubmitted,
+    AppsRunning,
+    AppsFailed,
+
+    AggregateRackLocalContainersAllocated,
+    AggregateOffSwitchContainersAllocated,
+    AggregateContainersReleased,
+    AggregateNodeLocalContainersAllocated,
+    AggregateContainersAllocated,
+
+    running_0,
+    running_60,
+    running_300,
+    running_1440,
+
+    ActiveUsers,
+
+    Hostname,
+    timestamp,
+    -- Remove the 'root.' from root.<queuename>
+    if (Queue != "root", substr(Queue, 6), Queue) as Queue,
+    Context,
+    name as metricName,
+    time,
+
+    tags as system,
+    date as partition_date
+from
+    ${hiveconf:tmp_table}
