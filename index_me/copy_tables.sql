@@ -1,0 +1,2 @@
+CREATE TABLE thomastest.burst_time_series_idx
+LIKE cluster_metrics_prod_2.burst_time_series;

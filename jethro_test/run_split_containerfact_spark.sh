@@ -10,6 +10,9 @@ $SPARK_HOME/bin/spark-submit \
     --verbose \
     --master yarn \
     --deploy-mode client \
+    --num-executors 10 \
+    --queue research \
+    --executor-memory 10G \
     --driver-class-path /etc/spark/hive-site.xml:$hive_jars_colon \
     --conf spark.eventLog.dir=${spark_event_log_dir}/$USER \
     --conf spark.yarn.dist.files=/etc/spark/hive-site.xml,$hive_jars \
