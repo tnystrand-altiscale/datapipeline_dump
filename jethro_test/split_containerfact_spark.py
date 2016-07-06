@@ -193,6 +193,7 @@ def main():
     hc.sql(create_string)
     print("Loading data into table...")
     hc.sql(load_string)
+    print("DONE")
 
 
 if __name__=="__main__":
