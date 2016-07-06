@@ -11,6 +11,8 @@
 *.crc
 *.log
 *.tde
+*.twbx
+*.class
 
 # Generic folders
 **/*/target
