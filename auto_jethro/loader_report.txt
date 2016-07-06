@@ -1,0 +1,170 @@
+Version: Jethro 1.6.4 rev 4:11144
+Loading into instance: <pipeline>
+appending into table <container_fact>
+description file
+-------------
+TABLE container_fact
+row format delimited
+        fields terminated by '\001'
+        null defined as '\N'
+OPTIONS
+ ROW REJECT LIMIT 10000
+(
+jobid,
+containerid,
+requestedtime format='unix_timestamp',
+reservedtime format='unix_timestamp',
+allocatedtime format='unix_timestamp',
+acquiredtime format='unix_timestamp',
+expiredtime format='unix_timestamp',
+runningtime format='unix_timestamp',
+killedtime format='unix_timestamp',
+releasedtime format='unix_timestamp',
+completedtime format='unix_timestamp',
+memory,
+vcores,
+queue,
+host,
+priority,
+account,
+cluster_uuid,
+principal_uuid,
+user_key,
+clustermemory,
+numberapps,
+system,
+date format='yyyy-MM-dd'
+)
+
+
+___________
+Loading from the following files:
+--- --- ---
+1:size (MB): 18580.00     /data/log_pipeline/jethro_staging/container_fact_2/000003_0
+--- --- ---
+configuration parameter: datamodel.column.dictionary.compression.max.cardinality.threshold = 25
+configuration parameter: datamodel.column.enable.multi.file.mode = 1
+configuration parameter: datamodel.column.write.compression.slicesize = 4096
+configuration parameter: datamodel.datablock.max.size = 10737418240
+configuration parameter: datamodel.datablock.rows.count = 10000000
+configuration parameter: datamodel.disable.index.string.range = 1
+configuration parameter: datamodel.global_uki.max_legal_size = 209715200
+configuration parameter: datamodel.global_uki.write.buffer.size = 20971520
+configuration parameter: datamodel.ignore.orphan.block = 1
+configuration parameter: datamodel.index.blocks.revisions.amount = 30
+configuration parameter: datamodel.index.meta.data.compressed.blocks.max.preload.size = 104857600
+configuration parameter: datamodel.partition.pruning.max.literals = 1048576
+configuration parameter: hdfs.client.socket.cache.capacity = 64
+configuration parameter: hdfs.column.files.hdfs.block.size = 0
+configuration parameter: hdfs.columns.files.wait.before.close.msec = 0
+configuration parameter: hdfs.enable.hdfshflush = 0
+configuration parameter: hdfs.enable.hdfshsync = 0
+configuration parameter: hdfs.fs.connection.configuration =
+configuration parameter: hdfs.kerberos.loader.ticket.cache.path =
+configuration parameter: hdfs.kerberos.maint.ticket.cache.path =
+configuration parameter: hdfs.kerberos.server.ticket.cache.path =
+configuration parameter: hdfs.read.buffer.size = 10485760
+configuration parameter: hdfs.use.pread = 1
+configuration parameter: hdfs.username =
+configuration parameter: hdfs.wait.after.write.msec = 0
+configuration parameter: hdfs.wait.before.close.msec = 100
+configuration parameter: hdfs.write.buffer.size = 104857600
+configuration parameter: index.merger.cycle.max.blocks = 10
+configuration parameter: index.merger.cycle.min.blocks = 10
+configuration parameter: index.merger.index.block.max.rows = 5000000000
+configuration parameter: index.merger.max.parallel.columns = 10
+configuration parameter: index.merger.memory.pct = 0.5
+configuration parameter: keys.buffer.size = 10485760
+configuration parameter: keys.cache.max.size = 10737418240
+configuration parameter: keys.cleaning.delay.time.sec = 60
+configuration parameter: keys.hash.entries.size = 10000000000
+configuration parameter: keys.hash.fill.threshold = 0.3
+configuration parameter: keys.hash.keyref.maxpreread.base.size = 262144000
+configuration parameter: keys.hash.readahead.size = 10485760
+configuration parameter: keys.hash.readahead.sort = 1
+configuration parameter: keys.hash.split.threshold = 200000000
+configuration parameter: keys.intermediate.hash-table.base.size = 5000000
+configuration parameter: keys.intermediate.hash-table.fill.threshold = 0.25
+configuration parameter: keys.merger.max.cache.size = 3221225472
+configuration parameter: loader.async.commit = 1
+configuration parameter: loader.async.index.commit = 1
+configuration parameter: loader.enable.datatype.validation = 1
+configuration parameter: loader.fields.finalize.flat.set.max.bitmaps.memory = 5368709120
+configuration parameter: loader.fields.use.flat.set.threshold = 50000
+configuration parameter: loader.index.block.commit.threads = 1
+configuration parameter: loader.max.column.block.threads = 0
+configuration parameter: loader.max.concurrent.processed.data.blocks = 3
+configuration parameter: loader.max.data.block.threads = 0
+configuration parameter: loader.max.index.block.threads = 0
+configuration parameter: loader.max.merger.threads = 3
+configuration parameter: loader.max.streamer.threads = 1
+configuration parameter: loader.max.unmerge.blocks = 10
+configuration parameter: loader.rejects.file.prefix = loader_rejects
+configuration parameter: loader.schedual.type = PRIO
+configuration parameter: loader.streamer.block.memory.pct.limit = 25
+configuration parameter: loader.streamer.block.page.size = 16777216
+configuration parameter: loader.threads.pool.size = 0
+data block size in row <10000000> after re-calculate
+block size in bytes is set to <80000000> after re-calculate
+
+ --- --- ---
+loading start at 2016-07-05 13:41:38
+keys cache initializing end at 2016-07-05 13:43:13
+streamer memory threshold is <16885993472>
+[2016-07-05 13:44:03] Row: 350000000, Partition-id: 1, Block-seq: 34, Avg throughput: 6423 rec/sec
+[2016-07-05 13:44:37] streamer read and processed 10000000 recs, throughput 119453 rec/sec
+[2016-07-05 13:46:48] streamer read and processed 20000000 recs, throughput 92985 rec/sec
+[2016-07-05 13:50:58] Row: 70000000, Partition-id: 7, Block-seq: 6, Avg throughput: 15553 rec/sec
+[2016-07-05 13:51:29] streamer read and processed 30000000 recs, throughput 60455 rec/sec
+[2016-07-05 13:56:13] Row: 60000000, Partition-id: 8, Block-seq: 5, Avg throughput: 19791 rec/sec
+[2016-07-05 13:56:36] streamer read and processed 40000000 recs, throughput 49776 rec/sec
+[2016-07-05 14:02:39] streamer read and processed 50000000 recs, throughput 42883 rec/sec
+[2016-07-05 14:03:38] Row: 80000000, Partition-id: 7, Block-seq: 7, Avg throughput: 20761 rec/sec
+[2016-07-05 14:09:02] Row: 360000000, Partition-id: 1, Block-seq: 35, Avg throughput: 22883 rec/sec
+[2016-07-05 14:09:40] streamer read and processed 60000000 recs, throughput 37793 rec/sec
+[2016-07-05 14:13:21] Row: 330000000, Partition-id: 2, Block-seq: 32, Avg throughput: 23310 rec/sec
+[2016-07-05 14:16:41] Row: 366369864, Partition-id: 1, Block-seq: 36, Avg throughput: 24163 rec/sec
+[2016-07-05 14:18:00] Row: 5733632, Partition-id: 5, Block-seq: 0, Avg throughput: 23321 rec/sec
+[2016-07-05 14:18:45] Row: 333105577, Partition-id: 2, Block-seq: 33, Avg throughput: 24279 rec/sec
+[2016-07-05 14:20:54] Row: 85396972, Partition-id: 7, Block-seq: 8, Avg throughput: 25278 rec/sec
+[2016-07-05 14:23:35] Row: 66238466, Partition-id: 8, Block-seq: 6, Avg throughput: 26183 rec/sec
+[2016-07-05 14:32:37] keys release is done
+[2016-07-05 14:32:43] merging indexes is done, loader.max.unmerge.blocks = 10
+[2016-07-05 14:33:29] global-uki is done
+[2016-07-05 14:33:29] create join index is done
+[2016-07-05 14:33:29] update range index is done
+
+ --- --- ---
+JethroLoader successfully finished
+
+Processing Summary
+******************
+Load started :                  2016-07-05 13:41:38
+Load completed :                2016-07-05 14:33:33
+Input file count:               1
+Input file size on disk:        19482560745
+Input file size uncompressed:   19482560745
+Input records:                  63433654
+Records loaded:                 63433654
+Records skipped:                0 ( 0 empty lines, 0 no matching rules, 0 header lines, 0 outside partitions boundary )
+Records rejected:               0
+Table rows - before :           828907822
+Table rows - after :            892341476
+
+Loader Partition Summary
+************************
+Partition start value:: 2016-01-01 00:00:00   Rows loaded: 16699756
+Partition start value:: 2016-04-01 00:00:00   Rows loaded: 9819378
+Partition start value:: 2016-07-01 00:00:00   Rows loaded: 144401
+Partition start value:: 2015-10-01 00:00:00   Rows loaded: 22323042
+Partition start value:: 2015-07-01 00:00:00   Rows loaded: 14447077
+
+Performance Summary
+*******************
+Total duration (sec) :          3114.336652
+        Initializing (sec) :    3.795804
+        Loading (sec) :         2516.313876
+        Finalizing (sec) :      594.795121
+Writes to TEMP (MB)  :          29547
+Rows x fields / sec :           488838
+Rows / second :                 20368

@@ -1,0 +1,35 @@
+table
+    burst_time_series 
+overwrite 
+
+row format delimited
+    fields terminated by '\001'
+    null defined as '\n'
+options
+    row reject limit 10000
+(
+    mt_timestamp format='unix_timestamp'    ,
+    matched_inventory       ,
+    desired_capacity        ,
+    requested_delta         ,
+    cluster_capacity        ,
+    locked_by               ,
+    mt_cluster              ,
+    qm_timestamp format='unix_timestamp'    ,
+    pendinggb               ,
+    allocatedgb             ,
+    availablegb             ,
+    reservedgb              ,
+    qm_cluster              ,
+    qm_queue                ,
+    memory                  ,
+    memory_in_wait          ,
+    cluster_memory_capacity ,
+    minute_start format='unix_timestamp'    ,
+    cts_queue               ,
+    fulfilled_capacity      ,
+    flow_status             ,
+    flow_duration           ,
+    partition_date format='yyyy-mm-dd'  ,
+    system
+)
