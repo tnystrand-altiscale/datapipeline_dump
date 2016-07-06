@@ -11,4 +11,5 @@ hive \
 --hiveconf tez.queue.name=research \
 -e "select * from cluster_metrics_prod_2.burst_time_series where partition_date>'2016-06-06'" > /tmp/thomas/burst_time_series.tsv
 exit
+
 scp tnystrand@dfs://tmp/thomas/burst_time_series.tsv .
