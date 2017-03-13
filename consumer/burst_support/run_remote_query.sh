@@ -11,7 +11,9 @@ hive \
 --hiveconf tez.session.client.timeout.secs=10000000 \
 --hiveconf tez.session.am.dag.submit.timeout.secs=10000000 \
 --hiveconf tez.queue.name=research \
--e "select * from cluster_metrics_prod_2.burst_time_series where partition_date between '2016-06-22' and '2016-07-05'" > /tmp/thomas/burst_time_series.tsv
+-e "select * from thomastest.burst_time_series_patchjoin" > /tmp/thomas/burst_time_series_patch.tsv
+"
 EOF
 
-python run_etl_procedure.py -f burst_time_series.tsv
+python run_etl_procedure.py -f burst_time_series_patch.tsv
+#-e "select * from cluster_metrics_prod_2.burst_time_series where partition_date between '$1' and '$2'" > /tmp/thomas/burst_time_series.tsv
