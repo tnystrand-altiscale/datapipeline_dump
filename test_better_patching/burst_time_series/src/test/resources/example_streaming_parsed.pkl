@@ -1,0 +1,4023 @@
+{
+  "tpe": "scala.collection.immutable.$colon$colon[scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]]",
+  "elems": [
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:57:34,741",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:57:41,337",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:57:44,741",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:57:51,337",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:57:54,753",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:57:59,654",
+        "INFO",
+        "SecurityLogger.org.apache.hadoop.ipc.Server",
+        "Auth successful for alti-test-01\/10076099@TEST.ALTISCALE.COM (auth:KERBEROS)"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:57:59,665",
+        "INFO",
+        "SecurityLogger.org.apache.hadoop.security.authorize.ServiceAuthorizationManager",
+        "Authorization successful for alti-test-01\/10076099@TEST.ALTISCALE.COM (auth:KERBEROS) for protocol=interface org.apache.hadoop.yarn.api.ApplicationClientProtocolPB"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:01,339",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:04,754",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:11,337",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:14,754",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:21,338",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:24,754",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:31,338",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:34,754",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:39,167",
+        "INFO",
+        "SecurityLogger.org.apache.hadoop.ipc.Server",
+        "Auth successful for alti-test-01\/10076099@TEST.ALTISCALE.COM (auth:KERBEROS)"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:39,173",
+        "INFO",
+        "SecurityLogger.org.apache.hadoop.security.authorize.ServiceAuthorizationManager",
+        "Authorization successful for alti-test-01\/10076099@TEST.ALTISCALE.COM (auth:KERBEROS) for protocol=interface org.apache.hadoop.yarn.api.ApplicationClientProtocolPB"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:39,174",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.ClientRMService: Allocated new applicationId",
+        "13"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:39,511",
+        "INFO",
+        "SecurityLogger.org.apache.hadoop.ipc.Server",
+        "Auth successful for alti-test-01\/10076099@TEST.ALTISCALE.COM (auth:KERBEROS)"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:39,526",
+        "INFO",
+        "SecurityLogger.org.apache.hadoop.security.authorize.ServiceAuthorizationManager",
+        "Authorization successful for alti-test-01\/10076099@TEST.ALTISCALE.COM (auth:KERBEROS) for protocol=interface org.apache.hadoop.yarn.api.ApplicationClientProtocolPB"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:41,340",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,069",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.ClientRMService",
+        "Application with id 13 submitted by user alti-test-01"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,130",
+        "INFO",
+        "org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl: Timeline service address",
+        "http:\/\/rm-dpci.s3s.altiscale.com:8188\/ws\/v1\/timeline\/"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,147",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.DelegationTokenRenewer: Renewed delegation-token= [Kind: TIMELINE_DELEGATION_TOKEN, Service: 10.250.16.27:8188, Ident",
+        "(owner=alti-test-01, renewer=yarn, realUser=, issueDate=1493035122025, maxDate=1493639922025, sequenceNumber=13, masterKeyId=7);exp=1493121522138; apps=[application_1492563482964_0013]], for [application_1492563482964_0013]"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,147",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.DelegationTokenRenewer: application_1492563482964_0013 found existing hdfs token Kind: HDFS_DELEGATION_TOKEN, Service: 10.250.16.26:8020, Ident",
+        "(HDFS_DELEGATION_TOKEN token 168353 for alti-test-01)"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,251",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.DelegationTokenRenewer: Renewed delegation-token= [Kind: HDFS_DELEGATION_TOKEN, Service: 10.250.16.26:8020, Ident",
+        "(HDFS_DELEGATION_TOKEN token 168353 for alti-test-01);exp=1493121522154; apps=[application_1492563482964_0013]], for [application_1492563482964_0013]"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,251",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.DelegationTokenRenewer: Renew Kind: HDFS_DELEGATION_TOKEN, Service: 10.250.16.26:8020, Ident",
+        "(HDFS_DELEGATION_TOKEN token 168353 for alti-test-01);exp=1493121522154; apps=[application_1492563482964_0013] in 86399903 ms, appId = [application_1492563482964_0013]"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,251",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.DelegationTokenRenewer: Renew Kind: TIMELINE_DELEGATION_TOKEN, Service: 10.250.16.27:8188, Ident",
+        "(owner=alti-test-01, renewer=yarn, realUser=, issueDate=1493035122025, maxDate=1493639922025, sequenceNumber=13, masterKeyId=7);exp=1493121522138; apps=[application_1492563482964_0013] in 86399887 ms, appId = [application_1492563482964_0013]"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,251",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl",
+        "Storing application with id application_1492563482964_0013"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,251",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl",
+        "application_1492563482964_0013 State change from NEW to NEW_SAVING on event=START"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,251",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.recovery.RMStateStore: Storing info for app",
+        "application_1492563482964_0013"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,251",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl",
+        "application_1492563482964_0013 State change from NEW_SAVING to SUBMITTED on event=APP_NEW_SAVED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,252",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue: Application added - appId: application_1492563482964_0013 user: alti-test-01 leaf-queue of parent: root #applications",
+        "1"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,252",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler: Accepted application application_1492563482964_0013 from user: alti-test-01, in queue",
+        "default"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,252",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl",
+        "application_1492563482964_0013 State change from SUBMITTED to ACCEPTED on event=APP_ACCEPTED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,252",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.ApplicationMasterService: Registering app attempt ",
+        "appattempt_1492563482964_0013_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,252",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl",
+        "appattempt_1492563482964_0013_000001 State change from NEW to SUBMITTED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,252",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue: Application application_1492563482964_0013 from user: alti-test-01 activated in queue",
+        "default"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,252",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue: Application added - appId: application_1492563482964_0013 user: org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue$User@44de1622, leaf-queue: default #user-pending-applications: 0 #user-active-applications: 1 #queue-pending-applications: 0 #queue-active-applications",
+        "1"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,252",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler",
+        "Added Application Attempt appattempt_1492563482964_0013_000001 to scheduler from user alti-test-01 in queue default"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,253",
+        "DEBUG",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo: update: application=application_1492563482964_0013 request={Priority: 0, Capability: <memory:1536, vCores:1>, # Containers: 1, Location: *, Relax Locality",
+        "true}"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,253",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl",
+        "appattempt_1492563482964_0013_000001 State change from SUBMITTED to SCHEDULED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,286",
+        "DEBUG",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo: allocate",
+        "applicationId=application_1492563482964_0013 container=container_1492563482964_0013_01_000001 host=203-09-01-c02.sc1.altiscale.com:41801 user=alti-test-01 resource=<memory:1536, vCores:1> type=OFF_SWITCH"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,286",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0013_01_000001 Container Transitioned from NEW to ALLOCATED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,287",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.SchedulerNode",
+        "Assigned container container_1492563482964_0013_01_000001 of capacity <memory:1536, vCores:1> on host 203-09-01-c02.sc1.altiscale.com:41801, which has 1 containers, <memory:1536, vCores:1> used and <memory:38400, vCores:43> available after allocation"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,287",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue: assignedContainer application attempt=appattempt_1492563482964_0013_000001 container=Container: [ContainerId: container_1492563482964_0013_01_000001, NodeId: 203-09-01-c02.sc1.altiscale.com:41801, NodeHttpAddress: 203-09-01-c02.sc1.altiscale.com:8042, Resource: <memory:1536, vCores:1>, Priority: 0, Token: null, ] queue=default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:0, vCores:0>, usedCapacity=0.0, absoluteUsedCapacity=0.0, numApps=1, numContainers=0 clusterResource=<memory:130048, vCores:132> type=OFF_SWITCH"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,287",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue: Re-sorting assigned queue: root.default stats: default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:1536, vCores:1>, usedCapacity=4.3146067, absoluteUsedCapacity=0.011811024, numApps=1, numContainers=1"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,287",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue",
+        "assignedContainer queue=root usedCapacity=0.011811024 absoluteUsedCapacity=0.011811024 used=<memory:1536, vCores:1> cluster=<memory:130048, vCores:132>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,288",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.NMTokenSecretManagerInRM: Sending NMToken for nodeId : 203-09-01-c02.sc1.altiscale.com:41801 for container ",
+        "container_1492563482964_0013_01_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,290",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0013_01_000001 Container Transitioned from ALLOCATED to ACQUIRED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,290",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.NMTokenSecretManagerInRM",
+        "Clear node set for appattempt_1492563482964_0013_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,290",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl: Storing attempt: AppId: application_1492563482964_0013 AttemptId: appattempt_1492563482964_0013_000001 MasterContainer: Container: [ContainerId: container_1492563482964_0013_01_000001, NodeId: 203-09-01-c02.sc1.altiscale.com:41801, NodeHttpAddress: 203-09-01-c02.sc1.altiscale.com:8042, Resource: <memory:1536, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service",
+        "10.251.253.89:41801 }, ]"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,290",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl",
+        "appattempt_1492563482964_0013_000001 State change from SCHEDULED to ALLOCATED_SAVING"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,290",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl",
+        "appattempt_1492563482964_0013_000001 State change from ALLOCATED_SAVING to ALLOCATED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,291",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.amlauncher.AMLauncher",
+        "Launching masterappattempt_1492563482964_0013_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,292",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.amlauncher.AMLauncher: Setting up container Container: [ContainerId: container_1492563482964_0013_01_000001, NodeId: 203-09-01-c02.sc1.altiscale.com:41801, NodeHttpAddress: 203-09-01-c02.sc1.altiscale.com:8042, Resource: <memory:1536, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service",
+        "10.251.253.89:41801 }, ] for AM appattempt_1492563482964_0013_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,292",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.amlauncher.AMLauncher: Command to launch container container_1492563482964_0013_01_000001 ",
+        "$JAVA_HOME\/bin\/java -Djava.io.tmpdir=$PWD\/tmp -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA -Dhadoop.root.logfile=syslog  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MRAppMaster 1><LOG_DIR>\/stdout 2><LOG_DIR>\/stderr "
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,292",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.AMRMTokenSecretManager: Create AMRMToken for ApplicationAttempt",
+        "appattempt_1492563482964_0013_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,292",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.AMRMTokenSecretManager",
+        "Creating password for appattempt_1492563482964_0013_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,312",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.amlauncher.AMLauncher: Done launching container Container: [ContainerId: container_1492563482964_0013_01_000001, NodeId: 203-09-01-c02.sc1.altiscale.com:41801, NodeHttpAddress: 203-09-01-c02.sc1.altiscale.com:8042, Resource: <memory:1536, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service",
+        "10.251.253.89:41801 }, ] for AM appattempt_1492563482964_0013_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:42,312",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl",
+        "appattempt_1492563482964_0013_000001 State change from ALLOCATED to LAUNCHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:43,289",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0013_01_000001 Container Transitioned from ACQUIRED to RUNNING"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:44,756",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:51,339",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:52,152",
+        "INFO",
+        "SecurityLogger.org.apache.hadoop.ipc.Server",
+        "Auth successful for appattempt_1492563482964_0013_000001 (auth:SIMPLE)"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:52,155",
+        "INFO",
+        "SecurityLogger.org.apache.hadoop.security.authorize.ServiceAuthorizationManager",
+        "Authorization successful for appattempt_1492563482964_0013_000001 (auth:TOKEN) for protocol=interface org.apache.hadoop.yarn.api.ApplicationMasterProtocolPB"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:52,156",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.ApplicationMasterService",
+        "AM registration appattempt_1492563482964_0013_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:52,157",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.ApplicationMasterService",
+        "Setting client token master key"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:52,157",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl",
+        "appattempt_1492563482964_0013_000001 State change from LAUNCHED to RUNNING"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:52,157",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl",
+        "application_1492563482964_0013 State change from ACCEPTED to RUNNING on event=ATTEMPT_REGISTERED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:53,207",
+        "DEBUG",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo: update: application=application_1492563482964_0013 request={Priority: 20, Capability: <memory:1536, vCores:1>, # Containers: 1, Location: *, Relax Locality",
+        "true}"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:53,252",
+        "DEBUG",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo: allocate",
+        "applicationId=application_1492563482964_0013 container=container_1492563482964_0013_01_000002 host=102-13-04.sc1.altiscale.com:53402 user=alti-test-01 resource=<memory:1536, vCores:1> type=NODE_LOCAL"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:53,252",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0013_01_000002 Container Transitioned from NEW to ALLOCATED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:53,252",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.SchedulerNode",
+        "Assigned container container_1492563482964_0013_01_000002 of capacity <memory:1536, vCores:1> on host 102-13-04.sc1.altiscale.com:53402, which has 1 containers, <memory:1536, vCores:1> used and <memory:43520, vCores:43> available after allocation"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:53,252",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue: assignedContainer application attempt=appattempt_1492563482964_0013_000001 container=Container: [ContainerId: container_1492563482964_0013_01_000002, NodeId: 102-13-04.sc1.altiscale.com:53402, NodeHttpAddress: 102-13-04.sc1.altiscale.com:8042, Resource: <memory:1536, vCores:1>, Priority: 20, Token: null, ] queue=default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:1536, vCores:1>, usedCapacity=4.3146067, absoluteUsedCapacity=0.011811024, numApps=1, numContainers=1 clusterResource=<memory:130048, vCores:132> type=NODE_LOCAL"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:53,252",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue: Re-sorting assigned queue: root.default stats: default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:3072, vCores:2>, usedCapacity=8.629213, absoluteUsedCapacity=0.023622047, numApps=1, numContainers=2"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:53,252",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue",
+        "assignedContainer queue=root usedCapacity=0.023622047 absoluteUsedCapacity=0.023622047 used=<memory:3072, vCores:2> cluster=<memory:130048, vCores:132>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:54,239",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.NMTokenSecretManagerInRM: Sending NMToken for nodeId : 102-13-04.sc1.altiscale.com:53402 for container ",
+        "container_1492563482964_0013_01_000002"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:54,240",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0013_01_000002 Container Transitioned from ALLOCATED to ACQUIRED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:54,754",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:55,254",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0013_01_000002 Container Transitioned from ACQUIRED to RUNNING"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:55,262",
+        "DEBUG",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo: update: application=application_1492563482964_0013 request={Priority: 20, Capability: <memory:1536, vCores:1>, # Containers: 0, Location: *, Relax Locality",
+        "true}"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:58:55,262",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo",
+        "checking for deactivate of application :application_1492563482964_0013"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:01,338",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:01,800",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0013_01_000002 Container Transitioned from RUNNING to COMPLETED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:01,800",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.common.fica.FiCaSchedulerApp: Completed container: container_1492563482964_0013_01_000002 in state",
+        "COMPLETED event:FINISHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:01,801",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.SchedulerNode",
+        "Released container container_1492563482964_0013_01_000002 of capacity <memory:1536, vCores:1> on host 102-13-04.sc1.altiscale.com:53402, which currently has 0 containers, <memory:0, vCores:0> used and <memory:45056, vCores:44> available, release resources=true"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:01,801",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue",
+        "default used=<memory:1536, vCores:1> numContainers=1 user=alti-test-01 user-resources=<memory:1536, vCores:1>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:01,801",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue: completedContainer container=Container: [ContainerId: container_1492563482964_0013_01_000002, NodeId: 102-13-04.sc1.altiscale.com:53402, NodeHttpAddress: 102-13-04.sc1.altiscale.com:8042, Resource: <memory:1536, vCores:1>, Priority: 20, Token: Token { kind: ContainerToken, service: 10.251.254.239:53402 }, ] queue=default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:1536, vCores:1>, usedCapacity=4.3146067, absoluteUsedCapacity=0.011811024, numApps=1, numContainers=1 cluster=<memory:130048, vCores:132>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:01,801",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue",
+        "completedContainer queue=root usedCapacity=0.011811024 absoluteUsedCapacity=0.011811024 used=<memory:1536, vCores:1> cluster=<memory:130048, vCores:132>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:01,801",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue: Re-sorting completed queue: root.default stats: default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:1536, vCores:1>, usedCapacity=4.3146067, absoluteUsedCapacity=0.011811024, numApps=1, numContainers=1"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:01,801",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler: Application attempt appattempt_1492563482964_0013_000001 released container container_1492563482964_0013_01_000002 on node: host: 102-13-04.sc1.altiscale.com:53402 #containers=0 available=<memory:45056, vCores:44> used=<memory:0, vCores:0> with event",
+        "FINISHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:03,293",
+        "DEBUG",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo: update: application=application_1492563482964_0013 request={Priority: 10, Capability: <memory:2560, vCores:1>, # Containers: 1, Location: *, Relax Locality",
+        "true}"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:03,317",
+        "DEBUG",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo: allocate",
+        "applicationId=application_1492563482964_0013 container=container_1492563482964_0013_01_000003 host=203-09-01-c02.sc1.altiscale.com:41801 user=alti-test-01 resource=<memory:2560, vCores:1> type=OFF_SWITCH"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:03,317",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0013_01_000003 Container Transitioned from NEW to ALLOCATED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:03,317",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.SchedulerNode",
+        "Assigned container container_1492563482964_0013_01_000003 of capacity <memory:2560, vCores:1> on host 203-09-01-c02.sc1.altiscale.com:41801, which has 2 containers, <memory:4096, vCores:2> used and <memory:35840, vCores:42> available after allocation"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:03,317",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue: assignedContainer application attempt=appattempt_1492563482964_0013_000001 container=Container: [ContainerId: container_1492563482964_0013_01_000003, NodeId: 203-09-01-c02.sc1.altiscale.com:41801, NodeHttpAddress: 203-09-01-c02.sc1.altiscale.com:8042, Resource: <memory:2560, vCores:1>, Priority: 10, Token: null, ] queue=default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:1536, vCores:1>, usedCapacity=4.3146067, absoluteUsedCapacity=0.011811024, numApps=1, numContainers=1 clusterResource=<memory:130048, vCores:132> type=OFF_SWITCH"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:03,317",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue: Re-sorting assigned queue: root.default stats: default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:4096, vCores:2>, usedCapacity=11.505617, absoluteUsedCapacity=0.031496063, numApps=1, numContainers=2"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:03,317",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue",
+        "assignedContainer queue=root usedCapacity=0.031496063 absoluteUsedCapacity=0.031496063 used=<memory:4096, vCores:2> cluster=<memory:130048, vCores:132>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:04,320",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.NMTokenSecretManagerInRM: Sending NMToken for nodeId : 203-09-01-c02.sc1.altiscale.com:41801 for container ",
+        "container_1492563482964_0013_01_000003"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:04,321",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0013_01_000003 Container Transitioned from ALLOCATED to ACQUIRED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:04,756",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:05,311",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0013_01_000003 Container Transitioned from ACQUIRED to RUNNING"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:05,325",
+        "DEBUG",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo: update: application=application_1492563482964_0013 request={Priority: 10, Capability: <memory:2560, vCores:1>, # Containers: 0, Location: *, Relax Locality",
+        "true}"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:05,325",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo",
+        "checking for deactivate of application :application_1492563482964_0013"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:09,378",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0013_01_000003 Container Transitioned from RUNNING to COMPLETED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:09,378",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.common.fica.FiCaSchedulerApp: Completed container: container_1492563482964_0013_01_000003 in state",
+        "COMPLETED event:FINISHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:09,378",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.SchedulerNode",
+        "Released container container_1492563482964_0013_01_000003 of capacity <memory:2560, vCores:1> on host 203-09-01-c02.sc1.altiscale.com:41801, which currently has 1 containers, <memory:1536, vCores:1> used and <memory:38400, vCores:43> available, release resources=true"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:09,378",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue",
+        "default used=<memory:1536, vCores:1> numContainers=1 user=alti-test-01 user-resources=<memory:1536, vCores:1>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:09,379",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue: completedContainer container=Container: [ContainerId: container_1492563482964_0013_01_000003, NodeId: 203-09-01-c02.sc1.altiscale.com:41801, NodeHttpAddress: 203-09-01-c02.sc1.altiscale.com:8042, Resource: <memory:2560, vCores:1>, Priority: 10, Token: Token { kind: ContainerToken, service: 10.251.253.89:41801 }, ] queue=default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:1536, vCores:1>, usedCapacity=4.3146067, absoluteUsedCapacity=0.011811024, numApps=1, numContainers=1 cluster=<memory:130048, vCores:132>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:09,380",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue",
+        "completedContainer queue=root usedCapacity=0.011811024 absoluteUsedCapacity=0.011811024 used=<memory:1536, vCores:1> cluster=<memory:130048, vCores:132>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:09,380",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue: Re-sorting completed queue: root.default stats: default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:1536, vCores:1>, usedCapacity=4.3146067, absoluteUsedCapacity=0.011811024, numApps=1, numContainers=1"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:09,380",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler: Application attempt appattempt_1492563482964_0013_000001 released container container_1492563482964_0013_01_000003 on node: host: 203-09-01-c02.sc1.altiscale.com:41801 #containers=1 available=<memory:38400, vCores:43> used=<memory:1536, vCores:1> with event",
+        "FINISHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:10,464",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl: Updating application attempt appattempt_1492563482964_0013_000001 with final state: FINISHING, and exit status",
+        "-1000"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:10,465",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl",
+        "appattempt_1492563482964_0013_000001 State change from RUNNING to FINAL_SAVING"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:10,465",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl: Updating application application_1492563482964_0013 with final state",
+        "FINISHING"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:10,465",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl",
+        "application_1492563482964_0013 State change from RUNNING to FINAL_SAVING on event=ATTEMPT_UNREGISTERED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:10,465",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl",
+        "appattempt_1492563482964_0013_000001 State change from FINAL_SAVING to FINISHING"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:10,465",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.recovery.RMStateStore: Updating info for app",
+        "application_1492563482964_0013"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:10,465",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl",
+        "application_1492563482964_0013 State change from FINAL_SAVING to FINISHING on event=APP_UPDATE_SAVED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:11,339",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:11,471",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.ApplicationMasterService",
+        "application_1492563482964_0013 unregistered successfully. "
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:14,757",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,156",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0013_01_000001 Container Transitioned from RUNNING to COMPLETED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,156",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.ApplicationMasterService: Unregistering app attempt ",
+        "appattempt_1492563482964_0013_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,156",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.common.fica.FiCaSchedulerApp: Completed container: container_1492563482964_0013_01_000001 in state",
+        "COMPLETED event:FINISHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,156",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.AMRMTokenSecretManager",
+        "Application finished, removing password for appattempt_1492563482964_0013_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,156",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl",
+        "appattempt_1492563482964_0013_000001 State change from FINISHING to FINISHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,156",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.SchedulerNode",
+        "Released container container_1492563482964_0013_01_000001 of capacity <memory:1536, vCores:1> on host 203-09-01-c02.sc1.altiscale.com:41801, which currently has 0 containers, <memory:0, vCores:0> used and <memory:39936, vCores:44> available, release resources=true"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,156",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl",
+        "application_1492563482964_0013 State change from FINISHING to FINISHED on event=ATTEMPT_FINISHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,156",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue",
+        "default used=<memory:0, vCores:0> numContainers=0 user=alti-test-01 user-resources=<memory:0, vCores:0>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,156",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue: completedContainer container=Container: [ContainerId: container_1492563482964_0013_01_000001, NodeId: 203-09-01-c02.sc1.altiscale.com:41801, NodeHttpAddress: 203-09-01-c02.sc1.altiscale.com:8042, Resource: <memory:1536, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service: 10.251.253.89:41801 }, ] queue=default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:0, vCores:0>, usedCapacity=0.0, absoluteUsedCapacity=0.0, numApps=1, numContainers=0 cluster=<memory:130048, vCores:132>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,156",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue",
+        "completedContainer queue=root usedCapacity=0.0 absoluteUsedCapacity=0.0 used=<memory:0, vCores:0> cluster=<memory:130048, vCores:132>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,156",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue: Re-sorting completed queue: root.default stats: default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:0, vCores:0>, usedCapacity=0.0, absoluteUsedCapacity=0.0, numApps=1, numContainers=0"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,156",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler: Application attempt appattempt_1492563482964_0013_000001 released container container_1492563482964_0013_01_000001 on node: host: 203-09-01-c02.sc1.altiscale.com:41801 #containers=0 available=<memory:39936, vCores:44> used=<memory:0, vCores:0> with event",
+        "FINISHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,156",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler",
+        "Application Attempt appattempt_1492563482964_0013_000001 is done. finalState=FINISHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,156",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo",
+        "Application application_1492563482964_0013 requests cleared"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,156",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue: Application removed - appId: application_1492563482964_0013 user: alti-test-01 queue: default #user-pending-applications: 0 #user-active-applications: 0 #queue-pending-applications: 0 #queue-active-applications",
+        "0"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,156",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue: Application removed - appId: application_1492563482964_0013 user: alti-test-01 leaf-queue of parent: root #applications",
+        "0"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,157",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.RMAppManager$ApplicationSummary",
+        "appId=application_1492563482964_0013,name=select distinct name\\, date from cluster_dim(Stage-1),user=alti-test-01,queue=default,state=FINISHED,trackingUrl=http:\/\/rm-dpci.s3s.altiscale.com:8088\/proxy\/application_1492563482964_0013\/,appMasterHost=203-09-01-c02.sc1.altiscale.com,startTime=1493035122068,finishTime=1493035150465,finalStatus=SUCCEEDED,memorySeconds=82205,vcoreSeconds=48,preemptedAMContainers=0,preemptedNonAMContainers=0,preemptedResources=<memory:0\\, vCores:0>,applicationType=MAPREDUCE"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,158",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.amlauncher.AMLauncher",
+        "Cleaning master appattempt_1492563482964_0013_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:21,339",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:24,757",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:31,339",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:34,763",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:41,339",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:44,763",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:51,339",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:54,762",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:59,971",
+        "INFO",
+        "SecurityLogger.org.apache.hadoop.ipc.Server",
+        "Auth successful for alti-test-01\/10076099@TEST.ALTISCALE.COM (auth:KERBEROS)"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:59,985",
+        "INFO",
+        "SecurityLogger.org.apache.hadoop.security.authorize.ServiceAuthorizationManager",
+        "Authorization successful for alti-test-01\/10076099@TEST.ALTISCALE.COM (auth:KERBEROS) for protocol=interface org.apache.hadoop.yarn.api.ApplicationClientProtocolPB"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:01,339",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:04,762",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:11,340",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:14,764",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:21,340",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:23,422",
+        "INFO",
+        "SecurityLogger.org.apache.hadoop.ipc.Server",
+        "Auth successful for alti-test-01\/10076099@TEST.ALTISCALE.COM (auth:KERBEROS)"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:23,435",
+        "INFO",
+        "SecurityLogger.org.apache.hadoop.security.authorize.ServiceAuthorizationManager",
+        "Authorization successful for alti-test-01\/10076099@TEST.ALTISCALE.COM (auth:KERBEROS) for protocol=interface org.apache.hadoop.yarn.api.ApplicationClientProtocolPB"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:23,435",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.ClientRMService: Allocated new applicationId",
+        "14"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:24,764",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,176",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.ClientRMService",
+        "Application with id 14 submitted by user alti-test-01"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,226",
+        "INFO",
+        "org.apache.hadoop.yarn.client.api.impl.TimelineClientImpl: Timeline service address",
+        "http:\/\/rm-dpci.s3s.altiscale.com:8188\/ws\/v1\/timeline\/"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,241",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.DelegationTokenRenewer: Renewed delegation-token= [Kind: TIMELINE_DELEGATION_TOKEN, Service: 10.250.16.27:8188, Ident",
+        "(owner=alti-test-01, renewer=yarn, realUser=, issueDate=1493035226163, maxDate=1493640026163, sequenceNumber=14, masterKeyId=7);exp=1493121626236; apps=[application_1492563482964_0014]], for [application_1492563482964_0014]"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,241",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.DelegationTokenRenewer: application_1492563482964_0014 found existing hdfs token Kind: HDFS_DELEGATION_TOKEN, Service: 10.250.16.26:8020, Ident",
+        "(HDFS_DELEGATION_TOKEN token 168355 for alti-test-01)"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,343",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.DelegationTokenRenewer: Renewed delegation-token= [Kind: HDFS_DELEGATION_TOKEN, Service: 10.250.16.26:8020, Ident",
+        "(HDFS_DELEGATION_TOKEN token 168355 for alti-test-01);exp=1493121626247; apps=[application_1492563482964_0014]], for [application_1492563482964_0014]"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,344",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.DelegationTokenRenewer: Renew Kind: HDFS_DELEGATION_TOKEN, Service: 10.250.16.26:8020, Ident",
+        "(HDFS_DELEGATION_TOKEN token 168355 for alti-test-01);exp=1493121626247; apps=[application_1492563482964_0014] in 86399904 ms, appId = [application_1492563482964_0014]"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,344",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.DelegationTokenRenewer: Renew Kind: TIMELINE_DELEGATION_TOKEN, Service: 10.250.16.27:8188, Ident",
+        "(owner=alti-test-01, renewer=yarn, realUser=, issueDate=1493035226163, maxDate=1493640026163, sequenceNumber=14, masterKeyId=7);exp=1493121626236; apps=[application_1492563482964_0014] in 86399892 ms, appId = [application_1492563482964_0014]"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,344",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl",
+        "Storing application with id application_1492563482964_0014"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,344",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl",
+        "application_1492563482964_0014 State change from NEW to NEW_SAVING on event=START"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,344",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.recovery.RMStateStore: Storing info for app",
+        "application_1492563482964_0014"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,344",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl",
+        "application_1492563482964_0014 State change from NEW_SAVING to SUBMITTED on event=APP_NEW_SAVED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,344",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue: Application added - appId: application_1492563482964_0014 user: alti-test-01 leaf-queue of parent: root #applications",
+        "1"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,344",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler: Accepted application application_1492563482964_0014 from user: alti-test-01, in queue",
+        "default"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,345",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl",
+        "application_1492563482964_0014 State change from SUBMITTED to ACCEPTED on event=APP_ACCEPTED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,345",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.ApplicationMasterService: Registering app attempt ",
+        "appattempt_1492563482964_0014_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,345",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl",
+        "appattempt_1492563482964_0014_000001 State change from NEW to SUBMITTED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,345",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue: Application application_1492563482964_0014 from user: alti-test-01 activated in queue",
+        "default"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,345",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue: Application added - appId: application_1492563482964_0014 user: org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue$User@5e54e3c5, leaf-queue: default #user-pending-applications: 0 #user-active-applications: 1 #queue-pending-applications: 0 #queue-active-applications",
+        "1"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,345",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler",
+        "Added Application Attempt appattempt_1492563482964_0014_000001 to scheduler from user alti-test-01 in queue default"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,345",
+        "DEBUG",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo: update: application=application_1492563482964_0014 request={Priority: 0, Capability: <memory:1536, vCores:1>, # Containers: 1, Location: *, Relax Locality",
+        "true}"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,346",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl",
+        "appattempt_1492563482964_0014_000001 State change from SUBMITTED to SCHEDULED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,545",
+        "DEBUG",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo: allocate",
+        "applicationId=application_1492563482964_0014 container=container_1492563482964_0014_01_000001 host=101-17-04.sc1.altiscale.com:60080 user=alti-test-01 resource=<memory:1536, vCores:1> type=OFF_SWITCH"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,545",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0014_01_000001 Container Transitioned from NEW to ALLOCATED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,545",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.SchedulerNode",
+        "Assigned container container_1492563482964_0014_01_000001 of capacity <memory:1536, vCores:1> on host 101-17-04.sc1.altiscale.com:60080, which has 1 containers, <memory:1536, vCores:1> used and <memory:43520, vCores:43> available after allocation"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,545",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue: assignedContainer application attempt=appattempt_1492563482964_0014_000001 container=Container: [ContainerId: container_1492563482964_0014_01_000001, NodeId: 101-17-04.sc1.altiscale.com:60080, NodeHttpAddress: 101-17-04.sc1.altiscale.com:8042, Resource: <memory:1536, vCores:1>, Priority: 0, Token: null, ] queue=default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:0, vCores:0>, usedCapacity=0.0, absoluteUsedCapacity=0.0, numApps=1, numContainers=0 clusterResource=<memory:130048, vCores:132> type=OFF_SWITCH"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,545",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue: Re-sorting assigned queue: root.default stats: default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:1536, vCores:1>, usedCapacity=4.3146067, absoluteUsedCapacity=0.011811024, numApps=1, numContainers=1"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,545",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue",
+        "assignedContainer queue=root usedCapacity=0.011811024 absoluteUsedCapacity=0.011811024 used=<memory:1536, vCores:1> cluster=<memory:130048, vCores:132>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,547",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.NMTokenSecretManagerInRM: Sending NMToken for nodeId : 101-17-04.sc1.altiscale.com:60080 for container ",
+        "container_1492563482964_0014_01_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,549",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0014_01_000001 Container Transitioned from ALLOCATED to ACQUIRED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,549",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.NMTokenSecretManagerInRM",
+        "Clear node set for appattempt_1492563482964_0014_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,549",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl: Storing attempt: AppId: application_1492563482964_0014 AttemptId: appattempt_1492563482964_0014_000001 MasterContainer: Container: [ContainerId: container_1492563482964_0014_01_000001, NodeId: 101-17-04.sc1.altiscale.com:60080, NodeHttpAddress: 101-17-04.sc1.altiscale.com:8042, Resource: <memory:1536, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service",
+        "10.251.255.171:60080 }, ]"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,549",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl",
+        "appattempt_1492563482964_0014_000001 State change from SCHEDULED to ALLOCATED_SAVING"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,549",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl",
+        "appattempt_1492563482964_0014_000001 State change from ALLOCATED_SAVING to ALLOCATED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,550",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.amlauncher.AMLauncher",
+        "Launching masterappattempt_1492563482964_0014_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,552",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.amlauncher.AMLauncher: Setting up container Container: [ContainerId: container_1492563482964_0014_01_000001, NodeId: 101-17-04.sc1.altiscale.com:60080, NodeHttpAddress: 101-17-04.sc1.altiscale.com:8042, Resource: <memory:1536, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service",
+        "10.251.255.171:60080 }, ] for AM appattempt_1492563482964_0014_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,552",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.amlauncher.AMLauncher: Command to launch container container_1492563482964_0014_01_000001 ",
+        "$JAVA_HOME\/bin\/java -Djava.io.tmpdir=$PWD\/tmp -Dlog4j.configuration=container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dyarn.app.container.log.filesize=0 -Dhadoop.root.logger=INFO,CLA -Dhadoop.root.logfile=syslog  -Xmx1024m org.apache.hadoop.mapreduce.v2.app.MRAppMaster 1><LOG_DIR>\/stdout 2><LOG_DIR>\/stderr "
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,552",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.AMRMTokenSecretManager: Create AMRMToken for ApplicationAttempt",
+        "appattempt_1492563482964_0014_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,552",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.AMRMTokenSecretManager",
+        "Creating password for appattempt_1492563482964_0014_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,569",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.amlauncher.AMLauncher: Done launching container Container: [ContainerId: container_1492563482964_0014_01_000001, NodeId: 101-17-04.sc1.altiscale.com:60080, NodeHttpAddress: 101-17-04.sc1.altiscale.com:8042, Resource: <memory:1536, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service",
+        "10.251.255.171:60080 }, ] for AM appattempt_1492563482964_0014_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:26,569",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl",
+        "appattempt_1492563482964_0014_000001 State change from ALLOCATED to LAUNCHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:27,547",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0014_01_000001 Container Transitioned from ACQUIRED to RUNNING"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:31,340",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:34,765",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:35,107",
+        "INFO",
+        "SecurityLogger.org.apache.hadoop.ipc.Server",
+        "Auth successful for appattempt_1492563482964_0014_000001 (auth:SIMPLE)"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:35,110",
+        "INFO",
+        "SecurityLogger.org.apache.hadoop.security.authorize.ServiceAuthorizationManager",
+        "Authorization successful for appattempt_1492563482964_0014_000001 (auth:TOKEN) for protocol=interface org.apache.hadoop.yarn.api.ApplicationMasterProtocolPB"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:35,113",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.ApplicationMasterService",
+        "AM registration appattempt_1492563482964_0014_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:35,113",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.ApplicationMasterService",
+        "Setting client token master key"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:35,113",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl",
+        "appattempt_1492563482964_0014_000001 State change from LAUNCHED to RUNNING"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:35,113",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl",
+        "application_1492563482964_0014 State change from ACCEPTED to RUNNING on event=ATTEMPT_REGISTERED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:36,172",
+        "DEBUG",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo: update: application=application_1492563482964_0014 request={Priority: 20, Capability: <memory:1536, vCores:1>, # Containers: 1, Location: *, Relax Locality",
+        "true}"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:36,241",
+        "DEBUG",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo: allocate",
+        "applicationId=application_1492563482964_0014 container=container_1492563482964_0014_01_000002 host=203-09-01-c02.sc1.altiscale.com:41801 user=alti-test-01 resource=<memory:1536, vCores:1> type=RACK_LOCAL"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:36,241",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0014_01_000002 Container Transitioned from NEW to ALLOCATED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:36,241",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.SchedulerNode",
+        "Assigned container container_1492563482964_0014_01_000002 of capacity <memory:1536, vCores:1> on host 203-09-01-c02.sc1.altiscale.com:41801, which has 1 containers, <memory:1536, vCores:1> used and <memory:38400, vCores:43> available after allocation"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:36,241",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue: assignedContainer application attempt=appattempt_1492563482964_0014_000001 container=Container: [ContainerId: container_1492563482964_0014_01_000002, NodeId: 203-09-01-c02.sc1.altiscale.com:41801, NodeHttpAddress: 203-09-01-c02.sc1.altiscale.com:8042, Resource: <memory:1536, vCores:1>, Priority: 20, Token: null, ] queue=default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:1536, vCores:1>, usedCapacity=4.3146067, absoluteUsedCapacity=0.011811024, numApps=1, numContainers=1 clusterResource=<memory:130048, vCores:132> type=RACK_LOCAL"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:36,241",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue: Re-sorting assigned queue: root.default stats: default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:3072, vCores:2>, usedCapacity=8.629213, absoluteUsedCapacity=0.023622047, numApps=1, numContainers=2"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:36,241",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue",
+        "assignedContainer queue=root usedCapacity=0.023622047 absoluteUsedCapacity=0.023622047 used=<memory:3072, vCores:2> cluster=<memory:130048, vCores:132>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:37,208",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.NMTokenSecretManagerInRM: Sending NMToken for nodeId : 203-09-01-c02.sc1.altiscale.com:41801 for container ",
+        "container_1492563482964_0014_01_000002"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:37,209",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0014_01_000002 Container Transitioned from ALLOCATED to ACQUIRED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:37,661",
+        "INFO",
+        "SecurityLogger.org.apache.hadoop.ipc.Server",
+        "Auth successful for alti-test-01\/10076099@TEST.ALTISCALE.COM (auth:KERBEROS)"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:37,684",
+        "INFO",
+        "SecurityLogger.org.apache.hadoop.security.authorize.ServiceAuthorizationManager",
+        "Authorization successful for alti-test-01\/10076099@TEST.ALTISCALE.COM (auth:KERBEROS) for protocol=interface org.apache.hadoop.yarn.api.ApplicationClientProtocolPB"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:38,232",
+        "DEBUG",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo: update: application=application_1492563482964_0014 request={Priority: 20, Capability: <memory:1536, vCores:1>, # Containers: 0, Location: *, Relax Locality",
+        "true}"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:38,232",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo",
+        "checking for deactivate of application :application_1492563482964_0014"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:38,244",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0014_01_000002 Container Transitioned from ACQUIRED to RUNNING"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:41,342",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:44,765",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:45,823",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0014_01_000002 Container Transitioned from RUNNING to COMPLETED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:45,823",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.common.fica.FiCaSchedulerApp: Completed container: container_1492563482964_0014_01_000002 in state",
+        "COMPLETED event:FINISHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:45,824",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.SchedulerNode",
+        "Released container container_1492563482964_0014_01_000002 of capacity <memory:1536, vCores:1> on host 203-09-01-c02.sc1.altiscale.com:41801, which currently has 0 containers, <memory:0, vCores:0> used and <memory:39936, vCores:44> available, release resources=true"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:45,824",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue",
+        "default used=<memory:1536, vCores:1> numContainers=1 user=alti-test-01 user-resources=<memory:1536, vCores:1>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:45,824",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue: completedContainer container=Container: [ContainerId: container_1492563482964_0014_01_000002, NodeId: 203-09-01-c02.sc1.altiscale.com:41801, NodeHttpAddress: 203-09-01-c02.sc1.altiscale.com:8042, Resource: <memory:1536, vCores:1>, Priority: 20, Token: Token { kind: ContainerToken, service: 10.251.253.89:41801 }, ] queue=default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:1536, vCores:1>, usedCapacity=4.3146067, absoluteUsedCapacity=0.011811024, numApps=1, numContainers=1 cluster=<memory:130048, vCores:132>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:45,824",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue",
+        "completedContainer queue=root usedCapacity=0.011811024 absoluteUsedCapacity=0.011811024 used=<memory:1536, vCores:1> cluster=<memory:130048, vCores:132>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:45,825",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue: Re-sorting completed queue: root.default stats: default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:1536, vCores:1>, usedCapacity=4.3146067, absoluteUsedCapacity=0.011811024, numApps=1, numContainers=1"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:45,825",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler: Application attempt appattempt_1492563482964_0014_000001 released container container_1492563482964_0014_01_000002 on node: host: 203-09-01-c02.sc1.altiscale.com:41801 #containers=0 available=<memory:39936, vCores:44> used=<memory:0, vCores:0> with event",
+        "FINISHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:47,268",
+        "DEBUG",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo: update: application=application_1492563482964_0014 request={Priority: 10, Capability: <memory:2560, vCores:1>, # Containers: 1, Location: *, Relax Locality",
+        "true}"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:47,568",
+        "DEBUG",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo: allocate",
+        "applicationId=application_1492563482964_0014 container=container_1492563482964_0014_01_000003 host=101-17-04.sc1.altiscale.com:60080 user=alti-test-01 resource=<memory:2560, vCores:1> type=OFF_SWITCH"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:47,568",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0014_01_000003 Container Transitioned from NEW to ALLOCATED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:47,568",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.SchedulerNode",
+        "Assigned container container_1492563482964_0014_01_000003 of capacity <memory:2560, vCores:1> on host 101-17-04.sc1.altiscale.com:60080, which has 2 containers, <memory:4096, vCores:2> used and <memory:40960, vCores:42> available after allocation"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:47,568",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue: assignedContainer application attempt=appattempt_1492563482964_0014_000001 container=Container: [ContainerId: container_1492563482964_0014_01_000003, NodeId: 101-17-04.sc1.altiscale.com:60080, NodeHttpAddress: 101-17-04.sc1.altiscale.com:8042, Resource: <memory:2560, vCores:1>, Priority: 10, Token: null, ] queue=default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:1536, vCores:1>, usedCapacity=4.3146067, absoluteUsedCapacity=0.011811024, numApps=1, numContainers=1 clusterResource=<memory:130048, vCores:132> type=OFF_SWITCH"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:47,568",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue: Re-sorting assigned queue: root.default stats: default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:4096, vCores:2>, usedCapacity=11.505617, absoluteUsedCapacity=0.031496063, numApps=1, numContainers=2"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:47,569",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue",
+        "assignedContainer queue=root usedCapacity=0.031496063 absoluteUsedCapacity=0.031496063 used=<memory:4096, vCores:2> cluster=<memory:130048, vCores:132>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:48,273",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.NMTokenSecretManagerInRM: Sending NMToken for nodeId : 101-17-04.sc1.altiscale.com:60080 for container ",
+        "container_1492563482964_0014_01_000003"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:48,274",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0014_01_000003 Container Transitioned from ALLOCATED to ACQUIRED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:48,569",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0014_01_000003 Container Transitioned from ACQUIRED to RUNNING"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:49,279",
+        "DEBUG",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo: update: application=application_1492563482964_0014 request={Priority: 10, Capability: <memory:2560, vCores:1>, # Containers: 0, Location: *, Relax Locality",
+        "true}"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:49,279",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo",
+        "checking for deactivate of application :application_1492563482964_0014"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:51,342",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:53,090",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0014_01_000003 Container Transitioned from RUNNING to COMPLETED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:53,091",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.common.fica.FiCaSchedulerApp: Completed container: container_1492563482964_0014_01_000003 in state",
+        "COMPLETED event:FINISHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:53,091",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.SchedulerNode",
+        "Released container container_1492563482964_0014_01_000003 of capacity <memory:2560, vCores:1> on host 101-17-04.sc1.altiscale.com:60080, which currently has 1 containers, <memory:1536, vCores:1> used and <memory:43520, vCores:43> available, release resources=true"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:53,091",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue",
+        "default used=<memory:1536, vCores:1> numContainers=1 user=alti-test-01 user-resources=<memory:1536, vCores:1>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:53,091",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue: completedContainer container=Container: [ContainerId: container_1492563482964_0014_01_000003, NodeId: 101-17-04.sc1.altiscale.com:60080, NodeHttpAddress: 101-17-04.sc1.altiscale.com:8042, Resource: <memory:2560, vCores:1>, Priority: 10, Token: Token { kind: ContainerToken, service: 10.251.255.171:60080 }, ] queue=default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:1536, vCores:1>, usedCapacity=4.3146067, absoluteUsedCapacity=0.011811024, numApps=1, numContainers=1 cluster=<memory:130048, vCores:132>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:53,091",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue",
+        "completedContainer queue=root usedCapacity=0.011811024 absoluteUsedCapacity=0.011811024 used=<memory:1536, vCores:1> cluster=<memory:130048, vCores:132>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:53,091",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue: Re-sorting completed queue: root.default stats: default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:1536, vCores:1>, usedCapacity=4.3146067, absoluteUsedCapacity=0.011811024, numApps=1, numContainers=1"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:53,092",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler: Application attempt appattempt_1492563482964_0014_000001 released container container_1492563482964_0014_01_000003 on node: host: 101-17-04.sc1.altiscale.com:60080 #containers=1 available=<memory:43520, vCores:43> used=<memory:1536, vCores:1> with event",
+        "FINISHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:54,182",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl: Updating application attempt appattempt_1492563482964_0014_000001 with final state: FINISHING, and exit status",
+        "-1000"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:54,183",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl",
+        "appattempt_1492563482964_0014_000001 State change from RUNNING to FINAL_SAVING"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:54,183",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl: Updating application application_1492563482964_0014 with final state",
+        "FINISHING"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:54,183",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl",
+        "application_1492563482964_0014 State change from RUNNING to FINAL_SAVING on event=ATTEMPT_UNREGISTERED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:54,183",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl",
+        "appattempt_1492563482964_0014_000001 State change from FINAL_SAVING to FINISHING"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:54,183",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.recovery.RMStateStore: Updating info for app",
+        "application_1492563482964_0014"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:54,183",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl",
+        "application_1492563482964_0014 State change from FINAL_SAVING to FINISHING on event=APP_UPDATE_SAVED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:54,765",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:00:55,187",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.ApplicationMasterService",
+        "application_1492563482964_0014 unregistered successfully. "
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,872",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmcontainer.RMContainerImpl",
+        "container_1492563482964_0014_01_000001 Container Transitioned from RUNNING to COMPLETED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,872",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.ApplicationMasterService: Unregistering app attempt ",
+        "appattempt_1492563482964_0014_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,873",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.security.AMRMTokenSecretManager",
+        "Application finished, removing password for appattempt_1492563482964_0014_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,872",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.common.fica.FiCaSchedulerApp: Completed container: container_1492563482964_0014_01_000001 in state",
+        "COMPLETED event:FINISHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,873",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.attempt.RMAppAttemptImpl",
+        "appattempt_1492563482964_0014_000001 State change from FINISHING to FINISHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,873",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.SchedulerNode",
+        "Released container container_1492563482964_0014_01_000001 of capacity <memory:1536, vCores:1> on host 101-17-04.sc1.altiscale.com:60080, which currently has 0 containers, <memory:0, vCores:0> used and <memory:45056, vCores:44> available, release resources=true"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,873",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.rmapp.RMAppImpl",
+        "application_1492563482964_0014 State change from FINISHING to FINISHED on event=ATTEMPT_FINISHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,873",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue",
+        "default used=<memory:0, vCores:0> numContainers=0 user=alti-test-01 user-resources=<memory:0, vCores:0>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,873",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue: completedContainer container=Container: [ContainerId: container_1492563482964_0014_01_000001, NodeId: 101-17-04.sc1.altiscale.com:60080, NodeHttpAddress: 101-17-04.sc1.altiscale.com:8042, Resource: <memory:1536, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service: 10.251.255.171:60080 }, ] queue=default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:0, vCores:0>, usedCapacity=0.0, absoluteUsedCapacity=0.0, numApps=1, numContainers=0 cluster=<memory:130048, vCores:132>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,873",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue",
+        "completedContainer queue=root usedCapacity=0.0 absoluteUsedCapacity=0.0 used=<memory:0, vCores:0> cluster=<memory:130048, vCores:132>"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,873",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue: Re-sorting completed queue: root.default stats: default",
+        "capacity=0.0027416607, absoluteCapacity=0.0027416607, usedResources=<memory:0, vCores:0>, usedCapacity=0.0, absoluteUsedCapacity=0.0, numApps=1, numContainers=0"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,873",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler: Application attempt appattempt_1492563482964_0014_000001 released container container_1492563482964_0014_01_000001 on node: host: 101-17-04.sc1.altiscale.com:60080 #containers=0 available=<memory:45056, vCores:44> used=<memory:0, vCores:0> with event",
+        "FINISHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,873",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler",
+        "Application Attempt appattempt_1492563482964_0014_000001 is done. finalState=FINISHED"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,873",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.AppSchedulingInfo",
+        "Application application_1492563482964_0014 requests cleared"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,873",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue: Application removed - appId: application_1492563482964_0014 user: alti-test-01 queue: default #user-pending-applications: 0 #user-active-applications: 0 #queue-pending-applications: 0 #queue-active-applications",
+        "0"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,873",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.ParentQueue: Application removed - appId: application_1492563482964_0014 user: alti-test-01 leaf-queue of parent: root #applications",
+        "0"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,873",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.RMAppManager$ApplicationSummary",
+        "appId=application_1492563482964_0014,name=select distinct name\\, date from cluster_dim(Stage-1),user=alti-test-01,queue=default,state=FINISHED,trackingUrl=http:\/\/rm-dpci.s3s.altiscale.com:8088\/proxy\/application_1492563482964_0014\/,appMasterHost=101-17-04.sc1.altiscale.com,startTime=1493035226175,finishTime=1493035254183,finalStatus=SUCCEEDED,memorySeconds=81579,vcoreSeconds=48,preemptedAMContainers=0,preemptedNonAMContainers=0,preemptedResources=<memory:0\\, vCores:0>,applicationType=MAPREDUCE"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,874",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.amlauncher.AMLauncher",
+        "Cleaning master appattempt_1492563482964_0014_000001"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:01,343",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:04,765",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:11,343",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:14,766",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:21,343",
+        "INFO",
+        "com.altiscale.hadoop.security.AltiscaleAuthenticationHandler",
+        "Request from 10.250.16.27 has no token, redirecting to https:\/\/portal-staging.test.altiscale.com\/sso\/authorize?alti_acc=10076099&alti_clu=dpci&redirect_uri=http%3A%2F%2Frm-dpci.s3s.altiscale.com%3A8088%2Fjmx"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-27 14:46:22,518",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.RMAppManager$ApplicationSummary",
+        "appId=application_1492563482964_0024,name=select count(*) from ...line_dev.cluster_dim(Stage-1),user=alti-test-01,queue=default,state=FINISHED,trackingUrl=http:\/\/rm-dpci.s3s.altiscale.com:8088\/proxy\/application_1492563482964_0024\/,appMasterHost=203-09-01-c02.sc1.altiscale.com,startTime=1493304344446,finishTime=1493304375842,finalStatus=SUCCEEDED,memorySeconds=95465,vcoreSeconds=54,preemptedAMContainers=0,preemptedNonAMContainers=0,preemptedResources=<memory:0\\, vCores:0>,applicationType=MAPREDUCE"
+      ]
+    }
+  }
+  ]
+}

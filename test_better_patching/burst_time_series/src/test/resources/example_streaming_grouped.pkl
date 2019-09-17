@@ -1,0 +1,26 @@
+{
+  "tpe": "scala.collection.immutable.$colon$colon[scala.Tuple2[java.lang.String,scala.collection.immutable.List[scala.Any]]]",
+  "elems": [
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[scala.Any]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[scala.Any]",
+      "elems": [
+        {
+        "tpe": "java.lang.String",
+        "value": "dpci"
+      },
+        {
+        "tpe": "scala.Double",
+        "value": 1.493035150465E12
+      },
+        {
+        "tpe": "scala.Double",
+        "value": 0.02880544444444444
+      }
+      ]
+    }
+  }
+  ]
+}

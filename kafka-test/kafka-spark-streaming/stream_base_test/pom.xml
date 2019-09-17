@@ -1,0 +1,192 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.sap.altiscale.datapipeline.stream_test</groupId>
+    <artifactId>stream_test</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>stream_test</name>
+
+    <!-- Version settings -->
+    <properties>
+      <maven.compiler.source>1.6</maven.compiler.source>
+      <maven.compiler.target>1.6</maven.compiler.target>
+      <encoding>UTF-8</encoding>
+      <scala.version>2.10.5</scala.version>
+      <spark.version>2.0.2</spark.version>
+      <scala.compat.version>2.10</scala.compat.version>
+      <spark.compat.version>2.10</spark.compat.version>
+    </properties>
+
+    <dependencies>
+        <!-- Spark core -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_${spark.compat.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <!-- Spark streaming -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming_${spark.compat.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <!-- Spark streaming and kafka -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming-kafka-0-8_${spark.compat.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <!-- Scala -->
+        <dependency>
+          <groupId>org.scala-lang</groupId>
+          <artifactId>scala-library</artifactId>
+          <version>${scala.version}</version>
+        </dependency>
+
+        <!-- Unit testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- Scala testing -->
+        <dependency>
+            <groupId>org.specs2</groupId>
+            <artifactId>specs2-core_${scala.compat.version}</artifactId>
+            <version>2.4.16</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.scalatest</groupId>
+          <artifactId>scalatest_${scala.compat.version}</artifactId>
+          <version>2.2.4</version>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.specs2</groupId>
+            <artifactId>specs2-junit_${scala.compat.version}</artifactId>
+            <version>2.4.16</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.22</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/main/scala</sourceDirectory>
+        <testSourceDirectory>src/test/scala</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                  <execution>
+                    <goals>
+                      <goal>compile</goal>
+                      <goal>testCompile</goal>
+                    </goals>
+                    <configuration>
+                      <args>
+                        <arg>-dependencyfile</arg>
+                        <arg>${project.build.directory}/.scala_dependencies</arg>
+                      </args>
+                    </configuration>
+                  </execution>
+                </executions>
+            </plugin>
+            <!--
+            IF bundling to one jar we need to merge reference.conf files for Akka in scala to work!
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.sap.altiscale.datapipeline.stream_test.StreamTest</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+             <groupId>org.apache.maven.plugins</groupId>
+             <artifactId>maven-shade-plugin</artifactId>
+             <version>1.5</version>
+             <executions>
+              <execution>
+               <phase>package</phase>
+               <goals>
+                <goal>shade</goal>
+               </goals>
+               <configuration>
+                <shadedArtifactAttached>true</shadedArtifactAttached>
+                <shadedClassifierName>allinone</shadedClassifierName>
+                <artifactSet>
+                 <includes>
+                  <include>*:*</include>
+                 </includes>
+                </artifactSet>
+                <transformers>
+                  <transformer
+                   implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                   <resource>reference.conf</resource>
+                  </transformer>
+                  <transformer
+                   implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                   <manifestEntries>
+                    <Main-Class>akka.Main</Main-Class>
+                   </manifestEntries>
+                  </transformer>
+                </transformers>
+               </configuration>
+              </execution>
+             </executions>
+            </plugin>
+                -->
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.18.1</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

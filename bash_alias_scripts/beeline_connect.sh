@@ -6,5 +6,6 @@ beeline \
     --hiveconf mapreduce.reduce.memory.mb=20000 \
     --hiveconf mapreduce.reduce.java.opts=-Xmx18000m \
     --showHeader true \
-    --outputformat=csv2 \
+    --outputformat=tsv2 \
     "$1" "$2"
+    

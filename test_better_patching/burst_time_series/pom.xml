@@ -1,0 +1,190 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.sap.altiscale.datapipeline</groupId>
+    <artifactId>applicationsummary_slothours</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0.0</version>
+    <name>applicationsummary_slothours</name>
+
+    <!-- project coordinates -->
+    <groupId>com.sap.altiscale.datapipeline</groupId>
+    <artifactId>all_stream_apps</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+
+    <!-- All modules using this pom as parent -->
+    <modules>
+        <module>stream_test</module>
+        <module>applicationsummary_slothours</module>
+    </modules>
+
+    <!-- Version settings -->
+    <properties>
+      <maven.compiler.source>1.6</maven.compiler.source>
+      <maven.compiler.target>1.6</maven.compiler.target>
+      <encoding>UTF-8</encoding>
+      <scala.version>2.11.8</scala.version>
+      <spark.version>2.0.2</spark.version>
+      <scala.compat.version>2.11</scala.compat.version>
+      <spark.compat.version>2.11</spark.compat.version>
+    </properties>
+
+    <dependencies>
+        <!-- Spark core -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_${spark.compat.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+        <!-- Scala -->
+        <dependency>
+          <groupId>org.scala-lang</groupId>
+          <artifactId>scala-library</artifactId>
+          <version>${scala.version}</version>
+        </dependency>
+
+        <!-- Unit testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- Scala testing -->
+        <dependency>
+            <groupId>org.specs2</groupId>
+            <artifactId>specs2-core_${scala.compat.version}</artifactId>
+            <version>3.8.9</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.scalatest</groupId>
+          <artifactId>scalatest_${scala.compat.version}</artifactId>
+          <version>3.0.3</version>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.specs2</groupId>
+            <artifactId>specs2-junit_${scala.compat.version}</artifactId>
+            <version>3.8.9</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.8.0-alpha2</version>
+        </dependency>
+
+        <!-- Input args parsing, scopt issues with 2.11.... -->
+        <dependency>
+            <groupId>com.github.scopt</groupId>
+            <artifactId>scopt_2.10</artifactId>
+            <version>3.5.0</version>
+        </dependency>
+
+        <!-- Scala pickleing during testing -->
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-pickling_${scala.compat.version}</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src/main/scala</sourceDirectory>
+        <testSourceDirectory>src/test/scala</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>3.2.2</version>
+                <executions>
+                  <execution>
+                    <goals>
+                      <goal>compile</goal>
+                      <goal>testCompile</goal>
+                    </goals>
+                    <configuration>
+                      <args>
+                        <arg>-dependencyfile</arg>
+                        <arg>${project.build.directory}/.scala_dependencies</arg>
+                      </args>
+                    </configuration>
+                  </execution>
+                </executions>
+            </plugin>
+            <!-- Copy Dependencies, this is faster than building fat jars
+                 Especially for complining and testing cycles -->
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Making a fat jar, easiest to handle when uploading jars for
+                 cluster and client mode -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.sap.altiscale.datapipeline.applicationsummary_slothours.ApplicationSummarySlotHourStream</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Unit testing plugin -->
+            <!-- disable surefire -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.18.1</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+            <!-- enable scalatest -->
+            <plugin>
+                <groupId>org.scalatest</groupId>
+                <artifactId>scalatest-maven-plugin</artifactId>
+                <version>1.0</version>
+                <executions>
+                    <execution>
+                        <id>test</id>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,68 @@
+{
+  "tpe": "scala.collection.immutable.$colon$colon[scala.Tuple2[java.lang.String,scala.collection.immutable.List[scala.Any]]]",
+  "elems": [
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[scala.Any]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[scala.Any]",
+      "elems": [
+        {
+        "tpe": "java.lang.String",
+        "value": "dpci"
+      },
+        {
+        "tpe": "scala.Double",
+        "value": 1.493035150465E12
+      },
+        {
+        "tpe": "scala.Double",
+        "value": 0.009133888888888888
+      }
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[scala.Any]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[scala.Any]",
+      "elems": [
+        {
+        "tpe": "java.lang.String",
+        "value": "dpci"
+      },
+        {
+        "tpe": "scala.Double",
+        "value": 1.493035254183E12
+      },
+        {
+        "tpe": "scala.Double",
+        "value": 0.009064333333333332
+      }
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[scala.Any]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[scala.Any]",
+      "elems": [
+        {
+        "tpe": "java.lang.String",
+        "value": "dpci"
+      },
+        {
+        "tpe": "scala.Double",
+        "value": 1.493304375842E12
+      },
+        {
+        "tpe": "scala.Double",
+        "value": 0.010607222222222223
+      }
+      ]
+    }
+  }
+  ]
+}

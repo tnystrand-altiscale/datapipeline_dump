@@ -1,0 +1,47 @@
+{
+  "tpe": "scala.collection.immutable.$colon$colon[scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]]",
+  "elems": [
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 11:59:17,157",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.RMAppManager$ApplicationSummary",
+        "appId=application_1492563482964_0013,name=select distinct name\\, date from cluster_dim(Stage-1),user=alti-test-01,queue=default,state=FINISHED,trackingUrl=http:\/\/rm-dpci.s3s.altiscale.com:8088\/proxy\/application_1492563482964_0013\/,appMasterHost=203-09-01-c02.sc1.altiscale.com,startTime=1493035122068,finishTime=1493035150465,finalStatus=SUCCEEDED,memorySeconds=82205,vcoreSeconds=48,preemptedAMContainers=0,preemptedNonAMContainers=0,preemptedResources=<memory:0\\, vCores:0>,applicationType=MAPREDUCE"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-24 12:01:00,873",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.RMAppManager$ApplicationSummary",
+        "appId=application_1492563482964_0014,name=select distinct name\\, date from cluster_dim(Stage-1),user=alti-test-01,queue=default,state=FINISHED,trackingUrl=http:\/\/rm-dpci.s3s.altiscale.com:8088\/proxy\/application_1492563482964_0014\/,appMasterHost=101-17-04.sc1.altiscale.com,startTime=1493035226175,finishTime=1493035254183,finalStatus=SUCCEEDED,memorySeconds=81579,vcoreSeconds=48,preemptedAMContainers=0,preemptedNonAMContainers=0,preemptedResources=<memory:0\\, vCores:0>,applicationType=MAPREDUCE"
+      ]
+    }
+  },
+    {
+    "tpe": "scala.Tuple2[java.lang.String,scala.collection.immutable.List[java.lang.String]]",
+    "_1": "dpci",
+    "_2": {
+      "tpe": "scala.collection.immutable.$colon$colon[java.lang.String]",
+      "elems": [
+        "dpci",
+        "2017-04-27 14:46:22,518",
+        "INFO",
+        "org.apache.hadoop.yarn.server.resourcemanager.RMAppManager$ApplicationSummary",
+        "appId=application_1492563482964_0024,name=select count(*) from ...line_dev.cluster_dim(Stage-1),user=alti-test-01,queue=default,state=FINISHED,trackingUrl=http:\/\/rm-dpci.s3s.altiscale.com:8088\/proxy\/application_1492563482964_0024\/,appMasterHost=203-09-01-c02.sc1.altiscale.com,startTime=1493304344446,finishTime=1493304375842,finalStatus=SUCCEEDED,memorySeconds=95465,vcoreSeconds=54,preemptedAMContainers=0,preemptedNonAMContainers=0,preemptedResources=<memory:0\\, vCores:0>,applicationType=MAPREDUCE"
+      ]
+    }
+  }
+  ]
+}

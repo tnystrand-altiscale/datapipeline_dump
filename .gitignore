@@ -23,3 +23,6 @@ derby.log
 
 # Specifics
 help_stratos/output/*
+
+# Jar files
+*.jar
