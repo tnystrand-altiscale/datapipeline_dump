@@ -15,8 +15,7 @@ hive \
 exit
 
 scp tnystrand@dfs://tmp/thomas/burst_time_series.tsv .
-=======
--e "select * from cluster_metrics_prod_2.burst_time_series where partition_date between '2016-06-22' and '2016-07-05'" > /tmp/thomas/burst_time_series.tsv
 EOF
 
-python run_etl_procedure.py -f burst_time_series.tsv
+python run_etl_procedure.py -f burst_time_series_patch.tsv
+#-e "select * from cluster_metrics_prod_2.burst_time_series where partition_date between '$1' and '$2'" > /tmp/thomas/burst_time_series.tsv
